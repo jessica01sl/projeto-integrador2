@@ -8761,9 +8761,8 @@ progress {
     --bs-gutter-y: 3rem; } }
 
 .table, .jsgrid .jsgrid-table {
-  --bs-table-bg: transparent;
-  --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: #212529;
+ 
+  --bs-table-striped-color: #616f7a;
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
   --bs-table-active-color: #212529;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
