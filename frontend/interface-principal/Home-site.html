@@ -1,59 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home-site.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <!-- icone do site -->
+  <link rel="icon" href="img/icone-pagina.ico" type="image/png">
+
+
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="home-site.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Home</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR FETO -->
+
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img class="logo" src="img/logo-smartbuss.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-right">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rodape">Horarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rodape">Sobre Nós</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#rodape">Ajuda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled nav-link rounded-circle bg-black text-white" href="#">Meu Perfil</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+  
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+  
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+  
+  <!-- FINAL DO NAVBAR -->
+
+  <!-- Banner -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
-<!-- NAVBAR FETO -->
-
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img class="logo" src="making table (20).png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Horarios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sobre Nós</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ajuda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Meu Perfil</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<!-- FINAL DO NAVBAR -->
-
-<!-- Banner -->
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="banner.gif" alt="Primeiro Slide">
+      <img class="d-block w-100" src="img/banner.gif" alt="Primeiro Slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="11 3.png" alt="Segundo Slide">
+      <img class="d-block w-100" src="img/banner2.png" alt="Segundo Slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="onibus 1.png" alt="Terceiro Slide">
+      <img class="d-block w-100" src="img/banner3.png" alt="Terceiro Slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -66,144 +99,179 @@
   </a>
 </div>
 
-<!-- Final do Banner -->
+<script>
+  // Inicialize o carrossel
+  $(document).ready(function(){
+    $('#carouselExampleControls').carousel();
+  });
+</script>
 
-
-
-
-
-<!-- Começo do texto antes do banner -->
-<section class="texto-inicial">
-
-        <h3 class="texto-chamativo">Venha conhecer o melhor da <span>Smart</span>Bus</h3>
-
-</section>
-<!-- Final do texto antes do banner -->
-
-
-
-
-<!-- iCONES  -->
-            
-<section class="categorias">
-      </div>
-      <div class="categoria-icons">
-          <nav class="card">
-              <a href="categorias-sports.html"><img src="onibus 1.png" alt="sportsicon"></a>
-              <h5 class="textos-fontesh5" >ONIBUS MAIS SEGURO</h5>
-              <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mollis erat. ullamcorper magna at molestie.</P>
-          </nav>
-                          <nav class="card">
-              <a href="categorias-casuais.html"><img src="relogio 1.png" alt="casuaisicon"></a>
-              <h5 class="textos-fontesh5">HORARIOS FLEXIVEIS</h5>
-              <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mollis erat. ullamcorper magna at molestie.</P>
-          </nav>
-          <nav class="card">
-              <a href="categorias-snkrs.html"><img src="pin 1.png" alt="snkrsicon"></a>
-              <h5 class="textos-fontesh5">+DE500MIL PONTOS</h5>
-              <P>Lorem ipsum dolor sit amet, Nulla id mollis erat. ullamcorper magna at molestie.</P>
-          </nav>
-      </div>
-  </div>
-</section>
-
-<!-- final dos iCONES  -->
-
-
-
-
-
-<!-- banner2  -->
-
-<section class="banner2">
-
-    <img class="img-banner2" src="banner2.png" alt="Foto-Promocional-para-baixar-o-app">
-
-</section>
-
-<!-- final do banner2 -->
-
-
-<!-- Parte do video -->
-
-<section class="area-video">
-
-  <div class="texto-titulo">
-
-
-  <h5 class="titulo">Titulo de Onibus anderon deizepe profesor</h5>
-  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus modi, animi consequatur error ad corrupti vero repellat ipsam officiis deleniti iusto. Eius tempora veniam enim, odit atque explicabo illum cumque.
-  Ratione tempora sunt recusandae placeat nihil iusto similique sed perspiciatis temporibus magnam dolores aut esse a minima non repudiandae, qui, quasi quis, totam maxime exercitationem voluptatem laboriosam fugiat? Quaerat, placeat?
-  Ex ad aspernatur corrupti est hic itaque provident harum mollitia saepe rem dolorum, dolorem modi assumenda! Impedit aliquid consequuntur culpa tempore exercitationem, modi animi quo error. Similique hic nulla deserunt!
-  Ea architecto rerum ab minus unde fugit nihil temporibus aut pariatur quod? Magnam consequuntur odit quo? Vero ab quam possimus laud voluptate neque atque? Molestias vitae quidem nostrum nemo, natus culpa.</p>
-
-  </div>
-  <div class="mapa-div"><iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935621.177925329!2d-46.077415904094565!3d-23.648398457360308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd631551d2d585%3A0xbe6efd4b81fb3cd0!2sIFSP!5e0!3m2!1spt-BR!2sbr!4v1693867042092!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-
-
- </section>
-
-<!-- final da aprte do video -->
-
-<!-- AREA DE COMPRA DE CARTÕES -->
-
-<section class="compra-de-cartoes">
-<!-- ----------------------------------------------------------------------- -->
-        <div class="cardcompra1">
-            <div class="cardsuperior1"></div>
-            <div class="area-titulo-card1"><h5 class="titulo-comum1">CARTAO COMUM</h5></div>
-            <img class="cartão-icon1" src="icone.png" alt="cartão-imagem-representatia">
-            <button class="botao1"><h6>Criar Cartão</h6></button>
-            
-        </div>
-
-<!-- ----------------------------------------------------------------------- -->
-        <div class="cardcompra2">
-          <div class="cardsuperior2"></div>
-          <div class="area-titulo-card2"><h5 class="titulo-comum2">CARTAO ESTUDANTE</h5></div>
-          <img class="cartão-icon2" src="icone.png" alt="cartão-imagem-representatia">
-          <button class="botao2"><h6>Criar Cartão</h6></button>
-        </div>
-<!-- ----------------------------------------------------------------------- -->
-        <div class="cardcompra3">
-          <div class="cardsuperior3"></div>
-          <div class="area-titulo-card3"><h5 class="titulo-comum3">CARTAO IDOSO</h5></div>
-          <img class="cartão-icon3" src="icone.png" alt="cartão-imagem-representatia">
-          <button class="botao3"><h6>Criar Cartão</h6></button>
-        </div>
-<!-- ----------------------------------------------------------------------- -->
-        <div class="cardcompra4">
-          <div class="cardsuperior4"></div>
-          <div class="area-titulo-card4"><h5 class="titulo-comum4">RECARGA DE CARTÃO</h5></div>
-          <img class="cartão-icon4" src="icone.png" alt="cartão-imagem-representatia">
-          <h6 class="texto-card-499"> PLANOS APATIR DE <span >4,99</span></h6>
-          <button class="botao4"><h6>Saiba Mais</h6></button>
-        </div>
-<!-- ----------------------------------------------------------------------- -->
-
-
-
-</section>
-
-
-
-
-<!-- area do eco -->
-<section class="Area-card-verde">
-      <img class="img-card-verde" src="Group 10.png" alt="">
-</section>
-<!-- area do eco -->
-
-
-<!-- aread do rodape  -->
-
-<section class="rodape">
   
+
+  <!-- Final do Banner -->
+
+
+
+
+
+  <!-- Começo do texto antes do banner -->
+  <section class="texto-inicial">
+
+    <h3 class="texto-chamativo">Venha conhecer o melhor da <span>Smart</span>Bus</h3>
+
+  </section>
+  <!-- Final do texto antes do banner -->
+
+
+
+
+  <!-- iCONES  -->
+
+  <section class="categorias">
+    </div>
+    <div class="categoria-icons">
+      <nav class="card">
+        <a href="categorias-sports.html"><img src="img/icone-onibus.png" alt="sportsicon"></a>
+        <h5 class="textos-fontesh5">ONIBUS MAIS SEGURO</h5>
+        <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mollis erat. ullamcorper magna at molestie.
+        </P>
+      </nav>
+      <nav class="card">
+        <a href="categorias-casuais.html"><img src="img/icone-relogio.png" alt="casuaisicon"></a>
+        <h5 class="textos-fontesh5">HORARIOS FLEXIVEIS</h5>
+        <P>Lorem ipsum dolor sit amet, c. Nulla id mollis erat. ullamcorper magna at molestie.</P>
+      </nav>
+      <nav class="card">
+        <a href="categorias-snkrs.html"><img src="img/icone-local.png" alt="snkrsicon"></a>
+        <h5 class="textos-fontesh5">+DE500MIL PONTOS</h5>
+        <P>Lorem ipsum dolor sit amet, Nulla id molli molestie.</P>
+      </nav>
+    </div>
+    </div>
+  </section>
+
+  <!-- final dos iCONES  -->
+
+
+
+
+
+  <!-- banner2  -->
+
+  <section class="banner2">
+
+    <img class="img-banner2" src="img/banner2.png" alt="Foto-Promocional-para-baixar-o-app">
+
+  </section>
+
+  <!-- final do banner2 -->
+
+
+  <!-- Parte do video -->
+
+  <section class="area-video">
+
+    <div class="texto-titulo">
+
+
+      <h5 class="titulo">Titulo de Onibus anderon deizepe profesor</h5>
+      <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus modi, animi consequatur error ad
+        corrupti vero repellat ipsam officiis deleniti iusto. Eius tempora veniam enim, odit atque explicabo illum
+        cumque.
+        Ratione tempora sunt recusandae placeat nihil iusto similique sed perspiciatis temporibus magnam dolores aut
+        esse a minima non repudiandae, qui, quasi quis, totam maxime exercitationem voluptatem laboriosam fugiat?
+        Quaerat, placeat?
+        Ex ad aspernatur corrupti est hic itaque provident harum mollitia saepe rem dolorum, dolorem modi assumenda!
+        Impedit aliquid consequuntur culpa tempore exercitationem, modi animi quo error. Similique hic nulla deserunt!
+        Ea architecto rerum ab minus unde fugit nihil temporibus aut pariatur quod? Magnam consequuntur odit quo? Vero
+        ab quam possimus laud voluptate neque atque? Molestias vitae quidem nostrum nemo, natus culpa.</p>
+
+    </div>
+    <div class="mapa-div"><iframe class="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935621.177925329!2d-46.077415904094565!3d-23.648398457360308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd631551d2d585%3A0xbe6efd4b81fb3cd0!2sIFSP!5e0!3m2!1spt-BR!2sbr!4v1693867042092!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+
+  </section>
+
+  <!-- final da aprte do video -->
+
+  <!-- AREA DE COMPRA DE CARTÕES -->
+
+  <section class="compra-de-cartoes">
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="cardcompra1">
+      <div class="cardsuperior1"></div>
+      <div class="area-titulo-card1">
+        <h5 class="titulo-comum1">CARTAO COMUM</h5>
+      </div>
+      <img class="cartão-icon1" src="img/icone-cartão.png" alt="cartão-imagem-representatia">
+      <button class="botao1">
+        <h6>Criar Cartão</h6>
+      </button>
+
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="cardcompra2">
+      <div class="cardsuperior2"></div>
+      <div class="area-titulo-card2">
+        <h5 class="titulo-comum2">CARTAO ESTUDANTE</h5>
+      </div>
+      <img class="cartão-icon2" src="img/icone-cartão.png" alt="cartão-imagem-representatia">
+      <button class="botao2">
+        <h6>Criar Cartão</h6>
+      </button>
+    </div>
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="cardcompra3">
+      <div class="cardsuperior3"></div>
+      <div class="area-titulo-card3">
+        <h5 class="titulo-comum3">CARTAO IDOSO</h5>
+      </div>
+      <img class="cartão-icon3" src="img/icone-cartão.png" alt="cartão-imagem-representatia">
+      <button class="botao3">
+        <h6>Criar Cartão</h6>
+      </button>
+    </div>
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="cardcompra4">
+      <div class="cardsuperior4"></div>
+      <div class="area-titulo-card4">
+        <h5 class="titulo-comum4">RECARGA DE CARTÃO</h5>
+      </div>
+      <img class="cartão-icon4" src="img/icone-cartão.png" alt="cartão-imagem-representatia">
+      <h6 class="texto-card-499"> PLANOS APATIR DE <span>4,99</span></h6>
+      <button class="botao4">
+        <h6>Saiba Mais</h6>
+      </button>
+    </div>
+    <!-- ----------------------------------------------------------------------- -->
+
+
+
+  </section>
+
+
+
+
+  <!-- area do eco -->
+  <section class="Area-card-verde">
+    <img class="img-card-verde" src="img/card-natureza.png" alt="">
+  </section>
+  <!-- area do eco -->
+
+
+  <!-- aread do rodape  -->
+
+  <section id="rodape">
+
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6 text-center">
-          
-    </div>
+
+        </div>
   </section>
   <footer class="footer-02">
     <div class="container">
@@ -285,7 +353,8 @@
               </p>
             </div>
             <div class="col text-md-right">
-              <p class="mb-0"><a href="#" class="btn-custom">See All <span class="ion-ios-arrow-round-forward"></span></a></p>
+              <p class="mb-0"><a href="#" class="btn-custom">See All <span
+                    class="ion-ios-arrow-round-forward"></span></a></p>
             </div>
           </div>
         </div>
@@ -294,8 +363,12 @@
         <div class="col-md-6 col-lg-8">
 
           <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+            <i class="ion-ios-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+              target="_blank">Colorlib.com</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
         </div>
         <div class="col-md-6 col-lg-4 text-md-right">
           <p class="mb-0 list-unstyled">
@@ -308,21 +381,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
   </footer>
 
-  
+
 
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
 
-</section>
-<!-- finadl do rdape -->
+  </section>
+  <!-- finadl do rdape -->
 
 
 
 
 
 
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
+
 </html>
