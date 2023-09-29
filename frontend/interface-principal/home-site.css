@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(250, 250, 250);
+  background-color: rgb(255, 255, 255);
+  margin: 0;
 }
 
 
@@ -8,6 +9,10 @@ body {
   margin-bottom: 10px;
 }
 
+/* BG PASTEL COR DE FUNDO DO BOTSRAP */
+.bg-pastel{
+  background-color: rgb(255,240,210);
+}
 
 /* ---------------------------------------------------------PARTE DOS ICONES  ----------------------------*/
 .categoria-icons {
@@ -266,19 +271,7 @@ p {
 /* ----------------------------------------AREA ECOLOGICA CARD---------------------------------------- */
 
 
-
-.Area-card-verde {
-  width: 100%;
-  height: 200px;
-  background-color: #ffffff00;
-  margin-bottom: 40px;
-
-}
-
-.img-card-verde {
-  margin-top: 10px;
-  margin-left: 15%;
-}
+/* ----------------------------------------AREA ECOLOGICA CARD FIAL---------------------------------------- */ 
 
 .area-titulo-card1,
 .area-titulo-card2,
