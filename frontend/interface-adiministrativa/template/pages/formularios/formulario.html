@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <title>Formulario</title> 
+</head>
+<body>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block; /* Remove espaço extra sob a imagem */
+        }
+    </style>
+
+    <section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
+        <div class="col-12  col-md-6 col-lg-6">
+            <div class="w-100 bg-primary-subtle  rounded-4">
+                <div class="bg-black rounded-top-4">
+                    <h4 class="pb-5 text-light text-center">
+                    </h4>
+                    <img src="../../assets/images/smartbus-logo.png"  class="img-fluid w-50 mx-auto" style="margin-top: -50px">
+                </div>
+                <div class="text-center">
+                </div>
+                <br>
+                <div class=" rounded-bottom-4">
+                    <div class="container">
+                        <h4>Cadastro de Funcionários</h4>
+                        <form action="pastadestino.php" method="POST" class="mx-auto my-4" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputName">Nome</label>
+                                        <input type="text" id="inputName" class="form-control" placeholder="John" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputSurname">Sobrenome</label>
+                                        <input type="text" class="form-control" id="inputSurname" placeholder="Doe" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="inputAddress">Endereço</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="Av Vinicius de Morais, 25" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputEmail4">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail4" placeholder="doejohnn@email.com" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword4">Telefone</label>
+                                        <input type="number" class="form-control" id="inputPhone" placeholder="(00)90000-0000" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputCity">Cidade</label>
+                                        <input type="text" class="form-control" id="inputCity" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputZip">Identidade</label>
+                                        <input type="text" class="form-control" id="inputZip" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputState">Envio de documentos</label>
+                                        <input type="file" class="form-control-file" id="inputState" name="pdfDocument" accept=".pdf"  required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background-color: #FF9e00; color: #000;">Enviar</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #FF9e00; color: #000;">Cancelar
+                            <a href="../tables/basic-table.html"></a></button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+                
+        
+    
+</body>
+</html>
