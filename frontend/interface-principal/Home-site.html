@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <!-- icone do site -->
   <link rel="icon" href="img/icone-pagina.ico" type="image/png">
-
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,17 +39,24 @@
           <a class="nav-link" href="#rodape">Horarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#rodape">Sobre Nós</a>
+          <a class="nav-link" href="#rodape">Recarga</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#rodape">Ajuda</a>
+          <a class="nav-link" href="#footer">Ajuda</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled nav-link rounded-circle bg-black text-white" href="#">Meu Perfil</a>
+          <a class="nav-link  nav-link rounded-circle bg-black text-white" href="perfil.html">Meu Perfil</a>
         </li>
       </ul>
     </div>
   </nav>
+
+
+
+
+
+
+  
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -69,13 +78,10 @@
 
   <!-- Banner -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </head>
+  
+  
 
-  <body>
+  
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
@@ -86,9 +92,16 @@
           <img class="d-block w-100" src="img/BANNER4.gif" alt="Segundo Slide">
         </div>
         <div class="carousel-item">
-          <img class="d-block w-100" src="img/banner3.png" alt="Terceiro Slide">
+          <img class="d-block w-100" src="img/card4.gif" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/banner5.png" alt="Terceiro Slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="img/banner.png" alt="Terceiro Slide">
         </div>
       </div>
+      
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Anterior</span>
@@ -128,11 +141,10 @@
 
 
     <!-- Começo do texto antes do banner -->
-    <section class="texto-inicial">
-
-      <h3 class="texto-chamativo">Venha conhecer o melhor da <span>Smart</span>Bus</h3>
-
+    <section class="texto-inicial text-center">
+      <h3 class=" pt-5 texto-chamativo font-weight-bold">Venha conhecer o melhor da <span class="font-weight-bold">Smart</span>Bus</h3>
     </section>
+    
     <!-- Final do texto antes do banner -->
 
 
@@ -140,30 +152,40 @@
 
     <!-- iCONES  -->
 
-    <section class="categorias">
+    <section class="categorias ">
+      <div class="container">
+          <div class="row categoria-icons">
+              <div class="col-12  col-md- col-lg-12">
+                  <div class="card">
+                      <a href="categorias-sports.html"><img src="img/icone-onibus.png" alt="sportsicon"></a>
+                      <div class="card-body">
+                          <h5 class="card-title textos-fontesh5">ONIBUS MAIS SEGURO</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mollis erat. ullamcorper magna at molestie.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12  col-md-6 col-lg-12">
+                  <div class="card">
+                      <a href="categorias-casuais.html"><img src="img/icone-relogio.png" alt="casuaisicon"></a>
+                      <div class="card-body">
+                          <h5 class="card-title textos-fontesh5">HORARIOS FLEXIVEIS</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, c. Nulla id mollis erat. ullamcorper magna at molestie.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12  col-md-6 col-lg-12">
+                  <div class="card">
+                      <a href="categorias-snkrs.html"><img src="img/icone-local.png" alt="snkrsicon"></a>
+                      <div class="card-body">
+                          <h5 class="card-title textos-fontesh5">+DE500MIL PONTOS</h5>
+                          <p class="card-text">Lorem ipsum dolor sit amet, Nulla id molli molestie.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="categoria-icons">
-        <nav class="card">
-          <a href="categorias-sports.html"><img src="img/icone-onibus.png" alt="sportsicon"></a>
-          <h5 class="textos-fontesh5">ONIBUS MAIS SEGURO</h5>
-          <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id mollis erat. ullamcorper magna at
-            molestie.
-          </P>
-        </nav>
-        <nav class="card">
-          <a href="categorias-casuais.html"><img src="img/icone-relogio.png" alt="casuaisicon"></a>
-          <h5 class="textos-fontesh5">HORARIOS FLEXIVEIS</h5>
-          <P>Lorem ipsum dolor sit amet, c. Nulla id mollis erat. ullamcorper magna at molestie.</P>
-        </nav>
-        <nav class="card">
-          <a href="categorias-snkrs.html"><img src="img/icone-local.png" alt="snkrsicon"></a>
-          <h5 class="textos-fontesh5">+DE500MIL PONTOS</h5>
-          <P>Lorem ipsum dolor sit amet, Nulla id molli molestie.</P>
-        </nav>
-      </div>
-      </div>
-    </section>
-
+  </section>
+  
     <!-- final dos iCONES  -->
 
 
@@ -257,7 +279,7 @@
         <div class="col-10 col-md-6 col-lg-3">
           <div class="w-100 bg-white  custom-shadow rounded-4 mb-4"> <!-- Added mb-4 class for margin-bottom -->
             <div class="bg-black rounded-top-4">
-              <h5 class="pb-5 text-light text-center mb-4">CARTÃO COMUM</h5>
+              <h5 class=" pt-3 pb-5 text-light text-center mb-4">CARTÃO COMUM</h5>
             </div>
             <div class="text-center">
               <img src="img/logocartao.png" class="img-fluid w-75 mx-auto " style="margin-top: -50px ">
@@ -293,7 +315,7 @@
           <div class="w-100 bg-white mb-4  custom-shadow rounded-4">
 
             <div class="bg-black rounded-top-4">
-              <h5 class="pb-5 text-light text-center  mb-4">CARTÃO IDOSO</h5>
+              <h5 class=" pt-3 pb-5 text-light text-center  mb-4">CARTÃO IDOSO</h5>
 
             </div>
 
@@ -341,7 +363,7 @@
           <div class="w-100 bg-white  mb-4  custom-shadow  rounded-4">
 
             <div class="bg-black rounded-top-4">
-              <h5 class="pb-5 text-light text-center  mb-4">CARTÃO DE ESTUDANTE</h5>
+              <h5 class="pt-3 pb-5 text-light text-center  mb-4">CARTÃO DE ESTUDANTE</h5>
 
             </div>
 
@@ -385,7 +407,7 @@
           <div class="w-100 bg-white  custom-shadow rounded-4">
 
             <div class="bg-black rounded-top-4 ">
-              <h5 class=" pb-5 text-light text-center  mb-4  ">RECARGA DO CARTÃO</h5>
+              <h5 class="  pt-3 pb-5 text-light text-center  mb-4  ">RECARGA DO CARTÃO</h5>
 
             </div>
 
@@ -450,40 +472,19 @@
 
 
     <!-- Remove the container if you want to extend the Footer to full width. -->
-    <div class="container-fluid ">
+    <div class=" ">
 
       <!-- Footer -->
-      <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
+      <footer class="text-center text-lg-start text-white" style="background-color: #000000">
         <!-- Section: Social media -->
-        <section class="d-flex justify-content-between p-4" style="background-color: #6351ce">
+        <section class="d-flex justify-content-between p-2" style="background-color:goldenrod">
           <!-- Left -->
           <div class="me-5">
-            <span>Get connected with us on social networks:</span>
+            <span class="text-dark"> Qualquer duvida entrart em uma das redes sociais:</span>
           </div>
           <!-- Left -->
 
-          <!-- Right -->
-          <div>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="text-white me-4">
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-          <!-- Right -->
+
         </section>
         <!-- Section: Social media -->
 
@@ -495,7 +496,7 @@
               <!-- Grid column -->
               <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <!-- Content -->
-                <h6 class="text-uppercase fw-bold">Company name</h6>
+                <h6 class="text-uppercase fw-bold">SMART<span>BUS</span></h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
                   style="width: 60px; background-color: #7c4dff; height: 2px" />
                 <p>
@@ -509,7 +510,7 @@
               <!-- Grid column -->
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Products</h6>
+                <h6 class="text-uppercase fw-bold">De<span>VS</span></h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
                   style="width: 60px; background-color: #7c4dff; height: 2px" />
                 <p>
@@ -530,20 +531,23 @@
               <!-- Grid column -->
               <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Useful links</h6>
+                <h6 class="text-uppercase fw-bold">PAGINAS</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
                   style="width: 60px; background-color: #7c4dff; height: 2px" />
                 <p>
-                  <a href="#!" class="text-white">Your Account</a>
+                  <a href="criar-cartão.html" class="text-white">Criar cartão</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-white">Become an Affiliate</a>
+                  <a href="#!" class="text-white">Recarregar cartão</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-white">Shipping Rates</a>
+                  <a href="#!" class="text-white">Perfil</a>
                 </p>
                 <p>
-                  <a href="#!" class="text-white">Help</a>
+                  <a href="#!" class="text-white">Horarios</a>
+                </p>
+                <p>
+                  <a href="#!" class="text-white">Ajuda</a>
                 </p>
               </div>
               <!-- Grid column -->
@@ -551,7 +555,7 @@
               <!-- Grid column -->
               <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Contact</h6>
+                <h6 class="text-uppercase fw-bold">CONTATO</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto"
                   style="width: 60px; background-color: #7c4dff; height: 2px" />
                 <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
@@ -567,7 +571,7 @@
         <!-- Section: Links  -->
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="text-center " style="background-color: rgba(0, 0, 0, 0.2)">
           © 2020 Copyright:
           <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>

@@ -22,11 +22,11 @@
 
 
 <section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
-<div class="col-12  col-md-6 col-lg-6">
-    <div class="w-100 bg-primary-subtle  rounded-4">
+<div class="col-12  col-md-5 col-lg-5">
+    <div class="w-100 bg-light custom-shadow rounded-4">
 
         <div class="bg-black rounded-top-4">
-            <h5 class="pb-5 text-light text-center">--------
+            <h5 class="pb-5 text-light text-center">CRIAÇÃO DE CARTÃO
             </h5>
 
         </div>
@@ -44,12 +44,8 @@
          <form action="pastadestino.php" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputName">Nome</label>
+                    <label for="inputName">Nome Completo</label>
                     <input type="text" id="inputName" class="form-control" placeholder="John" required>
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="inputSurname">Sobrenome</label>
-                    <input type="text" class="form-control" id="inputSurname" placeholder="Doe" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
@@ -57,6 +53,10 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Senha</label>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="123@abc" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4"> Repita a Senha</label>
                     <input type="password" class="form-control" id="inputPassword4" placeholder="123@abc" required>
                 </div>
             </div>
@@ -68,15 +68,12 @@
                 <label for="inputAddress2">Complemento</label>
                 <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, casa, sítio...">
             </div>
-            <div class="form-row">
+            <div class="form-row ">
                 <div class="form-group col-md-6">
                     <label for="inputCity">Cidade</label>
                     <input type="text" class="form-control" id="inputCity" required>
                 </div>
-                <div class="form-group col-md-2">
-                    <label for="inputZip">Numero do cartão</label>
-                    <input type="text" class="form-control" id="inputZip" required>
-                </div>
+                
                 <div class="form-group col-md-4">
                     <label for="inputState">Estado</label>
                     <select id="inputState" class="form-control" required>
@@ -111,7 +108,11 @@
                     </select>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="botao text-center">
+                <button type="submit" class="btn mt-4 mb-5 btn btn-warning btn-md rounded-5 border-0  custom-shadow  text-black font-weight-bold m-2 text-center">CRIAR CARTÃO</button>
+              </div>
+          </div>
+           
         </form>
         
         
@@ -124,15 +125,31 @@
                 </form>
             </div>
         
-            <div class="botao text-center">
-              <button class=" btn btn-warning btn-md rounded-5 border-0 text-black font-weight-bold m-2 text-center">CRIAR CARTÃO</button>
-            </div>
-        </div>
+           
     </div></div>
 
 
 </section>
    
+
+
+
+<style>
+/* ABAIXO TEMOS AA COR PRETA DE BOTOES */
+    .btn-black-night {
+      background-color: black;
+    }
+/* ABAIXO TEMOS A SOMBRA CUSTOMIZADA PADARAO DO SITE */
+    .custom-shadow {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
