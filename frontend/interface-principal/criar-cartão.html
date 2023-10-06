@@ -52,7 +52,7 @@
                     <input type="email" class="form-control" id="inputEmail4" placeholder="doejohnn@email.com" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputPassword4">Senha</label>
+                    <label for="inputPassword4">Senha </label>
                     <input type="password" class="form-control" id="inputPassword4" placeholder="123@abc" required>
                 </div>
                 <div class="form-group col-md-6">
@@ -60,14 +60,55 @@
                     <input type="password" class="form-control" id="inputPassword4" placeholder="123@abc" required>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="inputAddress">Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Av Vinicius de Morais, 25" required>
-            </div>
-            <div class="form-group">
-                <label for="inputAddress2">Complemento</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, casa, sítio...">
-            </div>
+            <h5 class="mt-4">Adicione seu enderço</h5>
+<!-- cidade codigo cep -->
+    <form>
+        <input type="text" name="cep" id="cep" placeholder="CEP">
+
+        <input type="text" name="cidade" id="cidade" placeholder="Cidade">
+
+        <input type="submit" value="Buscar">
+    </form>
+
+    <div id="resultados"></div>
+
+    <script>
+        const formulario = document.querySelector("form");
+        const resultados = document.querySelector("#resultados");
+
+        formulario.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const cep = formulario.cep.value;
+
+            try {
+                const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+                // console.log(response);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    // console.log(data);
+
+                    resultados.innerHTML = `
+                    <ul>
+                        <li>CEP: ${data.cep}</li>
+                        <li>Cidade: ${data.city}</li>
+                        <li>Bairro: ${data.neighborhood}</li>
+                        <li>Estado: ${data.state}</li>
+                        <li>Rua: ${data.street}</li>
+                    </ul>`;
+
+                    formulario.cidade.value = data.city;
+                
+                } else {
+                    resultados.innerHTML = `<p>O CEP ${cep} é inválido.</p>`;
+                }
+            } catch (error) {
+                console.error(error);
+                resultados.innerHTML = "<p>Erro ao buscar CEP.</p>";
+            }
+        });
+    </script>
             <div class="form-row ">
                 <div class="form-group col-md-6">
                     <label for="inputCity">Cidade</label>

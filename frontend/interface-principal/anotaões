@@ -1,0 +1,39 @@
+<section class="categorias ">
+    <div class="container">
+      <div class="row categoria-icons">
+        <div class="col-12  col-md- col-lg-4 ">
+          <div class="card">
+            <a href="categorias-sports.html"><img src="img/icone-onibus.png" alt="sportsicon"></a>
+            <div class="card-body">
+              <h5 class="card-title textos-fontesh5"></h5>
+              <p class="card-text"> </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12  col-md-6 col-lg-4">
+          <div class="card">
+            <a href="categorias-casuais.html"><img src="img/icone-relogio.png" alt="casuaisicon"></a>
+            <div class="card-body">
+              <h5 class="card-title textos-fontesh5"></h5>
+              <p class="card-text">
+
+
+
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12  col-md-6 col-lg-4 ">
+          <div class="card ">
+            <a href="categorias-snkrs.html"><img src="img/icone-local.png" alt="snkrsicon"></a>
+            <div class="card-body">
+              <h5 class="card-title textos-fontesh5">Lideres de pontos no <span class="text-success">Brasil</span></h5>
+              <p class="card-text">Mais de 5 mil pontos por todo o litoral norte em cada parte da cidade</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
