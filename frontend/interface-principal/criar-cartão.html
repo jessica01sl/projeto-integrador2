@@ -7,6 +7,93 @@
     <title>SmartBus</title>
 </head>
 <body>
+    
+  <!-- NAVBAR FEITO -->
+
+  <nav class=" custom-shadow navbar navbar-dark bg-black navbar-expand-lg">
+    <a class="navbar-brand ml-5 " href="Home-site.html"><img class="logo" src="img/logo-smartbuss.png"
+        alt="logo-do-site-Smart-Bus"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto ">
+        </li>
+        <li class="nav-item py-2-5   m-2 ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="horarios-ajuda.html">Horarios</a>
+        </li>
+        <li class="nav-item py-2-5   m-2 ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="recarga-cartão.html">Recarga</a>
+        </li>
+        <li class="nav-item py-2-5   m-2  ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="horarios-ajuda.html">Ajuda</a>
+        </li>
+        <li>
+        <button type="button" src="criar-cartão.html"
+          class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Entrar</button>
+        </li>
+        </ul>
+    </div>
+  </nav>
+
+
+  <!-- abaixo muda o tAMANHO DO ICONE DA LOGO  -->
+<style>
+.logo {
+  width: 155px; /* Defina a largura desejada em pixels */
+  height: auto; /* Mantém a proporção da altura para evitar distorções */
+}
+</style>
+  <!-- SCRIPT DO BANNER -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- FINAL DO NAVBAR -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <style>
         body {
             margin: 0;
@@ -18,46 +105,52 @@
             height: auto;
             display: block; /* Remove espaço extra sob a imagem */
         }
+
+
+        .tamnaho-persoalizado-img{
+            width:400px ;
+            height:200px ;
+        }
     </style>
 
 
 <section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
-<div class="col-12  col-md-5 col-lg-5">
-    <div class="w-100 bg-light custom-shadow rounded-4">
+<div class="col-12  col-md-12 col-lg-12">
+    <div class="w-100 bg-light custom-shadow  ">
 
-        <div class="bg-black rounded-top-4">
-            <h5 class="pb-5 text-light text-center">CRIAÇÃO DE CARTÃO
-            </h5>
+        <div class="bg-black">
+            <h1 class="pb-5 text-light text-center  pt-3 pb-5 text-light text-center mb-4">CRIAÇÃO DE CARTÃO
+            </h1>
 
         </div>
 
-        <div class="text-center">
-            <img src="img/logocartao.png" class="img-fluid w-50 mx-auto" style="margin-top: -50px">
+        <div class="text-center ">
+            <img src="img/logocartao.png" class="tamnaho-persoalizado-img mx-auto" style="margin-top: -50px">
         </div>
 
-        <div class=" rounded-bottom-4">
+        <div class="  rounded-bottom-4">
             <div class="container">
                 <h4>Formulario para criação de cadastro</h4>
                 <form action="pastadestino.php" method="POST" class="mx-auto my-4">
                     <!-- O restante do seu formulário aqui -->
         
-         <form action="pastadestino.php" method="POST">
+         <form  claaction="pastadestino.php" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputName">Nome Completo</label>
-                    <input type="text" id="inputName" class="form-control" placeholder="John" required>
+                    <input type="text" id="inputName" class="form-control" placeholder="" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="doejohnn@email.com" required>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder="" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Senha </label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="123@abc" required>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder=""required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4"> Repita a Senha</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="123@abc" required>
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="" required>
                 </div>
             </div>
             <h5 class="mt-4">Adicione seu enderço</h5>
@@ -66,6 +159,7 @@
         <input type="text" name="cep" id="cep" placeholder="CEP">
 
         <input type="text" name="cidade" id="cidade" placeholder="Cidade">
+        
 
         <input type="submit" value="Buscar">
     </form>
@@ -109,11 +203,7 @@
             }
         });
     </script>
-            <div class="form-row ">
-                <div class="form-group col-md-6">
-                    <label for="inputCity">Cidade</label>
-                    <input type="text" class="form-control" id="inputCity" required>
-                </div>
+            
                 
                 <div class="form-group col-md-4">
                     <label for="inputState">Estado</label>

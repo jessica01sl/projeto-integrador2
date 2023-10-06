@@ -7,21 +7,61 @@ body {
 
 .font-do-site-primaria{
   font-family: 'Inter', sans-serif;
+ 
 }
 
+
+
+/* abaixo esta as fontes usadas na section de icones do site */
+.font-do-site-abaixo-banner{
+  font-family: 'Inter', sans-serif;
+  font-size: xx-large;
+}
+
+
+.font-do-site-icones-titulo{
+  font-family: 'Inter', sans-serif;
+  font-size: ;
+ 
+}
+.font-do-site-icones-texto{
+  font-family: 'Inter', sans-serif;
+ 
+}
 /* fontes acima */
+
+
+
+
+
+
+
+
+
 
 /* abaixo esta  tamanho do banner do meio da pagina */
 .tamanho-secundario{
-  height: 470px;
+  height: 550px;
 }
 
 /*icone do onibus personalizado  */
-.custon-tamanho{
-  width:150px ;
-  height: ;
+.custon-tamanho-relogio{
+  width:180px ;
+  height:120px;
 }
 
+/*icone do  relogio personalizado  */
+.custon-tamanho-relogio{
+  width:130px ;
+  height:110px;
+}
+
+
+/*icone do pontos personalizado  */
+.custon-tamanho-pontos{
+  width:140px ;
+  height:117px;
+}
 
 
 
