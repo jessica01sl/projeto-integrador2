@@ -1,0 +1,41 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+
+<div class="container">
+    <h1>Qtd. de Horários por Linha</h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Linha</th>
+                <th>Qtd. de Horários por Linha</th>
+            </tr>
+        </thead>
+        <tbody id="qtdHorariosPorLinha"></tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    async function fetchLinhas() {
+        try {
+            const response = await axios.get('http://localhost:3000/api/linhas/qtd-horarios-por-linha');
+            const linhas = response.data;
+
+            const qtdHorariosPorLinha = document.querySelector('#qtdHorariosPorLinha');
+
+            linhas.forEach(linha => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${linha.nome}</td>
+                    <td>${linha._count}</td>
+                `;
+                qtdHorariosPorLinha.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Erro ao buscar os dados:', error);
+        }
+    }
+
+    fetchLinhas();
+</script>
+</script>
