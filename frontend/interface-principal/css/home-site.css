@@ -4,9 +4,9 @@ body {
 }
 
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 .font-do-site-primaria{
-  font-family: 'Inter', sans-serif;
+  font-family: 'Bebas Neue', sans-serif
  
 }
 
@@ -20,8 +20,9 @@ body {
 
 
 .font-do-site-icones-titulo{
-  font-family: 'Inter', sans-serif;
-  font-size: ;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+ 
  
 }
 .font-do-site-icones-texto{
@@ -63,7 +64,27 @@ body {
   height:117px;
 }
 
+ /* ABAIXO TEMOS UMA LARGURA PERSONALIZADA PARA BOTAO */
+    .py-2-5 {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
 
+
+    /* ABAIXO TEMOS AA COR PRETA DE BOTOES */
+    .btn-black-night {
+      background-color: black;
+    }
+
+    /* ABAIXO TEMOS A SOMBRA CUSTOMIZADA PADARAO DO SITE */
+    .custom-shadow {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-font-weight {
+      font-weight: 600;
+      /* Altere o valor conforme necessário para obter o peso de fonte desejado */
+    }
 
 
 
