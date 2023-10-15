@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- icone do site -->
+  <link rel="icon" href="img/icone-pagina.ico" type="image/png">
+  <link rel="stylesheet" href="css/home-site.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="home-site.css">
+</head>
+
+<body>
+
+  <style>
+    body{
+      background-color: rgb(255, 255, 255);
+    }
+    .bg-especial{
+      background-color: rgb(11, 34, 0);
+    }
+  </style>
+  <!-- NAVBAR FEITO -->
+
+  <nav class=" custom-shadow navbar navbar-dark bg-black navbar-expand-lg">
+    <a class="navbar-brand ml-5 " href="Home-site.html"><img class="logo" src="img/logo-smartbuss.png"
+        alt="logo-do-site-Smart-Bus"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-right">
+        <li class="nav-item active py-2-5   m-2 ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria " href="Home-site.html">Home</a>
+        </li>
+        <li class="nav-item py-2-5   m-2 ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria"
+            href="horarios-ajuda.html">Horarios</a>
+        </li>
+        <li class="nav-item py-2-5   m-2 ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria"
+            href="recarga-cartão.html">Recarga</a>
+        </li>
+        <li class="nav-item py-2-5   m-2  ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="horarios-ajuda.html">Ajuda</a>
+        </li>
+        <li>
+          <button type="button" src="criar-cartão.html"
+            class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Entrar</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- abaixo muda o tAMANHO DO ICONE DA LOGO  -->
+  <style>
+    .logo {
+      width: 155px;
+      /* Defina a largura desejada em pixels */
+      height: auto;
+      /* Mantém a proporção da altura para evitar distorções */
+    }
+  </style>
+  <!-- SCRIPT DO BANNER -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- FINAL DO NAVBAR -->
+
+<!-- section de duvidas -->
+
+<section class="bg-especial">
+  <div class="container pt-5 pb-5 mb-5">
+    <h2 class="fs-5 text-light fw-medium">Está com dúvidas?</h2>
+    <h3 class="fs-1 text-light fw-bold">
+      Temos a solução para suas dúvidas!
+    </h3>
+    <h4 class="fs-5 text-light fw-light">Logo abaixo temos diveros tópicos com respostas de <br>
+      perguntas que recebemos com frequência, caso sua pergunta <br>
+      e dúvida não esteja entre elas, entre em contato</h4>
+  </div>
+</section>
+<!-- accordions/carteirinha -->
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-black fw-bold"> CARTEIRINHA </h1>
+    </div>
+    <div class="row mb-5 mt-5">
+      <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              O que é a carteirinha SmartBus?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">A carteirinha SmartBus é um cartão de transporte oferecido pel em
+              Caraguatatuba (CEP 11665-071) que permite aos
+              passageiros utilizar os serviços de transporte público da empresa. Essa carteirinha pode ser recarregada
+              com créditos ou
+              passes mensais e é usada ao entrar nos ônibus, onde o valor da passagem é automaticamente deduzido. Ela
+              pode oferecer
+              benefícios como descontos para estudantes e idosos, tornando o transporte público mais conveniente e
+              acessível.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Onde adquirir e usar sua carteirinha?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Para adquirir e usar sua carteirinha  em Caraguatatuba (CEP 11665-071),
+              você pode obtê-la em nosso único ponto de
+              emissão autorizado na região. Após adquirir a carteirinha, ela pode ser usada em todos os ônibus d
+              na cidade.
+              Basta aproximá-la do leitor de cartões próximo à catraca ao entrar no ônibus, e o valor da passagem será
+              deduzido
+              automaticamente. Certifique-se de verificar o horário de funcionamento do ponto de emissão e quaisquer
+              requisitos
+              específicos no site oficial da  ou através do nosso serviço de atendimento ao cliente para obter
+              informações
+              atualizadas sobre a obtenção e uso da carteirinha.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              A carteirinha possui validade?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Sim, a carteirinha em Caraguatatuba (CEP 11665-071) possui uma validade
+              determinada, geralmente com duração de
+              alguns anos. Após o término desse período, você precisará renovar sua carteirinha em nosso ponto de
+              emissão autorizado
+              ou no local indicado para garantir que ela continue sendo válida para uso nos ônibus da Smart<span>Bus</span>.
+              Certifique-se de verificar
+              a data de validade impressa na carteirinha para evitar qualquer inconveniente.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              Se eu perder minha carteirinha?
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Se você perder sua carteirinha  em Caraguatatuba (CEP 11665-071), entre em
+              contato com nosso serviço de atendimento
+              ao cliente imediatamente para reportar a perda. Geralmente, você poderá solicitar a emissão de uma nova
+              carteirinha,
+              sujeita a um custo de substituição. Os créditos existentes em sua carteirinha perdida podem ser
+              transferidos para a
+              nova, conforme as políticas da . Certifique-se de seguir as orientações específicas fornecidas pelo
+              nosso serviço de
+              atendimento ao cliente para o procedimento adequado de substituição da carteirinha.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- accordions/usos -->
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-black fw-bold"> USOS DA CARTEIRINHA </h1>
+    </div>
+    <div class="row mb-5 mt-5">
+      <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+              Como funciona o Uso Comum?
+            </button>
+          </h2>
+          <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O uso comum da carteirinha  em Caraguatatuba (CEP 11665-071) se aplica aos
+              passageiros que recarregam seus próprios
+              cartões com seu próprio dinheiro. Para utilizar o transporte público, basta carregar sua carteirinha com
+              créditos ou
+              passes mensais em um dos nossos pontos de recarga autorizados ou online, se disponível. Ao entrar no
+              ônibus, aproxime a
+              carteirinha do leitor de cartões próximo à catraca, e o valor da passagem será automaticamente deduzido.
+              Quando os
+              créditos acabarem, você precisará recarregar a carteirinha para continuar utilizando o serviço.
+              Certifique-se de manter
+              um saldo suficiente para suas viagens e de verificar as políticas de recarga da  para evitar
+              interrupções no uso do
+              transporte público.</div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+              Como funciona o Uso Escolar?
+            </button>
+          </h2>
+          <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O Uso Escolar da carteirinha  é destinado a estudantes e funciona
+              permitindo que eles obtenham descontos ou isenção
+              nas passagens de ônibus. Os estudantes precisam adquirir a carteirinha  em um ponto de emissão
+              autorizado e, em
+              seguida, podem recarregá-la com créditos ou passes mensais. Ao entrar no ônibus, eles utilizam a
+              carteirinha para pagar
+              a passagem com o desconto ou a isenção aplicados. É importante seguir as políticas específicas da 
+              em relação à
+              elegibilidade, documentação necessária e requisitos para aproveitar os benefícios do Uso Escolar.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+              Como funciona o Uso Idoso?
+            </button>
+          </h2>
+          <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O Uso Idoso da carteirinha  oferece vantagens aos idosos ao utilizar o
+              transporte público. Idosos elegíveis podem
+              adquirir a carteirinha  e, com ela, viajar de ônibus com descontos especiais ou até mesmo isenção de
+              tarifas,
+              dependendo das políticas da . Basta apresentar a carteirinha ao entrar no ônibus para usufruir dos
+              benefícios. Os
+              requisitos de idade e documentação podem variar, portanto, é essencial verificar as políticas
+              específicas da  em
+              Caraguatatuba (CEP 11665-071) para aproveitar os benefícios do Uso Idoso.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+              Como funciona o Uso PCDs?
+            </button>
+          </h2>
+          <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O Uso PCDs (Pessoas com Deficiência) da carteirinh destina-se a
+              indivíduos com deficiência e funciona oferecendo
+              benefícios específicos ao utilizar o transporte público. Para aproveitar esses benefícios, as pessoas
+              com deficiência
+              elegíveis devem adquirir a carteirinha , seguindo os procedimentos e requisitos estabelecidos pela
+               em
+              Caraguatatuba (CEP 11665-071). Com a carteirinha, podem obter descontos especiais ou isenção de tarifas
+              em viagens de
+              ônibus. Ao entrar no ônibus, basta apresentar a carteirinha para usufruir dessas vantagens.
+              Certifique-se de verificar
+              as políticas e os requisitos específicos da P para o Uso PCDs a fim de aproveitar os benefícios
+              oferecidos.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+              Como funciona o Uso Vale Transporte?
+            </button>
+          </h2>
+          <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">O Uso Vale Transporte da carteirinha é destinado a empresas e seus
+              funcionários. As empresas adquirem os
+              vales-transporte junto à  para fornecer aos funcionários como parte de seu benefício de transporte.
+              Os funcionários
+              recebem os vales-transporte em suas carteirinhas e podem utilizá-los para pagar as passagens de ônibus
+              ao entrar no
+              transporte público. A empresa é responsável por carregar os vales-transporte nas carteirinhas dos
+              funcionários de acordo
+              com a legislação vigente. Para obter mais informações específicas sobre como adquirir e utilizar o Uso
+              Vale Transporte,
+              é recomendável entrar em contato diretamente com o departamento de Recursos Humanos de sua empresa ou
+              com a SP em
+              Caraguatatuba (CEP 11665-071).
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- accordions/recarga -->
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-black fw-bold"> RECARGA </h1>
+    </div>
+    <div class="row mb-5 mt-5">
+      <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+              Como e onde recarrego minha carteirinha?
+            </button>
+          </h2>
+          <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Para recarregar sua carteirinha em Caraguatatuba (CEP 11665-071), você
+              pode fazê-lo em pontos de recarga
+              autorizados, que geralmente estão localizados em terminais de ônibus, postos de atendimento ou locais
+              específicos na
+              cidade. Além disso, em alguns casos, pode ser possível recarregar sua carteirinha online por meio do
+              site oficial da
+              P. Certifique-se de verificar os pontos de recarga disponíveis e as opções online no site da ou
+              entre em contato
+              com nosso serviço de atendimento ao cliente para obter informações atualizadas sobre como recarregar sua
+              carteirinha de
+              forma conveniente
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+              Quais as formas de pagamento?
+            </button>
+          </h2>
+          <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">As formas de pagamento para recarregar sua carteirinha  em Caraguatatuba
+              (CEP 11665-071) incluem dinheiro, cartão de
+              crédito/débito, boleto bancário (se disponível), e, possivelmente, opções de recarga online pelo site
+              oficial da .
+              Os passageiros podem escolher a opção que melhor se adequa às suas necessidades e conveniência para
+              manter sua
+              carteirinha com saldo suficiente para utilizar o transporte público de forma contínua.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+              Qual o limite que posso colocar no cartão?
+            </button>
+          </h2>
+          <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Não há limite estabelecido para o valor que você pode colocar em sua
+              carteirinha S em Caraguatatuba (CEP 11665-071).
+              Os passageiros geralmente podem recarregar o valor que desejam, desde que estejam de acordo com as
+              políticas específicas
+              da em relação aos limites de recarga para cada tipo de cartão. Para informações precisas sobre as
+              políticas de
+              recarga da , é aconselhável entrar em contato diretamente com a empresa ou consultar o site oficial.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- accordions/para empresas -->
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-black fw-bold"> PARA EMPRESAS </h1>
+    </div>
+    <div class="row mb-5 mt-5">
+      <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFifteen" aria-expanded="false" aria-controls="flush-collapseFifteen">
+              Como cadastrar minha empresa?
+            </button>
+          </h2>
+          <div id="flush-collapseFifteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">No momento, não é possível cadastrar empresas na em Caraguatatuba (CEP
+              11665-071). A  pode ter políticas e
+              restrições específicas em relação ao cadastro de empresas, e pode haver períodos em que não aceitam
+              novos cadastros.
+              Recomendamos entrar em contato direto com a ou verificar periodicamente o site oficial da empresa
+              para obter
+              informações atualizadas sobre a possibilidade de cadastro de empresas e quaisquer mudanças nas políticas
+              de adesão.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- segurança -->
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-black fw-bold"> SEGURANÇA </h1>
+    </div>
+    <div class="row mb-5 mt-5">
+      <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseSeventeen" aria-expanded="false" aria-controls="flush-collapseSeventeen">
+              Como recuperar ou mudar minha senha?
+            </button>
+          </h2>
+          <div id="flush-collapseSeventeen" class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Para recuperar ou alterar sua senha da  em Caraguatatuba (CEP 11665-071),
+              você geralmente pode fazer isso por meio
+              do site oficial da empresa ou visitando uma unidade de atendimento. No site, siga as instruções de
+              recuperação ou
+              alteração de senha, fornecendo as informações necessárias. Nas unidades de atendimento, a equipe local
+              poderá ajudá-lo
+              pessoalmente com esse processo. Certifique-se de ter os documentos de identificação adequados e
+              informações pessoais
+              prontos, e verifique as políticas e procedimentos específicos da  para obter assistência na
+              recuperação ou mudança
+              de senha.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseEighteen" aria-expanded="false" aria-controls="flush-collapseEighteen">
+              Consigo alterar meus dados cadastrais?
+            </button>
+          </h2>
+          <div id="flush-collapseEighteen" class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Sim, é possível alterar seus dados cadastrais na  em Caraguatatuba (CEP
+              11665-071). Normalmente, você pode fazer
+              essas alterações acessando sua conta no site oficial da empresa e seguindo as opções de edição de
+              perfil. Se preferir,
+              também pode visitar uma unidade de atendimento da  para fazer as alterações pessoalmente, onde a
+              equipe poderá
+              ajudá-lo a atualizar suas informações cadastrais. Certifique-se de ter os documentos relevantes para
+              comprovar as
+              mudanças que deseja fazer, como comprovante de endereço ou documentos de identificação.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <h1 class="text-black fw-bold"> APLICATIVO </h1>
+    </div>
+    <div class="row mb-5 mt-5">
+      <div class="accordion accordion-flush rounded-5" id="accordionFlushExample">
+        <div class="accordion-item rounded-5 border-2 border-secondary mb-4">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed rounded-5" type="button" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseNineteen" aria-expanded="false" aria-controls="flush-collapseNineteen">
+              Como baixar o APP?
+            </button>
+          </h2>
+          <div id="flush-collapseNineteen" class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">No momento, não possuímos um aplicativo da P (Sistema de Transporte Urbano
+              Público) disponível em Caraguatatuba (CEP
+              11665-071). A empresa pode estar planejando desenvolver um aplicativo no futuro, mas atualmente, não
+              está disponível
+              para download. Caso haja planos futuros para lançar um aplicativo, é recomendável verificar regularmente
+              as atualizações
+              e informações fornecidas pela  para ficar por dentro das novidades e possíveis lançamentos.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- footer --
+  
+
+
+
+
+  <!-- Remove the container if you want to extend the Footer to full width. -->
+  <div class="font-do-site-primaria ">
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start text-white" style="background-color: #000000">
+      <!-- Section: Social media -->
+      <section class="d-flex justify-content-between p-2" style="background-color:goldenrod">
+        <!-- Left -->
+
+        <!-- Left -->
+
+
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Section: Links  -->
+      <section class="">
+        <!-- ABAIXO ESTA O NEWSTWOSELLER -->
+        <section class="py-4 py-xl-5">
+          <div
+            class="text-white bg-dark border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5">
+            <div class="text-center text-lg-start py-3 py-lg-1">
+              <h2 class="fw-bold mb-2"><strong>Coloque seu Email e receba Novidades!</strong></h2>
+              <p class="mb-0">Imperdiet consectetur dolor.</p>
+            </div>
+            <form class="d-flex justify-content-center flex-wrap my-2" method="post">
+              <div class="my-2"><input class="form-control" type="email" name="email" placeholder="Digite seu email">
+              </div>
+              <div class="my-2"><button class="btn btn-warning text-dark ms-sm-2" type="submit">Subscribe </button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <!-- ACIMA ESTA O NEWSTWOSELLER -->
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <!-- Content -->
+              <h6 class="text-uppercase fw-bold">SMART<span>BUS</span></h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p>
+                Conduzindo sua jornada com excelência, segurança e comodidade, porque para nós, cada viagem é uma
+                experiência única
+              </p>
+              <a href=" https://www.reclameaqui.com.br/empresa/cartao-top/"><img class="mt-4 rounded-4 " src="img/reclame-aqui-icone.png" alt="logo-reclameaqui-nota1000"></a>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">De<span>VS</span></h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p>
+                <a href="#!" class="text-white">Philype.html</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Jessica.css</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Silda.gpt</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Lorena.catraca</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">PAGINAS</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p>
+                <a href="criar-cartão.html" class="text-white">Criar cartão</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Recarregar cartão</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Perfil</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Horarios</a>
+              </p>
+              <p>
+                <a href="#!" class="text-white">Ajuda</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">CONTATO</h6>
+              <hr class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px" />
+              <p><i class="fas fa-home mr-3"></i> Caraguatatuba, AV. bahia 293, SP</p>
+              <p><i class="fas fa-envelope mr-3"></i>SmartBusCliente@gmail.com</p>
+              <p><i class="fas fa-phone mr-3"></i> + 55 98567-9388</p>
+              <p><i class="fas fa-print mr-3"></i> + 55 89567-7789</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+
+      <!-- Copyright -->
+      <div class="text-center " style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="termos.html">SmartBus</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+  </div>
+  <!-- End of .container -->
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

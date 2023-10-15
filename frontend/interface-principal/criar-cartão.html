@@ -2,16 +2,16 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/home-site.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartBus</title>
 </head>
 <body>
-    
-  <!-- NAVBAR FEITO -->
+   <!-- NAVBAR FEITO -->
 
-  <nav class=" custom-shadow navbar navbar-dark bg-black navbar-expand-lg">
-    <a class="navbar-brand ml-5 " href="Home-site.html"><img class="logo" src="img/logo-smartbuss.png"
+   <nav class=" custom-shadow navbar navbar-dark bg-black navbar-expand-lg">
+    <a class="navbar-brand px-lg-5  " href="Home-site.html"><img class="logo" src="img/logo-smartbuss.png"
         alt="logo-do-site-Smart-Bus"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,33 +19,39 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto ">
+      <ul class="navbar-nav ml-auto text-right">
+        <li class="nav-item active py-2-5   m-2 ">
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria " href="Home-site.html">Home</a>
         </li>
         <li class="nav-item py-2-5   m-2 ">
-          <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="horarios-ajuda.html">Horarios</a>
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria"
+            href="horarios-ajuda.html">Horarios</a>
         </li>
         <li class="nav-item py-2-5   m-2 ">
-          <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="recarga-cartão.html">Recarga</a>
+          <a class="nav-link text-warning custom-font-weight font-do-site-primaria"
+            href="recarga-cartão.html">Recarga</a>
         </li>
         <li class="nav-item py-2-5   m-2  ">
           <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="horarios-ajuda.html">Ajuda</a>
         </li>
         <li>
-        <button type="button" src="criar-cartão.html"
-          class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Entrar</button>
+          <button type="button"  href="template/pages/samples/login.html" src="template/pages/samples/login.html"
+            class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Entrar</button>
         </li>
-        </ul>
+      </ul>
     </div>
   </nav>
 
 
   <!-- abaixo muda o tAMANHO DO ICONE DA LOGO  -->
-<style>
-.logo {
-  width: 155px; /* Defina a largura desejada em pixels */
-  height: auto; /* Mantém a proporção da altura para evitar distorções */
-}
-</style>
+  <style>
+    .logo {
+      width: 155px;
+      /* Defina a largura desejada em pixels */
+      height: auto;
+      /* Mantém a proporção da altura para evitar distorções */
+    }
+  </style>
   <!-- SCRIPT DO BANNER -->
   <script>
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -65,8 +71,6 @@
   </script>
 
   <!-- FINAL DO NAVBAR -->
-
-
 
 
 
@@ -114,20 +118,17 @@
     </style>
 
 
-<section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
+<section class=" container-fluid   d-flex justify-content-center align-items-center">
 <div class="col-12  col-md-12 col-lg-12">
     <div class="w-100 bg-light custom-shadow  ">
 
         <div class="bg-black">
-            <h1 class="pb-5 text-light text-center  pt-3 pb-5 text-light text-center mb-4">CRIAÇÃO DE CARTÃO
+            <h1 class="pb-5 text-light text-center  pt-4 pb-5 text-light text-center mb-5">CRIAÇÃO DE CARTÃO
             </h1>
 
         </div>
 
-        <div class="text-center ">
-            <img src="img/logocartao.png" class="tamnaho-persoalizado-img mx-auto" style="margin-top: -50px">
-        </div>
-
+      
         <div class="  rounded-bottom-4">
             <div class="container">
                 <h4>Formulario para criação de cadastro</h4>
@@ -240,7 +241,7 @@
                 </div>
             </div>
             <div class="botao text-center">
-                <button type="submit" class="btn mt-4 mb-5 btn btn-warning btn-md rounded-5 border-0  custom-shadow  text-black font-weight-bold m-2 text-center">CRIAR CARTÃO</button>
+                <button type="submit" class="btn   mt-4 mb-5 btn btn-warning btn-md rounded-5 border-0  custom-shadow  text-black font-weight-bold m-2 text-center">CRIAR CARTÃO</button>
               </div>
           </div>
            

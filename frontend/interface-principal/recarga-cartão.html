@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <!-- icone do site -->
         <link rel="icon" href="img/icone-pagina.ico" type="image/png">
+        <link rel="stylesheet" href="css/home-site.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -16,404 +17,322 @@
       </head>
 <body>
     
-    <!-- navbar inicio -->
+  <div class="checkout-panel">
+    <div class="panel-body">
+      <h2 class="title">Recarregue e comece a viver!</h2>
    
-    <section>
-      <div style="background-color: #ffffff;" class="w-100 h-auto pt-5" id="carteirinhas-modal">
-          <div class="container">
-              <div class="row">
-                  <h2 class="text-secondary fw-bold fs-2">
-                      Ei! Procurando informações?
-                  </h2>
-              </div>
-              <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 row-gap-3 pt-5 pb-5">
-                  <div class="col">
-                      <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoComum"
-                          style="cursor: pointer;">
-                          <img src="img/onibus-amarelo.png" alt="" class="img-fluid w-100 rounded-1">
-                          <span class="position-absolute text-light fw-bold ps-2 pt-1  top-0 start-0">USO <br>
-                              COMUM</span>
-                          <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
-                                  src="img/" alt=""></span>
-                      </div>
-                  </div>
-                  <div class="modal modal-xl fade" id="modalUsoComum" tabindex="-1"
-                      aria-labelledby="modalUsoComumLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body ">
-                                  <div class="container-fluid ">
-                                      <div class="row ">
-                                          <div class="col-12 col-lg-6 ">
-                                              <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Comum</h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-3"> Carteirinha destinada a
-                                                  usuários comuns, cidadãos que utilizam o
-                                                  ônibus no cotidiano e que pretendem transitar sobre a área urbana de
-                                                  maneira segura, confortável e ágil.</h2>
-                                              <h2 class="fw-bold tex-dark fs-5 pb-2">
-                                                  Solicite sua Carteirinha STUP, é fácil!
-                                              </h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-2">Você pode checar os horários e
-                                                  comparecer presencialmente na unidade mais próxima da sua casa,
-                                                  verifique a disponibildiade da sua unidade e aproveite os benefícios
-                                              </h2>
-                                              <a class="text-primary text-decoration-underline fw-bold fs-5 " href="">
-                                                  ACHAR SUA UNIDADE </a>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Limite de uso diário:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  20 vezes.
-                                              </h2>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Validação para uso:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  Saldo maior ou igual ao valor da tarifa
-                                              </h2>
-                                          </div>
-                                          <div class="col-12 col-lg-6 p-0 position-relative ">
-                                            <!-- quando clicadoa abre isso -->
-                                              <img src="img/onibus-amarelo.png" alt=""
-                                                  class="img-fluid w-100  rounded-1">
-                                              <span
-                                                  class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
-                                                  <button
-                                                      class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
-                                                      data-bs-dismiss="modal">
-                                                      <a class="text-decoration-none text-secondary"
-                                                          href="#atendimento-presencial">QUERO A MINHA</a>
-                                                  </button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer ">
-                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                      <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoEscolar"
-                          style="cursor: pointer;">
-                          <img src="img/onibus-amarelo.png" alt="" class="img-fluid w-100 rounded-1">
-                          <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
-                              Escolar</span>
-                          <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
-                                  src="img/carteirnha-linhas-button.png" alt=""></span>
-                      </div>
-                  </div>
-                  <div class="modal modal-xl  fade" id="modalUsoEscolar" tabindex="-1"
-                      aria-labelledby="modalUsoEscolarLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body ">
-                                  <div class="container-fluid ">
-                                      <div class="row ">
-                                          <div class="col-12 col-lg-6 ">
-                                              <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Escolar</h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-3"> A carteirinha de uso escolar é
-                                                  voltada para estudantes que dependem do transporte público para
-                                                  chegar à escola
-                                                  diariamente. Ela garante que os alunos tenham acesso fácil e
-                                                  econômico ao transporte, contribuindo para a educação e
-                                                  promovendo a mobilidade segura dos jovens.</h2>
-                                              <h2 class="fw-bold tex-dark fs-5 pb-2">
-                                                  Solicite sua Carteirinha STUP, é fácil!
-                                              </h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-2">Você pode checar os horários e
-                                                  comparecer presencialmente na unidade mais próxima da sua casa,
-                                                  verifique a disponibildiade da sua unidade e aproveite os benefícios
-                                              </h2>
-                                              <a class="text-primary text-decoration-underline fw-bold fs-5 " href="">
-                                                  ACHAR SUA UNIDADE </a>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Limite de uso diário:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  20 vezes.
-                                              </h2>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Validação para uso:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  Saldo maior ou igual ao valor da tarifa
-                                              </h2>
-                                          </div>
-                                          <div class="col-12 col-lg-6 p-0 position-relative ">
-                                              <img src="img/carteirinha-linhas-modal2.png" alt=""
-                                                  class="img-fluid w-100 rounded-1">
-                                              <span
-                                                  class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
-                                                  <button
-                                                      class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
-                                                      data-bs-dismiss="modal">
-                                                      <a class="text-decoration-none text-secondary"
-                                                          href="#atendimento-presencial">QUERO A MINHA</a>
-                                                  </button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer ">
-                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                      <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoIdoso"
-                          style="cursor: pointer;">
-                          <img src="img/onibus-amarelo.png" alt="" class="img-fluid w-100 rounded-1">
-                          <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
-                              IDOSO</span>
-                          <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
-                                  src="img/carteirnha-linhas-button.png" alt=""></span>
-                      </div>
-                  </div>
-                  <div class="modal modal-xl  fade" id="modalUsoIdoso" tabindex="-1"
-                      aria-labelledby="modalUsoIdosoLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body ">
-                                  <div class="container-fluid ">
-                                      <div class="row ">
-                                          <div class="col-12 col-lg-6 ">
-                                              <h2 class="fw-bold fs-3 tex-dark pb-3 "> Uso Idoso</h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-3">A carteirinha destinada aos
-                                                  idosos é uma ferramenta essencial para garantir a acessibilidade e a
-                                                  dignidade dos cidadãos
-                                                  mais experientes. Ela oferece descontos e benefícios especiais no
-                                                  transporte público, permitindo que os idosos se
-                                                  desloquem de maneira conveniente e econômica pela cidade.</h2>
-                                              <h2 class="fw-bold tex-dark fs-5 pb-2">
-                                                  Solicite sua Carteirinha STUP, é fácil!
-                                              </h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-2">Você pode checar os horários e
-                                                  comparecer presencialmente na unidade mais próxima da sua casa,
-                                                  verifique a disponibildiade da sua unidade e aproveite os benefícios
-                                              </h2>
-                                              <a class="text-primary text-decoration-underline fw-bold fs-5 " href="">
-                                                  ACHAR SUA UNIDADE </a>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Limite de uso diário:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  20 vezes.
-                                              </h2>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Validação para uso:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  Saldo maior ou igual ao valor da tarifa
-                                              </h2>
-                                          </div>
-                                          <div class="col-12 col-lg-6 p-0 position-relative ">
-                                              <img src="img/carteirinha-linhas-modal3.png" alt=""
-                                                  class="img-fluid w-100  rounded-1">
-                                              <span
-                                                  class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
-                                                  <button
-                                                      class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
-                                                      data-bs-dismiss="modal">
-                                                      <a class="text-decoration-none text-secondary"
-                                                          href="#atendimento-presencial">QUERO A MINHA</a>
-                                                  </button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer ">
-                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                      <div class="div position-relative" data-bs-toggle="modal" data-bs-target="#modalUsoPcds"
-                          style="cursor: pointer;">
-                          <img src="img/onibus-amarelo.png" alt="" class="img-fluid w-100 rounded-1">
-                          <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
-                              PCDs</span>
-                          <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
-                                  src="img/carteirnha-linhas-button.png" alt=""></span>
-                      </div>
-                  </div>
-                  <div class="modal modal-xl  fade" id="modalUsoPcds" tabindex="-1"
-                      aria-labelledby="modalUsoPcdsLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body ">
-                                  <div class="container-fluid ">
-                                      <div class="row ">
-                                          <div class="col-12 col-lg-6 ">
-                                              <h2 class="fw-bold fs-3 tex-dark pb-3 pt-3"> Uso PCDs</h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-3">A carteirinha de uso para
-                                                  pessoas com deficiência (PCDs) é uma medida inclusiva que visa
-                                                  facilitar a mobilidade desses
-                                                  indivíduos na área urbana. Ela oferece recursos como assentos
-                                                  reservados e acesso prioritário, tornando o transporte
-                                                  público mais acessível e adaptado às necessidades das PCDs.</h2>
-                                              <h2 class="fw-bold tex-dark fs-5 pb-2">
-                                                  Solicite sua Carteirinha STUP, é fácil!
-                                              </h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-2">Você pode checar os horários e
-                                                  comparecer presencialmente na unidade mais próxima da sua casa,
-                                                  verifique a disponibildiade da sua unidade e aproveite os benefícios
-                                              </h2>
-                                              <a class="text-primary text-decoration-underline fw-bold fs-5 " href="">
-                                                  ACHAR SUA UNIDADE </a>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Limite de uso diário:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  20 vezes.
-                                              </h2>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Validação para uso:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  Saldo maior ou igual ao valor da tarifa
-                                              </h2>
-                                          </div>
-                                          <div class="col-12 col-lg-6 p-0 position-relative ">
-                                              <img src="img/carteirinha-linhas-modal4.png" alt=""
-                                                  class="img-fluid w-100  rounded-1">
-                                              <span
-                                                  class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
-                                                  <button
-                                                      class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
-                                                      data-bs-dismiss="modal">
-                                                      <a class="text-decoration-none text-secondary"
-                                                          href="#atendimento-presencial">QUERO A MINHA</a>
-                                                  </button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer ">
-                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col">
-                      <div class="div position-relative" data-bs-toggle="modal"
-                          data-bs-target="#modalUsoValeTransporte" style="cursor: pointer;">
-                          <img src="img/onibus-amarelo.png" alt="" class="img-fluid w-100 rounded-1">
-                          <span class="position-absolute text-secondary fw-bold ps-2 pt-1  top-0 start-0">USO <br>
-                              VALE TRANSPORTE</span>
-                          <span class="position-absolute bottom-0 start-0 ps-2 pb-1"> <img
-                                  src="img/carteirnha-linhas-button.png" alt=""></span>
-                      </div>
-                  </div>
-                  <div class="modal modal-xl  fade" id="modalUsoValeTransporte" tabindex="-1"
-                      aria-labelledby="modalUsoValeTransporteLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body ">
-                                  <div class="container-fluid ">
-                                      <div class="row ">
-                                          <div class="col-12 col-lg-6 ">
-                                              <h2 class="fw-bold fs-3 tex-dark pb-3 pt-3"> Uso Vale Transporte</h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-3">O vale transporte é uma
-                                                  carteirinha fornecida pelas empresas aos seus funcionários como
-                                                  parte dos benefícios
-                                                  trabalhistas. Esse cartão permite que os trabalhadores tenham acesso
-                                                  ao transporte público de forma subsidiada,
-                                                  garantindo que possam se deslocar de casa para o trabalho.
-  
-                                              </h2>
-                                              <h2 class="fw-bold tex-dark fs-5 pb-2">
-                                                  Solicite sua Carteirinha STUP, é fácil!
-                                              </h2>
-                                              <h2 class="fw-light tex-dark fs-5 pb-2">Você pode checar os horários e
-                                                  comparecer presencialmente na unidade mais próxima da sua casa,
-                                                  verifique a disponibildiade da sua unidade e aproveite os benefícios
-                                              </h2>
-                                              <a class="text-primary text-decoration-underline fw-bold fs-5 " href="">
-                                                  ACHAR SUA UNIDADE </a>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Limite de uso diário:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  20 vezes.
-                                              </h2>
-                                              <h2 class="fs-5 fw-bold tex-dark pt-3">
-                                                  Validação para uso:
-                                              </h2>
-                                              <h2 class="tex-dark fw-light fs-5">
-                                                  Saldo maior ou igual ao valor da tarifa
-                                              </h2>
-                                          </div>
-                                          <div class="col-12 col-lg-6 p-0 position-relative ">
-                                              <img src="img/carteirinha-linhas-modal5.png" alt=""
-                                                  class="img-fluid w-100  rounded-1">
-                                              <span
-                                                  class="text-secondary fw-bold ps-2 pt-1 mt-5 pt-5 position-absolute bottom-0 start-50 translate-middle-x  pb-5">
-                                                  <button
-                                                      class="btn text-primary fw-bold btn-primary text-secondary px-3 px-lg-5"
-                                                      data-bs-dismiss="modal">
-                                                      <a class="text-decoration-none text-secondary"
-                                                          href="#atendimento-presencial">QUERO A MINHA</a>
-                                                  </button>
-                                              </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="modal-footer ">
-                                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col justify-content-center align-items-center d-flex">
-                      <div class="d-flex justify-content-center align-items-center d-flex d-lg-none">
-                          <a class="text-secondary text-decoration-none text-secondary align-items-center d-flex fw-bold fs-5 "
-                              href="#atendimento-presencial">PEÇA JÁ O SEU <img class=""
-                                  src="img/icon-arrow-white.svg" alt=""></a>
-                      </div>
-                  </div>
-              </div>
-  
-  
-              <div class="row pb-0 pb-lg-5">
-                  <div class="d-flex justify-content-end d-none d-lg-flex">
-                      <a class="text-secondary text-decoration-none text-secondary align-items-center d-flex fw-light fs-5 "
-                          href="#atendimento-presencial">PEÇA JÁ O SEU <img class="" src="img/icon-arrow-white.svg"
-                              alt=""></a>
-                  </div>
-              </div>
+    
+   
+      <div class="payment-method">
+        <label for="card" class="method card">
+          <div class="card-logos">
+            <img src="https://designmodo.com/demo/checkout-panel/img/visa_logo.png"/>
+            <img src="https://designmodo.com/demo/checkout-panel/img/mastercard_logo.png"/>
           </div>
+   
+          
+          <div class="radio-input">
+            <input id="card" type="radio" name="payment">
+            Pague R$ 5,00 por passagem 
+          </div>
+        </label>
+   
+        <label for="paypal" class="method paypal">
+          <img src="https://designmodo.com/demo/checkout-panel/img/paypal_logo.png"/>
+          <div class="radio-input">
+            <input id="paypal" type="radio" name="payment">
+            Pague R$ 4.80 por passagem
+          </div>
+        </label>
       </div>
+   
+      <div>
+        <label  for="date">Valor da recarga</label>
+        <input type="text" id="date"/>
+      </div>
+
+
+      <div class="input-fields">
+        <div class="column-1">
+          <label for="cardholder">Nome</label>
+          <input type="text" id="cardholder" />
+   
+          <div class="small-inputs">
+            <div>
+              <label for="date"> Data de validade</label>
+              <input type="text" id="date"/>
+            </div>
+            
+            <div>
+              <label for="verification">CVV / CVC *</label>
+              <input type="password" id="verification"/>
+            </div>
+          </div>
+   
+        </div>
+        <div class="column-2">
+          <label for="cardnumber">Nimero do cartão</label>
+          <input type="password" id="cardnumber"/>
+   
+          <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your card separate from its number.</span>
+        </div>
+      </div>
+    </div>
+   
+    <div class="panel-footer">
+      <a href="Home-site.html"><button class="btn back-btn">Voltar ao Home</button></a>
+      <a href="#"><button class="btn next-btn">Finalizar !</button></a>
+    </div>
+  </div>
   
-  </section>
+  
+  <style>
+    * {
+  box-sizing: border-box;
+}
+ 
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size-adjust: calc();
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: #eeeeee;
+  justify-content: center;
+  align-items: center;
+}
+.checkout-panel {
+  display: flex;
+  flex-direction: column;
+  width: 940px;
+  height: 766px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+}
+.panel-body {
+  padding: 45px 80px 0;
+  flex: 1;
+}
+ 
+.title {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: #2e2e2e;
+}
+.progress-bar {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+ 
+.step {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 30px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background-color: #efefef;
+}
+ 
+.step:after {
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 22px;
+  width: 225px;
+  height: 6px;
+  content: '';
+  background-color: #efefef;
+}
+ 
+.step:before {
+  color: #2e2e2e;
+  position: absolute;
+  top: 40px;
+}
+ 
+.step:last-child:after {
+  content: none;
+}
+ 
+.step.active {
+  background-color: #1abc9c;
+}
+.step.active:after {
+  background-color: #1abc9c;
+}
+.step.active:before {
+  color: #1abc9c;
+}
+.step.active + .step {
+  background-color: #1abc9c;
+}
+.step.active + .step:before {
+  color: #1abc9c;
+}
+ 
+.step:nth-child(1):before {
+  content: 'Cart';
+}
+.step:nth-child(2):before {
+  right: -40px;
+  content: 'Confirmation';
+}
+.step:nth-child(3):before {
+  right: -30px;
+  content: 'Payment';
+}
+.step:nth-child(4):before {
+  right: 0;
+  content: 'Finish';
+}
+.payment-method {
+  display: flex;
+  margin-bottom: 60px;
+  justify-content: space-between;
+}
+ 
+.method {
+  display: flex;
+  flex-direction: column;
+  width: 382px;
+  height: 122px;
+  padding-top: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: rgb(249, 249, 249);
+  justify-content: center;
+  align-items: center;
+}
+ 
+.card-logos {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.radio-input {
+  margin-top: 20px;
+}
+ 
+input[type='radio'] {
+  display: inline-block;
+}
+.input-fields {
+  display: flex;
+  justify-content: space-between;
+}
+ 
+.input-fields label {
+  display: block;
+  margin-bottom: 10px;
+  color: #b4b4b4;
+}
+ 
+.info {
+  font-size: 12px;
+  font-weight: 300;
+  display: block;
+  margin-top: 50px;
+  opacity: .5;
+  color: #2e2e2e;
+}
+ 
+div[class*='column'] {
+  width: 382px;
+}
+ 
+input[type='text'],
+input[type='password'] {
+  font-size: 16px;
+  width: 100%;
+  height: 50px;
+  padding-right: 40px;
+  padding-left: 16px;
+  color: rgba(46, 46, 46, .8);
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 4px;
+  outline: none;
+}
+ 
+input[type='text']:focus,
+input[type='password']:focus {
+  border-color: rgb(119, 219, 119);
+}
+ 
+#date { background: url(img/icons_calendar_black.png) no-repeat 95%; }
+#cardholder { background: url(img/icons_person_black.png) no-repeat 95%; }
+#cardnumber { background: url(img/icons_card_black.png) no-repeat 95%; }
+#verification { background: url(img/icons_lock_black.png) no-repeat 95%; }
+ 
+.small-inputs {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+ 
+.small-inputs div {
+  width: 182px;
+}
+.panel-footer {
+  display: flex;
+  width: 100%;
+  height: 96px;
+  padding: 0 80px;
+  background-color: rgb(239, 239, 239);
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  font-size: 16px;
+  width: 163px;
+  height: 48px;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 23px;
+}
+ 
+.back-btn {
+  color: #1abc9c;
+  background: #fff;
+}
+ 
+.next-btn {
+  color: #fff;
+  background: #1abc9c;
+}
+ 
+.btn:focus {
+  outline: none;
+}
+ 
+.btn:hover {
+  transform: scale(1.1);
+}
+.blue-border {
+  border: 1px solid rgb(110, 178, 251);
+}
+.warning {
+  border-color: #1abc9c;
+}
+  </style>
+
+
+
+<script></script>
+
+
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>

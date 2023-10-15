@@ -4,6 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <!-- icone do site -->
+  <!-- link do css -->
+  <link rel="stylesheet" href="css/home-site.css">
   <link rel="icon" href="img/icone-pagina.ico" type="image/png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -16,60 +18,84 @@
   <link rel="stylesheet" href="home-site.css">
 </head>
 
+
+
+
+
+
 <body>
+  
+ <!-- NAVBAR FEITO -->
+ <nav class=" custom-shadow navbar navbar-dark bg-black navbar-expand-lg">
+  <a class="navbar-brand ml-5 " href="Home-site.html"><img class="logo" src="img/logo-smartbuss.png"
+      alt="logo-do-site-Smart-Bus"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <!-- navbar inicio -->
-  <nav class="navbar navbar-dark bg-black navbar-expand-lg">
-    <a class="navbar-brand" href="#"><img class="logo" src="img/logo-smartbuss.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-right">
-        <li class="nav-item active">
-          <a class="nav-link" href="Home-site.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="horarios-ajuda.html">Horarios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#rodape">recargas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#footer">Ajuda</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link d nav-link rounded-circle bg-black text-white" href="perfil.html">Meu Perfil</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto text-right">
+      <li class="nav-item active py-2-5   m-2 ">
+        <a class="nav-link text-warning custom-font-weight font-do-site-primaria " href="Home-site.html">Home</a>
+      </li>
+      <li class="nav-item py-2-5   m-2 ">
+        <a class="nav-link text-warning custom-font-weight font-do-site-primaria"
+          href="horarios-ajuda.html">Horarios</a>
+      </li>
+      <li class="nav-item py-2-5   m-2 ">
+        <a class="nav-link text-warning custom-font-weight font-do-site-primaria"
+          href="recarga-cartão.html">Recarga</a>
+      </li>
+      <li class="nav-item py-2-5   m-2  ">
+        <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="horarios-ajuda.html">Ajuda</a>
+      </li>
+      <li>
+        <a href="template/pages/samples/login.html"><button type="button"   src="template/pages/samples/login.html"
+          class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Entrar</button></a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
 
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+<!-- abaixo muda o tAMANHO DO ICONE DA LOGO  -->
+<style>
+  .logo {
+    width: 155px;
+    /* Defina a largura desejada em pixels */
+    height: auto;
+    /* Mantém a proporção da altura para evitar distorções */
+    
+  }
+  body{
+    background-color: #eee
+  }
+</style>
+<!-- SCRIPT DO BANNER -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
 
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
     });
-  </script>
-  <!-- navbar final -->
+  });
+</script>
 
-  <section style="background-color: #eee ;">
-    <div class="container  py-4-5">
+<!-- FINAL DO NAVBAR -->
+
+  <section style=" background-color: #eee  ;">
+    <div class="container  col-lg-4 py-4-5">
       <div class="row justify-content-center">
-        <div class="col-lg-4">
+        <div class="col-lg-12">
           <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
             <ol class="breadcrumb mb-0">
               <li class="breadcrumb-item"><a href="Home-site.html">Home</a></li>
