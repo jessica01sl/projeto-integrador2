@@ -1,0 +1,309 @@
+body {
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.font-do-site-primaria{
+  font-family: 'Bebas Neue', sans-serif
+ 
+}
+
+
+
+/* abaixo esta as fontes usadas na section de icones do site */
+.font-do-site-abaixo-banner{
+  font-family: 'Inter', sans-serif;
+  font-size: xx-large;
+}
+
+
+.font-do-site-icones-titulo{
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+ 
+ 
+}
+.font-do-site-icones-texto{
+  font-family: 'Inter', sans-serif;
+ 
+}
+/* fontes acima */
+
+
+
+
+
+
+
+
+
+
+/* abaixo esta  tamanho do banner do meio da pagina */
+.tamanho-secundario{
+  height: 550px;
+}
+
+/*icone do onibus personalizado  */
+.custon-tamanho-relogio{
+  width:180px ;
+  height:120px;
+}
+
+/*icone do  relogio personalizado  */
+.custon-tamanho-relogio{
+  width:130px ;
+  height:110px;
+}
+
+
+/*icone do pontos personalizado  */
+.custon-tamanho-pontos{
+  width:140px ;
+  height:117px;
+}
+
+ /* ABAIXO TEMOS UMA LARGURA PERSONALIZADA PARA BOTAO */
+    .py-2-5 {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+
+
+    /* ABAIXO TEMOS AA COR PRETA DE BOTOES */
+    .btn-black-night {
+      background-color: black;
+    }
+
+    /* ABAIXO TEMOS A SOMBRA CUSTOMIZADA PADARAO DO SITE */
+    .custom-shadow {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .custom-font-weight {
+      font-weight: 600;
+      /* Altere o valor conforme necessário para obter o peso de fonte desejado */
+    }
+
+
+
+
+
+
+ /* ABAIXO TEMOS UMA LARGURA PERSONALIZADA PARA BOTAO */
+    .py-2-5 {
+      padding-top: 0.6rem !important;
+      padding-bottom: 0.6rem !important;
+    }
+
+
+    /* ABAIXO TEMOS AA COR PRETA DE BOTOES */
+    .btn-black-night {
+      background-color: black;
+    }
+
+    /* ABAIXO TEMOS A SOMBRA CUSTOMIZADA PADARAO DO SITE */
+    .custom-shadow {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+.logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+/* BG PASTEL COR DE FUNDO DO BOTSRAP */
+.bg-pastel{
+  background-color: rgb(255,240,210);
+}
+
+
+/* ---------------------------------------------------------PARTE DOS ICONES  ----------------------------*/
+.categoria-icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  text-align: center;
+  margin-bottom: 10%;
+  align-items: flex-start;
+  /* Adicionado para alinhar os itens verticalmente */
+}
+
+.card {
+  width: 30%;
+  height: 100%;
+  /* Defina uma altura explícita para todos os cartões */
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card h5 {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.card p {
+  margin-top: 8px;
+}
+
+.card img {
+  max-width: 80%;
+}
+
+.textos-fontesh
+
+/* -------------------------------------------FINAL DOS ICONES-------------------------------------------------------------------------- */
+
+
+/* css do banner 2 sobre o app */
+
+
+.texto-chamativo {
+  margin: 30px;
+  text-align: center;
+  font-weight: 800;
+}
+
+span {
+  color: #f7be05;
+
+}
+
+
+/* CSS DO MOBILE */
+@media screen and (max-width: 768px) {
+  .categoria-icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    text-align: center;
+    margin-bottom: 10%;
+    align-items: flex-start;
+    /* Adicionado para alinhar os itens verticalmente */
+
+
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .card {
+    width: 50%;
+    height: 50%;
+    /* Defina uma altura explícita para todos os cartões */
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 100px;
+
+  }
+
+  .card h5 {
+    font-weight: 700;
+    margin-top: 10px;
+
+  }
+
+  .card p {
+    margin-top: 8px;
+  }
+
+  .card img {
+    max-width: 80%;
+  }
+
+  .textos-fontesh5 {
+    font-weight: 700;
+  }
+
+  .categoria-icons nav {
+    border: none;
+    outline: none;
+  }
+
+
+
+
+
+
+}
+
+.img-banner2 {
+  width: 100%;
+  margin-top: -150px;
+
+}
+
+p {
+  font-size: small;
+}
+
+
+/* CSS DA AREA DO MAPA DO SITE fazer com botsrap futuramente */
+
+
+
+.area-video {
+  width: 100%;
+  height: 400px;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.texto-titulo {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0);
+
+}
+
+.mapa-div {
+  float: right;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.mapa {
+  border-radius: 20px;
+  margin-left: 70px;
+  margin-top: 40px;
+  width: 80%;
+  height: 80%;
+}
+
+
+
+
+.titulo {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.text {
+  text-align: center;
+  margin-left: 40px;
+  margin-right: 40px;
+
+}
