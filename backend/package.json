@@ -7,12 +7,17 @@
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {
-    "@prisma/client": "^5.5.2",
+    "@prisma/client": "^5.4.1",
+    "axios": "^1.5.1",
     "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
+    "prisma": "^5.4.1"
+  },
+  "devDependencies": {
     "nodemon": "^3.0.1"
   }
 }

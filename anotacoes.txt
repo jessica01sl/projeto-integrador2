@@ -1,0 +1,14 @@
+BACKEND
+
+ligar xampp
+executar no workbench o script.sql para criar o banco "bancopi"
+
+npm i
+
+criar .env
+	DATABASE_URL="mysql://root:@127.0.0.1:3306/bancopi"
+	PORT=5000
+
+npx prisma generate
+
+npx prisma db pull
