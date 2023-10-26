@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// schema.prisma
+
+// Define the data model for the "cliente" table
+model Cliente {
+  id        Int        @id @default(autoincrement())
+  usuario   Usuario?   @relation(fields: [usuarioId], references: [id])
+  usuarioId Int?
+  nome      String
+  saldo     Decimal
+  cpf       String
+  Embarque  Embarque[]
+}
+
+// Define the data model for the "embarque" table
+model Embarque {
+  id        Int      @id @default(autoincrement())
+  cliente   Cliente  @relation(fields: [clienteId], references: [id])
+  clienteId Int
+  viagem    Viagem   @relation(fields: [viagemId], references: [id])
+  viagemId  Int
+  tarifa    Decimal
+  horario   DateTime
+}
+
+// Define the data model for the "linha" table
+model Linha {
+  id             Int      @id @default(autoincrement())
+  nome           String
+  origem         String
+  destino        String
+  horarioPartida DateTime
+  horarioChegada DateTime
+  Viagem         Viagem[]
+}
+
+// Define the data model for the "motorista" table
+model Motorista {
+  id     Int      @id @default(autoincrement())
+  nome   String
+  foto   String?
+  Viagem Viagem[]
+}
+
+// Define the data model for the "onibus" table
+model Onibus {
+  id     Int      @id @default(autoincrement())
+  placa  String
+  Viagem Viagem[]
+}
+
+// Define the data model for the "usuario" table
+model Usuario {
+  id       Int       @id @default(autoincrement())
+  nome     String
+  email    String
+  senha    String
+  token    String
+  clientes Cliente[]
+}
+
+// Define the data model for the "viagem" table
+model Viagem {
+  id          Int        @id @default(autoincrement())
+  linha       Linha      @relation(fields: [linhaId], references: [id])
+  linhaId     Int
+  motorista   Motorista  @relation(fields: [motoristaId], references: [id])
+  motoristaId Int
+  onibus      Onibus     @relation(fields: [onibusId], references: [id])
+  onibusId    Int
+  dataPartida DateTime
+  dataChegada DateTime
+  Embarque    Embarque[]
+}
