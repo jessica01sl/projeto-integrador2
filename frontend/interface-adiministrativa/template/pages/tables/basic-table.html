@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,6 +19,22 @@
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
   <body>
+<!-- abaixo temos o style das cores do nav lateral -->
+
+    <style>
+      #sidebar {
+  background-color: rgb(10, 10, 10);
+    }
+    /* Se desejar alterar a cor do texto dentro do sidebar para preto */
+    #sidebar a {
+    color: rgb(255, 187, 0);
+      }
+
+/* Se desejar alterar a cor do texto do nome do perfil no topo */
+    .profile-name {
+    color: rgb(255, 255, 255);
+}
+    </style>
     <div class="container-scroller">
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
@@ -31,11 +47,11 @@
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="../../assets/images/faces/face15.jpg" alt="">
+                  <img class="img-xs rounded-circle " src="../../assets/images/icone-motorista.png" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Anderson</h5>
+                  <h5 class="mb-0 font-weight-normal">Philype</h5>
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -85,40 +101,58 @@
               <span class="menu-title">Linhas</span>
             </a>
           </li>
+
+
+
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/tables/basic-table.html">
               <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
+                <img src="../../assets/images/icone-motorista.png" alt="Motoristas">
               </span>
               <span class="menu-title">Motoristas</span>
             </a>
           </li>
+
+
+
+
+
+
           
           <li class="nav-item menu-items">
             <a class="nav-link" href="../../pages/icons/mdi.html">
               <span class="menu-icon">
-                <i class="mdi mdi-contacts"></i>
+               <img src="../../assets/images/icone-passageiros.png" alt="">
               </span>
               <span class="menu-title">Passageiros</span>
             </a>
           </li>
+
+
+
+
+
+
+
+
           <li class="nav-item menu-items">
             <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
-                <i class="mdi mdi-security"></i>
+               <img src="../../assets/images/login-amarescuro.png" alt="">
               </span>
-              <span class="menu-title">Registro/login</span>
+              <span class="menu-title">Registro/Login</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Registrarse </a></li>
+                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Registrar-se </a></li>
               </ul>
             </div>
-          </li>
         </ul>
       </nav>
+          
+       
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_navbar.html -->
