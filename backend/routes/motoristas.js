@@ -19,6 +19,25 @@ router.get('/listar', async (req, res) => {
 // quando gerar o codigo trocar de app.js para router.get
 
 // cadastrar motorista
+router.post('/cadastrar', async (req, res) => {
+  try {
+    const { nome } = req.body;
+
+    // Crie um novo motorista no banco de dados usando Prisma
+    const novoMotorista = await prisma.motorista.create({
+      data: {
+        nome: nome
+      }
+    });
+
+    // Retorne a resposta como JSON
+    res.json(novoMotorista);
+  } catch (error) {
+    console.error(error);
+    // Se houver um erro, retorne um status de erro e a mensagem de erro
+    res.status(500).json({ error: 'Erro ao cadastrar o motorista.' });
+  }
+});
 
 // atualizar o motorista
 
