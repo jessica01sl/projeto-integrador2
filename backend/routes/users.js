@@ -5,5 +5,5 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-
+// aqui se coloca os  conteudos
 module.exports = router;

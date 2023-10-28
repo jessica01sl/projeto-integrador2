@@ -43,8 +43,8 @@ CREATE TABLE Linha (
     nome VARCHAR(255) NOT NULL,
     origem VARCHAR(255) NOT NULL,
     destino VARCHAR(255) NOT NULL,
-    horarioPartida DATETIME NOT NULL,
-    horarioChegada DATETIME NOT NULL
+    horarioPartida TIME NOT NULL,
+    duracao INT NOT NULL
 );
 
 
