@@ -41,8 +41,61 @@ router.post('/cadastrar', async (req, res) => {
 
 // atualizar o motorista
 
+router.put('/editar/:id', async function (req, res, next) {
+  try {
+    const id = parseInt(req.params.id);
+    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    
+    const motoristaAtualizada = await prisma.motorista.update({
+      where: {
+        id: id,
+      },
+      data: {
+        nome: nome,
+      },
+    });
+
+    res.json(motoristaAtualizada);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao atualizar dados do motorista.' });
+  }
+});
+
+
+
+
 // deletar o motorista
+router.delete("/excluir/:id", async function (req, res, next) {
+  try {
+    const id = parseInt(req.params.id);
+    const motoristaExcluida = await prisma.motorista.delete({
+      where: {
+        id: id,
+      },
+    });
+
+    if (motoristaExcluida) {
+      res.json({ message: "motorista excluído excluído com sucesso." });
+    } else {
+      res.status(404).json({ error: "motorista não encontrada." });
+    }
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Erro ao excluir a motorista ." });
+  }
+});
+
+
+
+
+
+
 
 // buscar um motorista por id
+
+
+
+
 
 module.exports = router;
