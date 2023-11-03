@@ -18,11 +18,31 @@ router.get('/listar', async (req, res) => {
 // no gpt: envia o codigo do schema prisma, "express prisma rota/endpoint para ..."
 // quando gerar o codigo trocar de app.js para router.get
 
-// cadastrar motorista
+// cadastrar linha
+router.post('/cadastrar', async (req, res) => {
+  try {
+    const { nome, origem, destino, horarioPartida, duracao } = req.body;
 
-// atualizar o motorista
+    // Crie uma nova linha express no banco de dados
+    const novaLinha = await prisma.linha.create({
+      data: {
+        nome,
+        origem,
+        destino,
+        horarioPartida,
+        duracao,
+      },
+    });
 
-// deletar o motorista
+    res.json(novaLinha);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro ao cadastrar a nova linha express' });
+  }
+});
+// atualizar o linha
+
+// deletar o linha 
 
 // buscar um motorista por id
 
