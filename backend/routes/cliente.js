@@ -191,26 +191,31 @@ router.get('/pesquisa/:id', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Rota para excluir um cliente por ID
+router.delete('/deleteid/:id', async (req, res) => {
+  try {
+    const clienteId = parseInt(req.params.id);
+
+    // Verifique se o cliente existe antes de tentar excluí-lo
+    const clienteExistente = await prisma.cliente.findUnique({
+      where: { id: clienteId },
+    });
+
+    if (!clienteExistente) {
+      return res.status(404).json({ error: 'Cliente não encontrado' });
+    }
+
+    // Exclua o cliente do banco de dados
+    await prisma.cliente.delete({
+      where: { id: clienteId },
+    });
+
+    res.status(204).send(); // Retorna uma resposta vazia para indicar que a exclusão foi bem-sucedida
+  } catch (error) {
+    console.error('Erro:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+
 module.exports = router;
