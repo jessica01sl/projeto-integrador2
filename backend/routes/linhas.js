@@ -23,28 +23,28 @@ router.get('/listar', async (req, res) => {
 
 
 // cadastrar linha
-router.post('/cadastrar', async (req, res) => {
+router.post("/cadastrar", async (req, res, next) => {
   try {
-    // Recupere os dados da solicitação do corpo
     const { nome, origem, destino, horarioPartida, duracao } = req.body;
 
-    // Crie uma nova linha de ônibus no banco de dados
     const novaLinha = await prisma.linha.create({
       data: {
         nome,
         origem,
         destino,
-        horarioPartida,
-        duracao,
+        horarioPartida: `1970-01-01T${horarioPartida}:00Z`,
+        duracao: parseInt(duracao)
       },
     });
 
-    res.status(201).json(novaLinha);
+    res.json(novaLinha);
   } catch (error) {
-    console.error('Erro:', error);
-    res.status(500).json({ error: 'Erro interno do servidor' });
+    console.error(error);
+    res.status(500).json({ error: "Erro ao criar a linha." });
   }
 });
+
+
 
 
 
