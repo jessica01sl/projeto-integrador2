@@ -34,56 +34,24 @@
                 <div class=" rounded-bottom-4">
                     <div class="container">
                         <h4>Cadastro de Funcionários</h4>
-                        <form action="pastadestino.php" method="POST" class="mx-auto my-4" enctype="multipart/form-data">
+                        <form  id="formulario" class="mx-auto my-4" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="inputName">Nome</label>
-                                        <input type="text" id="inputName" class="form-control" placeholder="John" required>
+                                        <label for="nome">Nome Completo</label>
+                                        <input type="text" id="nome" name="nome" class="form-control" placeholder="John" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="inputSurname">Sobrenome</label>
-                                        <input type="text" class="form-control" id="inputSurname" placeholder="Doe" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="inputEmail4">Email</label>
-                                        <input type="email" class="form-control" id="inputEmail4" placeholder="doejohnn@email.com" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="inputPassword4">Telefone</label>
-                                        <input type="number" class="form-control" id="inputPhone" placeholder="(00)90000-0000" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="inputCity">Cidade</label>
-                                        <input type="text" class="form-control" id="inputCity" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="inputZip">Identidade</label>
-                                        <input type="text" class="form-control" id="inputZip" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
+                                <!-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="inputState">Envio de documentos</label>
                                         <input type="file" class="form-control-file" id="inputState" name="pdfDocument" accept=".pdf"  required>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <button type="submit" class="btn btn-primary" style="background-color: #FF9e00; color: #000;">Enviar</button>
-                            <button type="submit" class="btn btn-primary" style="background-color: #FF9e00; color: #000;">Cancelar
-                            <a href="../tables/basic-table.html"></a></button>
-                            
-                            
+                               <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;"  href="/adm/motorista">  Cancelar</a>
+      
                         </form>
                     </div>
                 </div>
@@ -20946,8 +20914,49 @@
   /*# sourceMappingURL=maps/style.css.map */
   </style>
 
+
                 
         
+
+
+
+
+
+
+
+
+
+
+
     
 </body>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+
+    const form = document.querySelector('#formulario');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
+   
+        try {
+          const formData = new FormData(form);
+          const data = {
+            nome: formData.get('nome'),
+          };
+
+          const response = await axios.post('http://localhost:5000/motoristas/cadastrar', data);
+          alert("cadstrou")
+          // window.location.href = '/entrar';
+        } catch (error) {
+          alert("deu ruim")
+        }
+    
+      // form.classList.add('was-validated')
+    }, false)
+  });
+</script>
+
+
 </html>
