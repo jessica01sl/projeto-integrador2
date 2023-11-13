@@ -10,6 +10,15 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('pages/adm/index', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
+
+
+
+
+
+// abaixo esta toda a parte de 
+
+
+
 // rota de motorista da pagina de adm
 router.get('/motorista', function(req, res, next) {
   res.render('pages/adm/motoristas', { title: 'Painel do Administrador', layout: 'layout/layout' });
@@ -19,6 +28,19 @@ router.get('/motorista', function(req, res, next) {
 router.get('/motorista/cadastrar', function(req, res, next) {
   res.render('pages/adm/cadastromotorista', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //rota de onibus 
