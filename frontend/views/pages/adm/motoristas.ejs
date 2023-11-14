@@ -1,95 +1,80 @@
-
-<%- include('../../layout/layout.ejs') %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ABAIXO ESTA A PARTE DE Exibição de  motoristas -->
 
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page -->
-    <!-- End custom js for this page -->
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <!-- <script src="../../assets/vendors/js/vendor.bundle.base.js"></script> -->
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <!-- <script src="../../assets/js/off-canvas.js"></script>
+  <script src="../../assets/js/hoverable-collapse.js"></script>
+  <script src="../../assets/js/misc.js"></script>
+  <script src="../../assets/js/settings.js"></script>
+  <script src="../../assets/js/todolist.js"></script> -->
+  <!-- endinject -->
+  <!-- Custom js for this page -->
+  <!-- End custom js for this page -->
 
 
-    <div class="content-wrapper">
-      <!-- Content -->
-    
-      <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4">
-          <span class="text-muted fw-light">Motoristas atuais</span>
-        </h4>
-    
-                   
-        <h4 class="fw-bold py-3 mb-4">
-          <span class="text-muted fw-light">Cadastro/</span> Motorista
-        </h4>
-        
-        <!-- meu  -->
-        
-        <div class="mt-3">
-          <!-- Button trigger modal -->
-        
-          <div class="modal fade" id="exLargeModal" tabindex="-1" style="display: none" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header mb-3">
-                  <h5 class="modal-title" id="exampleModalLabel4">Novo Motorista</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-name">Nome Completo</label>
-                      <div class="col-sm-10">
-                        <input type="text" class="form-control" id="basic-default-name" placeholder="John Doe" />
-                      </div>
+  <div class="content-wrapper">
+    <!-- Content -->
+
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light">Motoristas atuais</span>
+      </h4>
+
+
+      <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light">Cadastro/</span> Motorista
+      </h4>
+
+      <!-- meu  -->
+
+      <div class="mt-3">
+        <!-- Button trigger modal -->
+
+        <div class="modal fade" id="exLargeModal" tabindex="-1" style="display: none" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header mb-3">
+                <h5 class="modal-title" id="exampleModalLabel4">Novo Motorista</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">Nome Completo</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="basic-default-name" placeholder="John Doe" />
                     </div>
-        
-                    <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-name">CPF</label>
-                      <div class="col-sm-10">
-                        <input type="number" class="form-control" id="basic-default-name" placeholder="548985228523" />
-                      </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">CPF</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="basic-default-name" placeholder="548985228523" />
                     </div>
-                    <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-name">Data de Nascimento</label>
-                      <div class="col-sm-10">
-                        <input type="date" id="birthday" class="form-control dob-picker flatpickr-input" name="birthday" />
-                      </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">Data de Nascimento</label>
+                    <div class="col-sm-10">
+                      <input type="date" id="birthday" class="form-control dob-picker flatpickr-input"
+                        name="birthday" />
                     </div>
-        
-                    <div class="row mb-3 d-flex">
-                      <label class="col-sm-2 col-form-label" for="basic-default-name">
-                        Nº CNH</label>
-                      <div class="col-sm-10">
-                        <input type="number" class="form-control" id="basic-default-name" placeholder="6878958790" />
-                      </div>
+                  </div>
+
+                  <div class="row mb-3 d-flex">
+                    <label class="col-sm-2 col-form-label" for="basic-default-name">
+                      Nº CNH</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="basic-default-name" placeholder="6878958790" />
                     </div>
-        
-                    <!-- <div class="row mb-3">
+                  </div>
+
+                  <!-- <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-email">Email</label>
                                 <div class="col-sm-10">
                                   <div class="input-group input-group-merge">
@@ -98,336 +83,95 @@
                                   </div>
                                 </div>
                               </div> -->
-                    <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default-phone">Telefone</label>
-                      <div class="col-sm-10">
-                        <input type="number" id="basic-default-phone" class="form-control phone-mask" placeholder="1198788-2440" aria-label="658 799 8941" aria-describedby="basic-default-phone" />
-                      </div>
+                  <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default-phone">Telefone</label>
+                    <div class="col-sm-10">
+                      <input type="number" id="basic-default-phone" class="form-control phone-mask"
+                        placeholder="1198788-2440" aria-label="658 799 8941" aria-describedby="basic-default-phone" />
                     </div>
-        
-                    <!-- <div class="row mb-3">
+                  </div>
+
+                  <!-- <div class="row mb-3">
                                 <label class="col-sm-2 col-form-label" for="basic-default-phone">Linha</label>
                                 <div class="col-sm-10">
                                   <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="Linha de Operação"
                                     aria-label="658 799 8941" aria-describedby="basic-default-phone" />
                                 </div>
                               </div> -->
-        
-                    <div class="row mb-3">
-                      <label class="col-sm-2 col-form-label" for="basic-default">Enviar Foto</label>
-                      <div class="col-sm-10">
-                        <input type="file" class="form-control" id="inputGroupFile01" />
-                      </div>
+
+                  <div class="row mb-3">
+                    <label class="col-sm-2 col-form-label" for="basic-default">Enviar Foto</label>
+                    <div class="col-sm-10">
+                      <input type="file" class="form-control" id="inputGroupFile01" />
                     </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-                    Cancelar
-                  </button>
-                  <button type="submit" class="btn btn-primary">Enviar</button>
-                </div>
+                  </div>
+                </form>
               </div>
-            </div>
-          </div>
-        
-
-
-
-
-
-
-
-
-
-
-<!-- o botao abaixo deve levar para a rota  http://127.0.0.1:3000/adm/motorista/cadastrar-->
-
-
-          <a type="button" class="btn btn-success" data-bs-toggle="modal" href="/adm/motorista/cadastrar" data-bs-target="#exLargeModal">
-            Adicionar Novo Motorista  
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
-          </a>
-        </div>
-        </div>
-        
-        <!-- fim meu  -->
-        
-        <!-- / Content -->
-        
-        <div class="content-wrapper">
-          <!-- Content -->
-        
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4">
-              <span class="text-muted fw-light">Motoristas atuais </span>
-            </h4>
-        
-            <!-- Basic Bootstrap Table -->
-            <div class="card" style="height: 380px; overflow: auto" s>
-              <div class="table-responsive text-nowrap">
-                <table id="example" class="table table-striped" style="width: 100%">
-                  <thead>
-                    <tr>
-                      <th>Nome</th>
-                      <th>CPF</th>
-                      <th>Nascimento</th>
-                      <th>Nº Da CNH</th>
-                      <th>Telefone</th>
-                      <th>Config</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-        
-                      <td>
-                        <div>
-
-
-
-                            <!-- BOTÃO VIZUALIZAR -->
-
-                          <button type="button" class="btn btn-info bg-success" data-bs-toggle="modal" data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 48h88c13.3 0 24-10.7 24-24s-10.7-24-24-24H32C14.3 0 0 14.3 0 32V136c0 13.3 10.7 24 24 24s24-10.7 24-24V48zM175.8 224a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-26.5 32C119.9 256 96 279.9 96 309.3c0 14.7 11.9 26.7 26.7 26.7h56.1c8-34.1 32.8-61.7 65.2-73.6c-7.5-4.1-16.2-6.4-25.3-6.4H149.3zm368 80c14.7 0 26.7-11.9 26.7-26.7c0-29.5-23.9-53.3-53.3-53.3H421.3c-9.2 0-17.8 2.3-25.3 6.4c32.4 11.9 57.2 39.5 65.2 73.6h56.1zm-89.4 0c-8.6-24.3-29.9-42.6-55.9-47c-3.9-.7-7.9-1-12-1H280c-4.1 0-8.1 .3-12 1c-26 4.4-47.3 22.7-55.9 47c-2.7 7.5-4.1 15.6-4.1 24c0 13.3 10.7 24 24 24H408c13.3 0 24-10.7 24-24c0-8.4-1.4-16.5-4.1-24zM464 224a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-80-32a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zM504 48h88v88c0 13.3 10.7 24 24 24s24-10.7 24-24V32c0-17.7-14.3-32-32-32H504c-13.3 0-24 10.7-24 24s10.7 24 24 24zM48 464V376c0-13.3-10.7-24-24-24s-24 10.7-24 24V480c0 17.7 14.3 32 32 32H136c13.3 0 24-10.7 24-24s-10.7-24-24-24H48zm456 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H608c17.7 0 32-14.3 32-32V376c0-13.3-10.7-24-24-24s-24 10.7-24 24v88H504z"/></svg>
-                          </button>
-
-                           <!-- BOTÃO EDITAR -->
-                          
-                          <button type="button" class="btn btn-info bg-warning" data-bs-toggle="modal" data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
-                          </button>
-        
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                          <!-- Botão  de Exluir -->
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
-      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-  </button>
-
-  <!-- Modal -->
-  <div class="modal" id="myModal">
-      <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-              <!-- Cabeçalho do Modal -->
-              <div class="modal-header">
-                  <h4 class="modal-title"> Excluir motorista</h4>
-                  
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-
-              <!-- Corpo do Modal -->
-              <div class="modal-body">
-                  <p>Tem certeza que Gostaria de deletar os dados do motorista de id 1</p>
-              </div>
-
-
-              <!-- Rodapé do Modal -->
               <div class="modal-footer">
-                  <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Confirmar exclusão!</button>
-              </div>
-              
-
-          </div>
-      </div>
-  </div>
-                    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-                          <!-- Modal 1-->
-                          <div class="modal fade" id="modalToggle" aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none" _mstvisible="0" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" _mstvisible="1">
-                              <div class="modal-content" _mstvisible="2">
-                                <div class="modal-header" _mstvisible="3">
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" _mstaria-label="59709" _msthash="308" _mstvisible="4"></button>
-                                </div>
-                                <div class="modal-body" _msttexthash="1992003" _msthash="309" _mstvisible="3">
-                                  <div class="row" _mstvisible="4">
-                                    <div class="card-body">
-                                      <form>
-                                        <div class="mb-4">
-                                          <label class="form-label">Nome</label>
-                                          <input type="text" class="form-control" id="basic-default-fullname" placeholder="Paioso" disabled />
-                                        </div>
-                                        <div class="mb-4">
-                                          <label class="form-label" for="basic-default-company">CPF</label>
-                                          <input type="text" class="form-control" id="basic-default-company" placeholder="545454685514" disabled />
-                                        </div>
-                                        <div class="mb-4">
-                                          <label class="form-label" for="basic-default-company">Data de nascimento</label>
-                                          <input type="date" id="birthday" class="form-control dob-picker flatpickr-input" name="birthday" disabled />
-                                        </div>
-                                        <div class="mb-4">
-                                          <label class="form-label" for="basic-default-company">Nº da CNH</label>
-                                          <input type="text" class="form-control" id="basic-default-company" placeholder="546452512354" disabled />
-                                        </div>
-                                        <div class="mb-4">
-                                          <label class="form-label" for="basic-default-company">Telefone</label>
-                                          <input type="number" class="form-control" id="basic-default-company" placeholder="1285585-5855" disabled />
-                                        </div>
-                                      </form>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="modal-footer" _mstvisible="3">
-                                  <button type="submit" class="btn btn-warning">
-                                    Editar informações
-                                  </button>
-                                  <!-- <button type="submit" class="btn btn-success">Salvar alterações</button> -->
-                                  <button class="btn btn-danger" data-bs-target="#modalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal" _msttexthash="350038" _msthash="310" _mstvisible="4">
-                                    Deletar
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-
-
-
-                          <!-- Modal 2-->
-                          <div class="modal fade" id="modalToggle2" aria-labelledby="modalToggleLabel2" tabindex="-1" _mstvisible="0" style="display: none" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" _mstvisible="1">
-                              <div class="modal-content" _mstvisible="2">
-                                <div class="modal-header" _mstvisible="3">
-                                  <h5 class="modal-title text-warning" id="modalToggleLabel2" _msttexthash="66105" _msthash="311" _mstvisible="4">
-                                    Alerta!!!
-                                  </h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" _mstaria-label="59709" _msthash="312" _mstvisible="4"></button>
-                                </div>
-                                <div class="modal-body" _msttexthash="1998048" _msthash="313" _mstvisible="3">
-                                  <span>
-                                    Tem certeza que desja excluir este Motorista?</span>
-                                </div>
-                                <div class="modal-footer" _mstvisible="3">
-                                  <button class="btn btn-warning" data-bs-target="#modalToggle" data-bs-toggle="modal" data-bs-dismiss="modal" _msttexthash="324714" _msthash="314" _mstvisible="4">
-                                    Não, voltar as alterações
-                                  </button>
-                                  <button type="submit" class="btn btn-danger">
-                                    Sim, Deletar
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-        
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-        
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>System Architect</td>
-        
-                      <td>61</td>
-                      <td>2011-04-25</td>
-                      <td>5161651516</td>
-                      <td>115788-55454</td>
-                      <td>$170,750</td>
-                    </tr>
-                  </tbody>
-        
-                  <tfoot></tfoot>
-                </table>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
               </div>
             </div>
           </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- o botao abaixo deve levar para a rota  http://127.0.0.1:3000/adm/motorista/cadastrar-->
+
+
+        <a type="button" class="btn btn-success" data-bs-toggle="modal" href="/adm/motorista/cadastrar"
+          data-bs-target="#exLargeModal">
+          Adicionar Novo Motorista
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- fim meu  -->
+
+    <!-- / Content -->
+
+    <div class="content-wrapper">
+      <!-- Content -->
+
+      <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4">
+          <span class="text-muted fw-light">Motoristas atuais </span>
+        </h4>
+
+        <!-- Basic Bootstrap Table -->
+        <div class="card" style="height: 380px; overflow: auto" s>
+          <div class="table-responsive text-nowrap">
+            <table id="example" class="table table-striped" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+              </tbody>
+
+              <tfoot></tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -446,70 +190,171 @@
 
 
 
-<!-- delete de motorista ainda nao funcional -->
-<script>
-    async function carregarDetalhesMotorista() {
+      <!-- delete de motorista ainda nao funcional -->
+      <script>
+        // async function carregarDetalhesMotorista() {
+        //   try {
+        //     const id = window.location.pathname.split('/').pop();
+        //     const response = await axios.get(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
+        //     const motorista = response.data;
+
+        //     const detalhesMotorista = document.querySelector("#detalhes-motorista");
+
+        //     const codigoElem = document.createElement('div');
+        //     codigoElem.innerHTML = `<div><strong>Código:</strong> ${motorista.id}</div>`;
+        //     detalhesMotorista.append(codigoElem);
+
+        //     const nomeElem = document.createElement('div');
+        //     nomeElem.innerHTML = `<div><strong>Nome:</strong> ${motorista.nome}</div>`;
+        //     detalhesMotorista.append(nomeElem);
+
+        //     const fotoElem = document.createElement('div');
+        //     if (motorista.foto) {
+        //       fotoElem.innerHTML = `
+        //     <div>
+        //       <strong>Foto:</strong> 
+        //       <img src="http://localhost:3001/${motorista.foto}" alt="${motorista.nome}" width="50">
+        //     </div>`;
+        //     } else {
+        //       fotoElem.innerHTML = `<div><strong>Foto:</strong> Não possui.</div>`;
+        //     }
+        //     detalhesMotorista.append(fotoElem);
+        //   } catch (error) {
+        //     console.log(error);
+
+        //     if (error?.response?.status === 404) {
+        //       alert("Motorista não encontrado.");
+        //       window.location.href = "/motoristas/listar";
+        //     } else {
+        //       alert(error.response.data.mensagem);
+        //     }
+        //   }
+        // }
+
+        // async function deletar(event) {
+        //   event.preventDefault();
+
+        //   const confirmacao = confirm("Tem certeza que deseja deletar este motorista?");
+        //   if (confirmacao) {
+        //     try {
+        //       const id = window.location.pathname.split('/').pop();
+        //       await axios.delete(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
+        //       alert("Motorista deletado com sucesso.");
+        //       window.location.href = "/motorista";
+        //     } catch (error) {
+        //       console.log(error);
+        //       alert("Erro ao deletar o motorista.");
+        //     }
+        //   }
+        // }
+
+        // carregarDetalhesMotorista();
+        // document.querySelector("#deletar-motorista").addEventListener("submit", deletar);
+
+        document.addEventListener('DOMContentLoaded', async () => {
         try {
-            const id = window.location.pathname.split('/').pop();
-            const response = await axios.get(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
-            const motorista = response.data;
+            const tbody = document.querySelector('#example tbody');
+          
+            const response = await axios.get('http://localhost:5000/motoristas/listar');
+            response.data.forEach(motorista => {
+                const tr = document.createElement('tr');
 
-            const detalhesMotorista = document.querySelector("#detalhes-motorista");
+                const codigoTd = document.createElement('td');
+                codigoTd.textContent = motorista.id;
+                tr.appendChild(codigoTd);
 
-            const codigoElem = document.createElement('div');
-            codigoElem.innerHTML = `<div><strong>Código:</strong> ${motorista.id}</div>`;
-            detalhesMotorista.append(codigoElem);
+                const nomeTd = document.createElement('td');
+                nomeTd.textContent = motorista.nome;
+                tr.appendChild(nomeTd);
 
-            const nomeElem = document.createElement('div');
-            nomeElem.innerHTML = `<div><strong>Nome:</strong> ${motorista.nome}</div>`;
-            detalhesMotorista.append(nomeElem);
+                // const fotoTd = document.createElement('td');
+                // if (motorista.foto) {
+                //     fotoTd.innerHTML = `<img src="http://localhost:3001/${motorista.foto}" alt="${motorista.nome}" width="50">`;
+                // } else {
+                //     fotoTd.innerHTML = "Não possui.";
+                // }
+                // tr.appendChild(fotoTd);
 
-            const fotoElem = document.createElement('div');
-            if (motorista.foto) {
-                fotoElem.innerHTML = `
-            <div>
-              <strong>Foto:</strong> 
-              <img src="http://localhost:3001/${motorista.foto}" alt="${motorista.nome}" width="50">
-            </div>`;
-            } else {
-                fotoElem.innerHTML = `<div><strong>Foto:</strong> Não possui.</div>`;
-            }
-            detalhesMotorista.append(fotoElem);
+                const acoesTd = document.createElement('td');
+                // <a href="/motoristas/exibir/${motorista.id}">Exibir</a>
+                const exibirLink = `
+
+                <button type="button" class="btn btn-info bg-success" data-bs-toggle="modal"
+          data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+
+            <path
+              d="M48 48h88c13.3 0 24-10.7 24-24s-10.7-24-24-24H32C14.3 0 0 14.3 0 32V136c0 13.3 10.7 24 24 24s24-10.7 24-24V48zM175.8 224a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-26.5 32C119.9 256 96 279.9 96 309.3c0 14.7 11.9 26.7 26.7 26.7h56.1c8-34.1 32.8-61.7 65.2-73.6c-7.5-4.1-16.2-6.4-25.3-6.4H149.3zm368 80c14.7 0 26.7-11.9 26.7-26.7c0-29.5-23.9-53.3-53.3-53.3H421.3c-9.2 0-17.8 2.3-25.3 6.4c32.4 11.9 57.2 39.5 65.2 73.6h56.1zm-89.4 0c-8.6-24.3-29.9-42.6-55.9-47c-3.9-.7-7.9-1-12-1H280c-4.1 0-8.1 .3-12 1c-26 4.4-47.3 22.7-55.9 47c-2.7 7.5-4.1 15.6-4.1 24c0 13.3 10.7 24 24 24H408c13.3 0 24-10.7 24-24c0-8.4-1.4-16.5-4.1-24zM464 224a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-80-32a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zM504 48h88v88c0 13.3 10.7 24 24 24s24-10.7 24-24V32c0-17.7-14.3-32-32-32H504c-13.3 0-24 10.7-24 24s10.7 24 24 24zM48 464V376c0-13.3-10.7-24-24-24s-24 10.7-24 24V480c0 17.7 14.3 32 32 32H136c13.3 0 24-10.7 24-24s-10.7-24-24-24H48zm456 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H608c17.7 0 32-14.3 32-32V376c0-13.3-10.7-24-24-24s-24 10.7-24 24v88H504z" />
+          </svg>
+        </button>
+
+                `;
+
+                // <a href="/motoristas/editar/${motorista.id}">Editar</a>
+                const editarLink = `<!-- BOTÃO EDITAR -->
+<button type="button" class="btn btn-info bg-warning" data-bs-toggle="modal"
+  data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
+  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+    <path
+      d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z" />
+  </svg>
+</button>`;
+
+                //  <a href="/motoristas/deletar/${motorista.id}">Deletar</a>
+                const deletarLink = `
+               
+                <!-- Botão  de Exluir -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+            <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+            <path
+              d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z" />
+          </svg>
+        </button>
+                
+                `;
+                acoesTd.innerHTML = `${exibirLink} | ${editarLink} | ${deletarLink}`;
+                tr.appendChild(acoesTd);
+
+                tbody.appendChild(tr);
+            });
+
         } catch (error) {
             console.log(error);
-
-            if (error?.response?.status === 404) {
-                alert("Motorista não encontrado.");
-                window.location.href = "/motoristas/listar";
-            } else {
-                alert(error.response.data.mensagem);
-            }
+            alert(error.response.data.mensagem);
         }
-    }
 
-    async function deletar(event) {
-        event.preventDefault();
-
-        const confirmacao = confirm("Tem certeza que deseja deletar este motorista?");
-        if (confirmacao) {
-            try {
-                const id = window.location.pathname.split('/').pop();
-                await axios.delete(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
-                alert("Motorista deletado com sucesso.");
-                window.location.href = "/motorista";
-            } catch (error) {
-                console.log(error);
-                alert("Erro ao deletar o motorista.");
-            }
-        }
-    }
-
-    carregarDetalhesMotorista();
-    document.querySelector("#deletar-motorista").addEventListener("submit", deletar);
-</script>
+    });
+      </script>
 
 
+       <!-- Modal -->
+       <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+            <!-- Cabeçalho do Modal -->
+            <div class="modal-header">
+              <h4 class="modal-title"> Excluir motorista</h4>
+
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
 
 
+            <!-- Corpo do Modal -->
+            <div class="modal-body">
+              <p>Tem certeza que Gostaria de deletar os dados do motorista de id 1</p>
+            </div>
 
 
+            <!-- Rodapé do Modal -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Confirmar
+                exclusão!</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
