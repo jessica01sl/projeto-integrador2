@@ -133,9 +133,10 @@
 <!-- o botao abaixo deve levar para a rota  http://127.0.0.1:3000/adm/motorista/cadastrar-->
 
 
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exLargeModal">
-            Adicionar Novo Motorista
-          </button>
+          <a type="button" class="btn btn-success" data-bs-toggle="modal" href="/adm/motorista/cadastrar" data-bs-target="#exLargeModal">
+            Adicionar Novo Motorista  
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+          </a>
         </div>
         </div>
         
@@ -176,9 +177,63 @@
         
                       <td>
                         <div>
-                          <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
-                            <i class="bx bx-cog"></i>
+
+
+
+                            <!-- BOTÃO VIZUALIZAR -->
+
+                          <button type="button" class="btn btn-info bg-success" data-bs-toggle="modal" data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 48h88c13.3 0 24-10.7 24-24s-10.7-24-24-24H32C14.3 0 0 14.3 0 32V136c0 13.3 10.7 24 24 24s24-10.7 24-24V48zM175.8 224a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-26.5 32C119.9 256 96 279.9 96 309.3c0 14.7 11.9 26.7 26.7 26.7h56.1c8-34.1 32.8-61.7 65.2-73.6c-7.5-4.1-16.2-6.4-25.3-6.4H149.3zm368 80c14.7 0 26.7-11.9 26.7-26.7c0-29.5-23.9-53.3-53.3-53.3H421.3c-9.2 0-17.8 2.3-25.3 6.4c32.4 11.9 57.2 39.5 65.2 73.6h56.1zm-89.4 0c-8.6-24.3-29.9-42.6-55.9-47c-3.9-.7-7.9-1-12-1H280c-4.1 0-8.1 .3-12 1c-26 4.4-47.3 22.7-55.9 47c-2.7 7.5-4.1 15.6-4.1 24c0 13.3 10.7 24 24 24H408c13.3 0 24-10.7 24-24c0-8.4-1.4-16.5-4.1-24zM464 224a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm-80-32a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zM504 48h88v88c0 13.3 10.7 24 24 24s24-10.7 24-24V32c0-17.7-14.3-32-32-32H504c-13.3 0-24 10.7-24 24s10.7 24 24 24zM48 464V376c0-13.3-10.7-24-24-24s-24 10.7-24 24V480c0 17.7 14.3 32 32 32H136c13.3 0 24-10.7 24-24s-10.7-24-24-24H48zm456 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H608c17.7 0 32-14.3 32-32V376c0-13.3-10.7-24-24-24s-24 10.7-24 24v88H504z"/></svg>
                           </button>
+
+                           <!-- BOTÃO EDITAR -->
+                          
+                          <button type="button" class="btn btn-info bg-warning" data-bs-toggle="modal" data-bs-target="#modalToggle" _msttexthash="557609" _msthash="306">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"/></svg>
+                          </button>
+        
+                            
+
+
+
+
+                          <!-- Botão  de Exluir -->
+    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+  </button>
+
+  <!-- Modal -->
+  <div class="modal" id="myModal">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+
+              <!-- Cabeçalho do Modal -->
+              <div class="modal-header">
+                  <h4 class="modal-title">Título do Modal</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+
+              <!-- Corpo do Modal -->
+              <div class="modal-body">
+                  <p>Este é o conteúdo do modal.</p>
+              </div>
+
+              <!-- Rodapé do Modal -->
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+              </div>
+
+          </div>
+      </div>
+  </div>
+                    
+
+
+
+
+
+
+        
         
                           <!-- Modal 1-->
                           <div class="modal fade" id="modalToggle" aria-labelledby="modalToggleLabel" tabindex="-1" style="display: none" _mstvisible="0" aria-hidden="true">
@@ -227,6 +282,10 @@
                               </div>
                             </div>
                           </div>
+
+
+
+
                           <!-- Modal 2-->
                           <div class="modal fade" id="modalToggle2" aria-labelledby="modalToggleLabel2" tabindex="-1" _mstvisible="0" style="display: none" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" _mstvisible="1">
@@ -328,88 +387,89 @@
             </div>
           </div>
 
-<!-- /abaixo temos comentado o codigo antigo caso seja necessario -->
 
 
-                    <!-- <div class="col-lg-12 grid-margin stretch-card">
-                      <div class="card">
-                        <div class="card-body">
-                          <h4 class="card-title">Motoristas</h4>
-    
-                         
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th> Foto </th>
-                                  <th> Nome do Motorista </th>
-                                  <th> Identidade </th>
-                                </tr>
-                              </thead>
 
-                              <tbody>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
-                                  </td>
-                                  <td> Lucas da Silva </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-2.png" alt="image" />
-                                  </td>
-                                  <td> Melissa Carvalho </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-3.png" alt="image" />
-                                  </td>
-                                  <td> John Lennon </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-4.png" alt="image" />
-                                  </td>
-                                  <td> Matheus de Araujo </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
-                                  </td>
-                                  <td> Emanoel Firminio </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-2.png" alt="image" />
-                                  </td>
-                                  <td> Leoncio de Pinheiros </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                                <tr>
-                                  <td class="py-1">
-                                    <img src="../../assets/images/faces-clipart/pic-3.png" alt="image" />
-                                  </td>
-                                  <td> Mario de Aragão </td>
-                                  <td> 48.678.434-45 </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <br>
-                              <div class="botao text-center">
-                                <a href="../formularios/formulario.html" class="btn btn-warning btn-md rounded-5 border-0 text-black font-weight-bold m-2 text-center">Novo Cadastro</a>
-                            </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div> -->
-          </div>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- delete de motorista ainda nao funcional -->
+<script>
+    async function carregarDetalhesMotorista() {
+        try {
+            const id = window.location.pathname.split('/').pop();
+            const response = await axios.get(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
+            const motorista = response.data;
+
+            const detalhesMotorista = document.querySelector("#detalhes-motorista");
+
+            const codigoElem = document.createElement('div');
+            codigoElem.innerHTML = `<div><strong>Código:</strong> ${motorista.id}</div>`;
+            detalhesMotorista.append(codigoElem);
+
+            const nomeElem = document.createElement('div');
+            nomeElem.innerHTML = `<div><strong>Nome:</strong> ${motorista.nome}</div>`;
+            detalhesMotorista.append(nomeElem);
+
+            const fotoElem = document.createElement('div');
+            if (motorista.foto) {
+                fotoElem.innerHTML = `
+            <div>
+              <strong>Foto:</strong> 
+              <img src="http://localhost:3001/${motorista.foto}" alt="${motorista.nome}" width="50">
+            </div>`;
+            } else {
+                fotoElem.innerHTML = `<div><strong>Foto:</strong> Não possui.</div>`;
+            }
+            detalhesMotorista.append(fotoElem);
+        } catch (error) {
+            console.log(error);
+
+            if (error?.response?.status === 404) {
+                alert("Motorista não encontrado.");
+                window.location.href = "/motoristas/listar";
+            } else {
+                alert(error.response.data.mensagem);
+            }
+        }
+    }
+
+    async function deletar(event) {
+        event.preventDefault();
+
+        const confirmacao = confirm("Tem certeza que deseja deletar este motorista?");
+        if (confirmacao) {
+            try {
+                const id = window.location.pathname.split('/').pop();
+                await axios.delete(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
+                alert("Motorista deletado com sucesso.");
+                window.location.href = "/motorista";
+            } catch (error) {
+                console.log(error);
+                alert("Erro ao deletar o motorista.");
+            }
+        }
+    }
+
+    carregarDetalhesMotorista();
+    document.querySelector("#deletar-motorista").addEventListener("submit", deletar);
+</script>
+
+
+
+
 
 
