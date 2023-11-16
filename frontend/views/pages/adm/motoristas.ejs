@@ -284,9 +284,9 @@
 
 
             <!-- Rodapé do Modal -->
-            <div class="modal-footer">
+            <div class="modal-footer" id="modal_footer">
               <button type="button" class="btn btn-dark" data-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Confirmar
+              <button type="submit" class="btn btn-danger" data-dismiss="modal">Confirmar
                 exclusão!</button>
             </div>
 
@@ -294,3 +294,32 @@
           </div>
         </div>
       </div>
+
+
+
+
+      <!-- aqui esta o codigo para excluir -->
+
+      <script>
+      
+      modal_footer.addEventListener('submit', async (event) => {
+	event.preventDefault();
+
+        const confirmacao = confirm("Tem certeza que deseja deletar este motorista?");
+        if (confirmacao) {
+            try {
+                const id = window.location.pathname.split('/').pop();
+                await axios.delete(`http://127.0.0.1:5000/motoristas/excluir/${id}`);
+                alert("Motorista deletado com sucesso.");
+                window.location.href = "/motoristas";
+            } catch (error) {
+                console.log(error);
+                alert("Erro ao deletar o motorista.");
+            }
+        }
+    }
+      
+    
+        ,carregarDetalhesMotorista());
+        document.querySelector("#deletar-motorista").addEventListener("submit", deletar);
+    </script>
