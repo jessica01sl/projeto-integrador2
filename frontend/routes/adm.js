@@ -19,11 +19,15 @@ router.get('/', function(req, res, next) {
 router.get('/motorista', function(req, res, next) {
   res.render('pages/adm/motoristas', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
-
 // rota de motorista da pagina de cadastro 
 router.get('/motorista/cadastrar', function(req, res, next) {
   res.render('pages/adm/cadastromotorista', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
+// rota de motorista da pagina de EDIÇÃO 
+router.get('/motorista/editar', function(req, res, next) {
+  res.render('pages/adm/editarmotorista', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+
 
 
 

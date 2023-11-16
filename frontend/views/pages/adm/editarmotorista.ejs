@@ -36,7 +36,7 @@
         <br>
         <div class=" rounded-bottom-4">
           <div class="container">
-            <h4>Cadastro de Funcionários</h4>
+            <h4>Edição de dados dos Funcionários</h4>
             <form id="formulario" name="formulario" class="mx-auto my-4" enctype="multipart/form-data">
               <div class="row">
                 <div class="col-md-6">
@@ -66,41 +66,66 @@
 </body>
 
 </html>
-<!-- abaixo todo o css fechado -->
 
 
 
 
 
-<!-- abaixo temos o codigo funcional do cadastrar -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
 
 
-    const form = document.querySelector('#formulario');
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault()
 
 
-      try {
-        const formData = new FormData(form);
-        const data = {
-          nome: formData.get('nome'),
-        };
-
-        const response = await axios.post('http://127.0.0.1:5000/motoristas/cadastrar', data);
-        alert("cadastrou")
-        // window.location.href = '/entrar';
-      } catch (error) {
-        console.error("Erro ao enviar requisição:", error);
-        alert("deu ruim");
-      }
-
-      // form.classList.add('was-validated')
-    }, false)
-  });
-</script>
 
 
-</html>
+
+
+
+
+    <!-- edição da tabela do motorista -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          const id = window.location.pathname.split('/').pop();
+          const response = await axios.get(`http://localhost:5000/motoristas/listar/${id}`);
+          const motorista = response.data;
+
+          const form = document.querySelector('#form');
+          const nomeInput = document.querySelector('#nome');
+
+          nomeInput.value = motorista.nome;
+
+          form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            if (form.checkValidity()) {
+              try {
+                const formData = new FormData(form);
+                await axios.put(`http://127.0.0.1:5000/motoristas/editar/${id}`, formData, {
+                  headers: {
+                    'Content-Type': 'multipart/form-data'
+                  }
+                });
+
+                alert("Motorista editado com sucesso.");
+                window.location.href = `/motoristas/exibir/${id}`;
+              } catch (error) {
+                console.log(error);
+                // alert(error.response.data.mensagem);
+              }
+            }
+
+            form.classList.add('was-validated');
+          }, false);
+        } catch (error) {
+          console.log(error);
+
+          if (error?.response?.status === 404) {
+            alert("Motorista não encontrado.");
+            window.location.href = "/motoristas/listar";
+          } else {
+            // alert(error.response.data.mensagem);
+          }
+        }
+      });
+    </script>
