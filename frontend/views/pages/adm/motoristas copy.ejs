@@ -161,8 +161,41 @@
         </div>
       </div>
     </div>
+    
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      data-bs-whatever="@mdo">Open modal for @mdo</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      data-bs-whatever="@fat">Open modal for @fat</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                <input type="text" class="form-control" id="recipient-name">
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label">Message:</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Send message</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
     <script>
@@ -221,7 +254,7 @@
             const deletarLink = `
                
                 <!-- Botão  de Exluir -->
-        <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#myModal" data-bs-id="${motorista.id}">
+        <button type="button" class="btn btn-danger"  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-id="${motorista.id}">
           <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
             <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path
@@ -250,7 +283,7 @@
           <div class="modal-header">
             <h4 class="modal-title">Excluir motorista</h4>
 
-            <button type="button" class="close" data-bs-dismiss="modal">
+            <button type="button" class="close" data-dismiss="modal">
               &times;
             </button>
           </div>
@@ -264,7 +297,7 @@
 
           <!-- Rodapé do Modal -->
           <div class="modal-footer" id="modal_footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">
               Fechar
             </button>
             <button type="button" id="exlcuiejbdviksd" class="btn btn-danger">
@@ -278,39 +311,45 @@
     <!-- aqui esta o codigo para excluir -->
 
     <script>
+      // document
+      //   .querySelector("#exlcuiejbdviksd")
+      //   .addEventListener("click", async (event) => {
+      //     console.log("afsd")
+      //     const confirmacao = confirm(
+      //       "Tem certeza que deseja deletar este motorista?"
+      //     );
+      //     if (confirmacao) {
+      //       try {
+      //         const id = window.location.pathname.split("/").pop();
+      //         console.log(id);
+      //         await axios.delete(
+      //           `http://127.0.0.1:5000/motoristas/excluir/${id}`
+      //         );
+      //         alert("Motorista deletado com sucesso.");
+      //         window.location.href = "/motoristas";
+      //       } catch (error) {
+      //         console.log(error);
+      //         alert("Erro ao deletar o motorista.");
+      //       }
+      //     }
+      //   });
 
-
-      const exampleModal = document.getElementById('myModal')
+      const exampleModal = document.getElementById('exampleModal')
       if (exampleModal) {
         exampleModal.addEventListener('show.bs.modal', event => {
-
+          // Button that triggered the modal
           const button = event.relatedTarget
+          // Extract info from data-bs-* attributes
+          const recipient = button.getAttribute('data-bs-whatever')
+          // If necessary, you could initiate an Ajax request here
+          // and then do the updating in a callback.
 
-          const motoristaId = button.getAttribute('data-bs-id')
+          // Update the modal's content.
+          const modalTitle = exampleModal.querySelector('.modal-title')
+          const modalBodyInput = exampleModal.querySelector('.modal-body input')
 
-          // alert(motoristaId)
-          document
-            .querySelector("#exlcuiejbdviksd")
-            .addEventListener("click", async (event) => {
-              console.log("afsd")
-              const confirmacao = confirm(
-                "Tem certeza que deseja deletar este motorista?"
-              );
-              if (confirmacao) {
-                try {
-                  // alert(motoristaId);
-                  await axios.delete(
-                    `http://127.0.0.1:5000/motoristas/excluir/${motoristaId}`
-                  );
-                  alert("Motorista deletado com sucesso.");
-                  window.location.href = "/adm/motorista";
-                } catch (error) {
-                  console.log(error);
-                  alert("Erro ao deletar o motorista.");
-                }
-              }
-            });
-
+          modalTitle.textContent = `New message to ${recipient}`
+          modalBodyInput.value = recipient
         })
       }
 
