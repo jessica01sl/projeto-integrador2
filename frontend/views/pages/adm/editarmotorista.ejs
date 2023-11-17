@@ -91,7 +91,7 @@
           const motorista = response.data;
 
           const form = document.querySelector('#formulario');
-          const nomeInput = document.querySelector('#nome');
+          document.querySelector('#nome').value = motorista.id;
 
           nomeInput.value = motorista.nome;
 
