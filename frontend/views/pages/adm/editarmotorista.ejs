@@ -89,11 +89,11 @@
           const id = window.location.pathname.split('/').pop();
           const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
           const motorista = response.data;
-
+          
           const form = document.querySelector('#formulario');
           document.querySelector('#nome').value = motorista.nome;
 
-          nomeInput.value = motorista.nome;
+          nome.value = motorista.nome;
 
 
 
@@ -106,13 +106,15 @@
 
             if (form.checkValidity()) {
               try {
+                
                 const formData = new FormData(form);
                 await axios.put(`http://127.0.0.1:5000/motoristas/editar/${id}`, formData, {
                   headers: {
                     'Content-Type': 'multipart/form-data'
+                    
                   }
                 });
-
+                
                 alert("Motorista editado com sucesso.");
                 window.location.href = `/adm/motorista`;
               } catch (error) {
