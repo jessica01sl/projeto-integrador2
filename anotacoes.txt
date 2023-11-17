@@ -9,9 +9,7 @@ criar .env
 	DATABASE_URL="mysql://root:@127.0.0.1:3306/bancopi"
 	PORT=5000
 
-npx prisma generate
-
-npx prisma db pull
+npx prisma generate && npx prisma db pull
 
 
 
