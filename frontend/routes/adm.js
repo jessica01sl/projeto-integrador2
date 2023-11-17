@@ -65,4 +65,7 @@ router.get('/cadastrar', function(req, res, next) {
   res.render('pages/adm/cadastrar', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
 
+
+
+
 module.exports = router;

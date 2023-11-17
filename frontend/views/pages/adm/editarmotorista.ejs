@@ -91,7 +91,7 @@
           const motorista = response.data;
 
           const form = document.querySelector('#formulario');
-          document.querySelector('#nome').value = motorista.id;
+          document.querySelector('#nome').value = motorista.nome;
 
           nomeInput.value = motorista.nome;
 
@@ -114,7 +114,7 @@
                 });
 
                 alert("Motorista editado com sucesso.");
-                window.location.href = `/adm/motorista/editar/${id}`;
+                window.location.href = `/adm/motorista`;
               } catch (error) {
                 console.log(error);
                 // alert(error.response.data.mensagem);
