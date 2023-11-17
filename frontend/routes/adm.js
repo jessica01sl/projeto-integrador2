@@ -35,9 +35,6 @@ router.get('/motorista/editar', function(req, res, next) {
 
 
 
-
-
-
 //rota de cliente
 router.get('/cliente', function(req, res, next) {
   res.render('pages/adm/cliente', { title: 'Painel do Administrador', layout: 'layout/layout' });

@@ -7,8 +7,9 @@ var expressLayouts = require('express-ejs-layouts');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+// abaixo eu crio  os 2 arquivos de rota la em baixo faz o use , aqui ainda vai a rota da catraca
 var admRouter = require('./routes/adm');
-
+var siteRouter = require('./routes/site');
 
 
 var app = express();
@@ -28,8 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+// abaixo eu uso os 2 arquivos de rota
 app.use('/adm', admRouter);
-
+app.use('/site', siteRouter);
 
 
 
