@@ -10,7 +10,7 @@ router.get('/home', function (req, res, next) {
 
 // recarga DO SITE PUBLICO
 router.get('/home/recarga', function (req, res, next) {
-  res.render('pages/site/recarga', { title: 'site publico', layout: 'layout/vazio' });
+  res.render('pages/site/recarga', { title: 'site publico', layout: 'layout/' });
 });
 
 // horarios DO SITE PUBLICO
