@@ -95,7 +95,7 @@ router.delete("/excluir/:id", async function (req, res, next) {
 // buscar um motorista por id
 
 // Rota para obter um motorista por ID
-router.get('/listar/:id', async (req, res) => {
+router.get('/puxar/:id', async (req, res) => {
   const { id } = req.params;
 
   try {
