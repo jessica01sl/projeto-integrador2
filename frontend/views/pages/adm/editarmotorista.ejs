@@ -90,7 +90,7 @@
           const response = await axios.get(`http://localhost:5000/motoristas/listar/${id}`);
           const motorista = response.data;
 
-          const form = document.querySelector('#form');
+          const form = document.querySelector('#formulario');
           const nomeInput = document.querySelector('#nome');
 
           nomeInput.value = motorista.nome;
@@ -108,7 +108,7 @@
                 });
 
                 alert("Motorista editado com sucesso.");
-                window.location.href = `/motoristas/exibir/${id}`;
+                window.location.href = `/adm/motorista/editar/${id}`;
               } catch (error) {
                 console.log(error);
                 // alert(error.response.data.mensagem);
@@ -122,7 +122,7 @@
 
           if (error?.response?.status === 404) {
             alert("Motorista não encontrado.");
-            window.location.href = "/motoristas/listar";
+            window.location.href = "/adm/motorista/editar";
           } else {
             // alert(error.response.data.mensagem);
           }
