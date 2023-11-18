@@ -52,8 +52,8 @@
                                     </div>
                                 </div> -->
               </div>
-              <button type="submit" class="btn btn-primary" style="background-color: #FF9e00; color: #000;">Finalizar
-                edição</button>
+              <button type="submit" class="btn btn-primary"
+                style="background-color: #FF9e00; color: #000;">Finalizar edição</button>
               <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;" href="/adm/motorista">
                 Cancelar</a>
 
@@ -70,6 +70,7 @@
 
 
 
+ 
 
 
 
@@ -80,71 +81,70 @@
 
 
 
+    <!-- edição da tabela do motorista -->
 
-<!-- edição da tabela do motorista -->
+    <script>
+      // document.addEventListener('DOMContentLoaded', async () => {
+      //   try {
+      //     const id = window.location.pathname.split('/').pop();
+      //     const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
+      //     const motorista = response.data;
+          
+      //     const form = document.querySelector('#formulario');
+      //     document.querySelector('#nome').value = motorista.nome;
 
-<script>
-  // document.addEventListener('DOMContentLoaded', async () => {
-  //   try {
-  //     const id = window.location.pathname.split('/').pop();
-  //     const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
-  //     const motorista = response.data;
-
-  //     const form = document.querySelector('#formulario');
-  //     document.querySelector('#nome').value = motorista.nome;
-
-  //     nome.value = motorista.nome;
-
-
-  document.addEventListener('DOMContentLoaded', async () => {
-    try {
-      const id = window.location.pathname.split('/').pop();
-      const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
-      const motorista = response.data;
-
-      const form = document.querySelector('#formulario');
-      const nomeInput = document.querySelector('#nome');
-
-      nomeInput.value = motorista.nome;
+      //     nome.value = motorista.nome;
 
 
-      // abaixo fala sobre o botao subimit para finalizar edição
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+      document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const id = window.location.pathname.split('/').pop();
+        const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
+        const motorista = response.data;
+  
+        const form = document.querySelector('#formulario');
+        const nomeInput = document.querySelector('#nome');
+        
+        nomeInput.value = motorista.nome;
 
 
+          // abaixo fala sobre o botao subimit para finalizar edição
+          form.addEventListener('submit', async (event) => {
+            event.preventDefault();
 
-        if (form.checkValidity()) {
-          try {
+           
 
-            const formData = new FormData(form);
-            await axios.put(`http://127.0.0.1:5000/motoristas/editar/${id}`, formData, {
-              headers: {
-                'Content-Type': 'multipart/form-data'
-
+            if (form.checkValidity()) {
+              try {
+                
+                const formData = new FormData(form);
+                await axios.put(`http://127.0.0.1:5000/motoristas/editar/${id}`, formData, {
+                  headers: {
+                    'Content-Type': 'multipart/form-data'
+                    
+                  }
+                });
+                
+                alert("Motorista editado com sucesso.");
+                window.location.href = `/adm/motorista`;
+              } catch (error) {
+                console.log(error);
+                // alert(error.response.data.mensagem);
               }
-            });
+            }
 
-            alert("Motorista editado com sucesso.");
-            window.location.href = `/adm/motorista`;
-          } catch (error) {
-            console.log(error);
+            form.classList.add('was-validated');
+          }, false);
+        } catch (error) {
+          console.log(error);
+
+          if (error?.response?.status === 404) {
+            alert("Motorista não encontrado.");
+            window.location.href = "/adm/motorista";
+          } else {
             // alert(error.response.data.mensagem);
           }
         }
-
-        form.classList.add('was-validated');
-      }, false);
-    } catch (error) {
-      console.log(error);
-
-      if (error?.response?.status === 404) {
-        alert("Motorista não encontrado.");
-        window.location.href = "/adm/motorista";
-      } else {
-        // alert(error.response.data.mensagem);
-      }
-    }
-
-  });
-</script>
+        
+      });
+    </script>

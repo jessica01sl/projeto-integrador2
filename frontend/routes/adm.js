@@ -56,13 +56,13 @@ router.get('/linhas', function(req, res, next) {
 
 //rota de login da adm 
 router.get('/login', function(req, res, next) {
-  res.render('pages/adm/login', { title: 'Painel do Administrador', layout: 'layout/layout' });
+  res.render('pages/adm/login', { title: 'Painel do Administrador', layout: 'layout/vazio' });
 });
 
 
 //rota de cadastro da adm 
 router.get('/cadastrar', function(req, res, next) {
-  res.render('pages/adm/cadastrar', { title: 'Painel do Administrador', layout: 'layout/layout' });
+  res.render('pages/adm/cadastrar', { title: 'Painel do Administrador', layout: 'layout/vazio' });
 });
 
 
