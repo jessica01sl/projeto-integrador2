@@ -7,16 +7,24 @@ const prisma = new PrismaClient();
 
 router.get('/listar', async (req, res) => {
   try {
-    const motoristas = await prisma.motorista.findMany(); 
+    const motoristas = await prisma.motorista.findMany();
     res.status(200).json(motoristas);
   } catch (error) {
     console.error('Erro ao buscar motoristas:', error);
     res.status(500).send('Erro ao buscar motoristas');
   }
 });
- 
+
 // no gpt: envia o codigo do schema prisma, "express prisma rota/endpoint para ..."
 // quando gerar o codigo trocar de app.js para router.get
+
+
+
+// 
+
+
+
+
 
 // cadastrar motorista
 router.post('/cadastrar', async (req, res) => {
@@ -39,13 +47,32 @@ router.post('/cadastrar', async (req, res) => {
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // atualizar o motorista
 
-router.put('/editar/:id', async function (req, res, next) {
+router.patch('/editar/:id', async function (req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    const { nome } = req.body;
+
+    console.log("oi");
+    console.log(req.params);
+    console.log(req.body);
     
+    console.log(nome);
+
     const motoristaAtualizada = await prisma.motorista.update({
       where: {
         id: id,
@@ -61,6 +88,19 @@ router.put('/editar/:id', async function (req, res, next) {
     res.status(500).json({ error: 'Erro ao atualizar dados do motorista.' });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,6 +138,7 @@ router.delete("/excluir/:id", async function (req, res, next) {
 router.get('/puxar/:id', async (req, res) => {
   const { id } = req.params;
 
+
   try {
     // Consultando o motorista pelo ID usando o Prisma
     const motorista = await prisma.motorista.findUnique({
@@ -105,10 +146,13 @@ router.get('/puxar/:id', async (req, res) => {
       include: { viagem: true }, // Se você quiser incluir informações de viagem
     });
 
+
     // Verificando se o motorista foi encontrado
     if (!motorista) {
       return res.status(404).json({ error: 'Motorista não encontrado' });
     }
+
+    console.log(motorista);
 
     // Retornando os dados do motorista
     res.json(motorista);
