@@ -44,8 +44,8 @@
                                 </div> -->
               </div>
               <button type="submit" class="btn btn-primary"
-                style="background-color: #FF9e00; color: #000;">Cadastrar Onibus</button>
-              <a class="btn btn-primary" style="background-color: #bc2613; color: #000;" href="/adm/onibus">
+                style="background-color: #FF9e00; color: #000;">Enviar</button>
+              <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;" href="/adm/onibus">
                 Cancelar</a>
 
             </form>
@@ -77,7 +77,7 @@
       try {
         const formData = new FormData(form);
         const data = {
-          placa: formData.get('placa'),
+          placa: formData.get('nome'),
         };
 
         const response = await axios.post('http://127.0.0.1:5000/onibus/cadastrar', data);
