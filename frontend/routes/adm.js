@@ -57,10 +57,21 @@ router.get('/onibus/editar/:id', function(req, res, next) {
 
 
 
-// rota de linhas 
+// rota de linhas -------------------------------------------------------------------------
 router.get('/linhas', function(req, res, next) {
   res.render('pages/adm/linhas', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
+
+
+
+
+
+
+
+
+
+
+
 
 //rota de login da adm 
 router.get('/login', function(req, res, next) {
