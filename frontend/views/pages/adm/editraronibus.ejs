@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Formulario</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Remove espaço extra sob a imagem */
+    }
+  </style>
+
+  <section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
+    <div class="col-12  col-md-6 col-lg-6">
+      <div class="w-100 bg-primary-subtle  rounded-4">
+        <div class="bg-black rounded-top-4">
+          <h4 class="pb-5 text-light text-center">
+          </h4>
+          <img src="/images/smartbus-logo.png" class="img-fluid w-50 mx-auto" style="margin-top: -50px">
+        </div>
+        <div class="text-center">
+        </div>
+        <br>
+        <div class=" rounded-bottom-4">
+          <div class="container">
+            <h4>Edição de dados dos Funcionários</h4>
+            <form id="formulario" name="formulario" class="mx-auto my-4" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" class="form-control" placeholder="John" required>
+                  </div>
+                </div>
+                <!-- <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputState">Envio de documentos</label>
+                                        <input type="file" class="form-control-file" id="inputState" name="pdfDocument" accept=".pdf"  required>
+                                    </div>
+                                </div> -->
+              </div>
+              <button type="submit" class="btn btn-primary"
+                style="background-color: #FF9e00; color: #000;">Finalizar edição</button>
+              <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;" href="/adm/motorista">
+                Cancelar</a>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+    <!-- edição da tabela do motorista -->
+
+    <script>
+      // document.addEventListener('DOMContentLoaded', async () => {
+      //   try {
+      //     const id = window.location.pathname.split('/').pop();
+      //     const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
+      //     const motorista = response.data;
+          
+      //     const form = document.querySelector('#formulario');
+      //     document.querySelector('#nome').value = motorista.nome;
+
+      //     nome.value = motorista.nome;
+
+
+      document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const id = window.location.pathname.split('/').pop();
+        const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
+        const motorista = response.data;
+  
+        const form = document.querySelector('#formulario');
+        const nomeInput = document.querySelector('#nome');
+        
+        nomeInput.value = motorista.nome;
+
+
+          // abaixo fala sobre o botao subimit para finalizar edição
+          form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+           
+
+            if (form.checkValidity()) {
+              try {
+                
+                const formData = new FormData(form);
+                await axios.put(`http://127.0.0.1:5000/motoristas/editar/${id}`, formData, {
+                  headers: {
+                    'Content-Type': 'multipart/form-data'
+                    
+                  }
+                });
+                
+                alert("Motorista editado com sucesso.");
+                window.location.href = `/adm/motorista`;
+              } catch (error) {
+                console.log(error);
+                // alert(error.response.data.mensagem);
+              }
+            }
+
+            form.classList.add('was-validated');
+          }, false);
+        } catch (error) {
+          console.log(error);
+
+          if (error?.response?.status === 404) {
+            alert("Motorista não encontrado.");
+            window.location.href = "/adm/motorista";
+          } else {
+            // alert(error.response.data.mensagem);
+          }
+        }
+        
+      });
+    </script>

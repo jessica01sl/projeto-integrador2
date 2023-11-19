@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 
 
-// rota de motorista da pagina de adm
+// rota de motorista da pagina de adm-------------------------------------
 router.get('/motorista', function(req, res, next) {
   res.render('pages/adm/motoristas', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
@@ -27,10 +27,7 @@ router.get('/motorista/cadastrar', function(req, res, next) {
 router.get('/motorista/editar/:id', function(req, res, next) {
   res.render('pages/adm/editarmotorista', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
-
-
-
-
+//-------------------------------------------------------------------------------
 
 
 
@@ -44,10 +41,21 @@ router.get('/cliente', function(req, res, next) {
 
 
 
-//rota de onibus 
+//rota de onibus ------------------------------------------------------------------------------
 router.get('/onibus', function(req, res, next) {
   res.render('pages/adm/onibus', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
+// rota de cadastrar onibus
+router.get('/onibus/cadastrar', function(req, res, next) {
+  res.render('pages/adm/cadastroonibus', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+//rota de editar onibus
+router.get('/onibus/editar/:id', function(req, res, next) {
+  res.render('pages/adm/editraronibus', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+//--------------------------------------------------------------------------------------------
+
+
 
 // rota de linhas 
 router.get('/linhas', function(req, res, next) {
