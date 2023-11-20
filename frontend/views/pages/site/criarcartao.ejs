@@ -130,20 +130,44 @@
               </div>
                
             </form>
-            
-            
-            
-            
-            
-            
-            
-            
+           
                     </form>
-                </div>
-            
-               
+                </div>   
         </div></div>
-    
-    
     </section>
        
+
+
+
+
+    
+<!-- abaixo temos o codigo NÃO FUNCIONAL  do cadastrar -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+
+    const form = document.querySelector('#formulario');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
+
+      try {
+        const formData = new FormData(form);
+        const data = {
+          nome: formData.get('nome'),
+        };
+
+        const response = await axios.post('http://127.0.0.1:5000/cliente/cadastrar', data);
+        alert("cadastrou")
+        // window.location.href = '/entrar';
+      } catch (error) {
+        console.error("Erro ao enviar requisição:", error);
+        alert("deu ruim");
+      }
+
+      // form.classList.add('was-validated')
+    }, false)
+  });
+</script>
+

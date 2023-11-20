@@ -31,17 +31,6 @@ router.get('/listar', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // cadastrar cliente funcionando
 router.post('/cadastrar', async (req, res) => {
   try {

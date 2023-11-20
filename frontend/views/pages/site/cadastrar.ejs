@@ -63,18 +63,65 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
-    <script src="../../assets/js/settings.js"></script>
-    <script src="../../assets/js/todolist.js"></script>
-    <!-- endinject -->
   </body>
-</html>
+
+
+
+  <!-- abaixo temos o codigonao funcional do cadastrar -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+
+    const form = document.querySelector('#formulario');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
+
+      try {
+        const formData = new FormData(form);
+        const data = {
+          nome: formData.get('nome'),
+        };
+
+        const response = await axios.post('<!-- abaixo temos o codigo funcional do cadastrar -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+
+    const form = document.querySelector('#formulario');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
+
+
+      try {
+        const formData = new FormData(form);
+        const data = {
+          nome: formData.get('nome'),
+          email
+        };
+
+        const response = await axios.post('http://127.0.0.1:5000/motoristas/cadastrar', data);
+        alert("cadastrou")
+        // window.location.href = '/entrar';
+      } catch (error) {
+        console.error("Erro ao enviar requisição:", error);
+        alert("deu ruim");
+      }
+
+      // form.classList.add('was-validated')
+    }, false)
+  });
+</script>', data);
+        alert("cadastrou")
+        // window.location.href = '/entrar';
+      } catch (error) {
+        console.error("Erro ao enviar requisição:", error);
+        alert("deu ruim");
+      }
+
+      // form.classList.add('was-validated')
+    }, false)
+  });
+</script>
