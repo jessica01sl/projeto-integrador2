@@ -115,7 +115,8 @@
                 try {
                     const formData = new FormData(form);
                     const data = {
-                        nome: formData.get('nome'),
+                        nome: formData.get('nome')
+                        ,
                     };
 
                     const response = await axios.post('http://127.0.0.1:5000/cliente/cadastrar', data);
