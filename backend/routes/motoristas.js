@@ -113,29 +113,33 @@ router.delete("/excluir/:id", async function (req, res, next) {
 
 
 
-// ROTA buscar um motorista por id
+// buscar um motorista por id
 
 // Rota para obter um motorista por ID
-router.get('/onibus/:id', async (req, res) => {
+router.get('/puxar/:id', async (req, res) => {
   const { id } = req.params;
 
+
   try {
-    // Consultando o ônibus pelo ID usando o Prisma
-    const onibus = await prisma.onibus.findUnique({
+    // Consultando o motorista pelo ID usando o Prisma
+    const motorista = await prisma.motorista.findUnique({
       where: { id: parseInt(id) },
       include: { viagem: true }, // Se você quiser incluir informações de viagem
     });
 
-    // Verificando se o ônibus foi encontrado
-    if (!onibus) {
-      return res.status(404).json({ mensagem: 'Ônibus não encontrado' });
+
+    // Verificando se o motorista foi encontrado
+    if (!motorista) {
+      return res.status(404).json({ error: 'Motorista não encontrado' });
     }
 
-    // Retornando os dados do ônibus
-    res.status(200).json(onibus);
+    console.log(motorista);
+
+    // Retornando os dados do motorista
+    res.json(motorista);
   } catch (error) {
-    console.error('Erro ao buscar o ônibus:', error);
-    res.status(500).json({ mensagem: 'Erro interno do servidor' });
+    console.error('Erro ao buscar o motorista:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
 

@@ -62,6 +62,14 @@ router.get('/linhas', function(req, res, next) {
   res.render('pages/adm/linhas', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
 
+router.get('/linhas/cadastrar', function(req, res, next) {
+  res.render('pages/adm/cadastrarlinha', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+
+router.get('/linhas/editar/:id', function(req, res, next) {
+  res.render('pages/adm/editarlinha', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+
 
 
 
