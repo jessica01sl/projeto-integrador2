@@ -5,6 +5,12 @@ const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
+
+
+
+
+// ROTA LISTAR
+
 router.get('/listar', async (req, res) => {
   try {
     const motoristas = await prisma.motorista.findMany();
@@ -15,18 +21,11 @@ router.get('/listar', async (req, res) => {
   }
 });
 
-// no gpt: envia o codigo do schema prisma, "express prisma rota/endpoint para ..."
-// quando gerar o codigo trocar de app.js para router.get
-
-
-
-// 
 
 
 
 
-
-// cadastrar motorista
+// ROTA cadastrar motorista
 router.post('/cadastrar', async (req, res) => {
   try {
     const { nome } = req.body;
@@ -46,15 +45,6 @@ router.post('/cadastrar', async (req, res) => {
     res.status(500).json({ error: 'Erro ao cadastrar o motorista.' });
   }
 });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -96,15 +86,6 @@ router.patch('/editar/:id', async function (req, res, next) {
 
 
 
-
-
-
-
-
-
-
-
-
 // deletar o motorista
 router.delete("/excluir/:id", async function (req, res, next) {
   try {
@@ -132,33 +113,29 @@ router.delete("/excluir/:id", async function (req, res, next) {
 
 
 
-// buscar um motorista por id
+// ROTA buscar um motorista por id
 
 // Rota para obter um motorista por ID
-router.get('/puxar/:id', async (req, res) => {
+router.get('/onibus/:id', async (req, res) => {
   const { id } = req.params;
 
-
   try {
-    // Consultando o motorista pelo ID usando o Prisma
-    const motorista = await prisma.motorista.findUnique({
+    // Consultando o ônibus pelo ID usando o Prisma
+    const onibus = await prisma.onibus.findUnique({
       where: { id: parseInt(id) },
       include: { viagem: true }, // Se você quiser incluir informações de viagem
     });
 
-
-    // Verificando se o motorista foi encontrado
-    if (!motorista) {
-      return res.status(404).json({ error: 'Motorista não encontrado' });
+    // Verificando se o ônibus foi encontrado
+    if (!onibus) {
+      return res.status(404).json({ mensagem: 'Ônibus não encontrado' });
     }
 
-    console.log(motorista);
-
-    // Retornando os dados do motorista
-    res.json(motorista);
+    // Retornando os dados do ônibus
+    res.status(200).json(onibus);
   } catch (error) {
-    console.error('Erro ao buscar o motorista:', error);
-    res.status(500).json({ error: 'Erro interno do servidor' });
+    console.error('Erro ao buscar o ônibus:', error);
+    res.status(500).json({ mensagem: 'Erro interno do servidor' });
   }
 });
 
