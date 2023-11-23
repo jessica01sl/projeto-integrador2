@@ -19,9 +19,10 @@ router.get('/listar', async (req, res) => {
 // quando gerar o codigo trocar de app.js para router.get
 
 // usuario cadastar funcionando
-router.post('/cadastar', async (req, res) => {
+router.post('/cadastrar', async (req, res) => {
   try {
-    const { nome, email, senha, token } = req.body;
+    const { nome, email, senha } = req.body;
+    console.log(req.body);
 
     // Crie um novo usuário no banco de dados
     const novoUsuario = await prisma.usuario.create({
@@ -29,7 +30,6 @@ router.post('/cadastar', async (req, res) => {
         nome,
         email,
         senha,
-        token,
       },
     });
 

@@ -19894,19 +19894,19 @@ div.tagsinput {
 /* === Landing screens === */
 /* Auth */
 .auth.login-bg {
-  background: url("/images/login");
+  background: url("../images/alallalala.png");
   background-size: cover; }
 
 .auth .login-half-bg {
-  background: url("/images/login");
+  background: url("../images/alallalala.png");
   background-size: cover; }
 
 .auth.register-half-bg {
-  background: url("/images/auth/Login_bg2.jpg");
+  background: url("../images//alallalala.png");
   background-size: cover; }
 
 .auth.lock-full-bg {
-  background: url("../images/auth/lockscreen-bg.jpg");
+  background: url("../images//alallalala.png");
   background-size: cover; }
 
 

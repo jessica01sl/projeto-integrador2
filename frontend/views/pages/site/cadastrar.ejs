@@ -14,7 +14,7 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="../../assets/images/favicon.png" />
   </head>
@@ -26,14 +26,18 @@
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-4">
                 <h3 class="card-title text-left mb-4">Registrar-se</h3>
-                <form>
+                <form id="formulario" >
+                  <div class="form-group">
+                    <label>Nome</label>
+                    <input id="nome" name="nome" type="text" class="form-control p_input">
+                  </div>
                   <div class="form-group">
                     <label>E-mail</label>
-                    <input type="email" class="form-control p_input">
+                    <input id="email" name="email" type="email" class="form-control p_input">
                   </div>
                   <div class="form-group">
                     <label>Senha</label>
-                    <input type="password" class="form-control p_input">
+                    <input id="senha" name="senha" type="password" class="form-control p_input">
                   </div>
                   <div class="form-group d-flex align-items-center justify-content-between">
                     <div class="form-check">
@@ -48,7 +52,7 @@
                   <div class="d-flex">
                     <button class="btn btn-facebook col me-2">
                       <i class="mdi mdi-facebook"></i> Facebook </button>
-                    <button class="btn btn-google col">
+                    <button type="submit" class="btn btn-google col">
                       <i class="mdi mdi-google-plus"></i> Google plus </button>
                   </div>
                   <p class="sign-up text-center">Já tem uma conta?<a href="login.html"> Entrar</a></p>
@@ -67,61 +71,33 @@
 
 
 
-  <!-- abaixo temos o codigonao funcional do cadastrar -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-
-    const form = document.querySelector('#formulario');
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault()
-
-
-      try {
-        const formData = new FormData(form);
-        const data = {
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  
+  
+      const form = document.querySelector('#formulario');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault()
+  
+  
+        try {
+          const formData = new FormData(form);
+          const data = {
           nome: formData.get('nome'),
+          email: formData.get('email'),
+          senha: formData.get('senha'),
         };
-
-        const response = await axios.post('<!-- abaixo temos o codigo funcional do cadastrar -->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-
-
-    const form = document.querySelector('#formulario');
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault()
-
-
-      try {
-        const formData = new FormData(form);
-        const data = {
-          nome: formData.get('nome'),
-          email
-        };
-
-        const response = await axios.post('http://127.0.0.1:5000/motoristas/cadastrar', data);
-        alert("cadastrou")
-        // window.location.href = '/entrar';
-      } catch (error) {
-        console.error("Erro ao enviar requisição:", error);
-        alert("deu ruim");
-      }
-
-      // form.classList.add('was-validated')
-    }, false)
-  });
-</script>', data);
-        alert("cadastrou")
-        // window.location.href = '/entrar';
-      } catch (error) {
-        console.error("Erro ao enviar requisição:", error);
-        alert("deu ruim");
-      }
-
-      // form.classList.add('was-validated')
-    }, false)
-  });
-</script>
+          
+          const response = await axios.post('http://127.0.0.1:5000/usuario/cadastrar', data);
+          alert("cadastrou")
+          // window.location.href = '/entrar';
+        } catch (error) {
+          console.error("Erro ao enviar requisição:", error);
+          alert("deu ruim");
+        }
+  
+        // form.classList.add('was-validated')
+      }, false)
+    });
+  </script>
+  
