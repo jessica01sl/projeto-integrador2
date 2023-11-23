@@ -44,7 +44,7 @@ router.post('/cadastrar', async (req, res) => {
 
 
 // UPDATE EDIÇÃO DE PLACA DO ONIBUS ABAIXO
-router.put('/atualizar/:id', async (req, res) => {
+router.patch('/atualizar/:id', async (req, res) => {
   const { id } = req.params; // Obtém o ID do ônibus a ser editado a partir dos parâmetros da URL
   const { placa, viagem } = req.body; // Obtém os dados a serem atualizados a partir do corpo da requisição
 
@@ -120,22 +120,29 @@ router.delete('/delete/:id', async (req, res) => {
 
 
 
-router.get('/onibus/:id', async (req, res) => {
+router.get('/puxar/:id', async (req, res) => {
   const { id } = req.params;
 
+  
   try {
-    // Lógica para buscar o ônibus no banco de dados usando o ID
-    const onibus = await buscarOnibusPorId(id);
+    // Consultando o motorista pelo ID usando o Prisma
+    const onibus = await prisma.onibus.findUnique({
+      where: { id: parseInt(id) },
+    });
 
+
+    // Verificando se o motorista foi encontrado
     if (!onibus) {
-      return res.status(404).json({ mensagem: 'Ônibus não encontrado' });
+      return res.status(404).json({ error: 'Motorista não encontrado' });
     }
 
-    // Se encontrou o ônibus, retorna as informações
+    console.log(onibus);
+
+    // Retornando os dados do motorista
     res.json(onibus);
-  } catch (erro) {
-    console.error('Erro ao buscar ônibus:', erro);
-    res.status(500).json({ mensagem: 'Erro interno do servidor' });
+  } catch (error) {
+    console.error('Erro ao buscar o onibus:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
 

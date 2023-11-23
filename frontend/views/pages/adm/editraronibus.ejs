@@ -42,7 +42,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" class="form-control" placeholder="John" required>
+                    <input type="text" id="placa" name="placa" class="form-control" placeholder="John" required>
                   </div>
                 </div>
                 <!-- <div class="col-md-6">
@@ -80,9 +80,9 @@
         const motorista = response.data;
 
         let form = document.querySelector('#formulario');
-        const nomeInput = document.querySelector('#nome');
+        const nomeInput = document.querySelector('#placa');
 
-        nomeInput.value = motorista.nome;
+        nomeInput.value = motorista.placa;
 
 
         // abaixo fala sobre o botao subimit para finalizar edição
@@ -95,13 +95,13 @@
             try {
               form = document.querySelector('#formulario');
               const formData = new FormData(form);
-              const nome = formData.get("nome");
-              const data = { nome };
+              const placa = formData.get("placa");
+              const data = { placa };
 
-              await axios.put(`http://127.0.0.1:5000/onibus/atualizar/${id}`, data);
+              await axios.patch(`http://127.0.0.1:5000/onibus/atualizar/${id}`, data);
 
-              alert("Motorista editado com sucesso.");
-              window.location.href = `/adm/motorista`;
+              alert("Onibus editado com sucesso.");
+              window.location.href = `/adm/onibus`;
             } catch (error) {
               console.log(error);
               // alert(error.response.data.mensagem);
@@ -114,8 +114,8 @@
         console.log(error);
 
         if (error?.response?.status === 404) {
-          alert("Motorista não encontrado.");
-          window.location.href = "/adm/motorista";
+          alert("Onibus não encontrado.");
+          window.location.href = "/adm/onibus";
         } else {
           // alert(error.response.data.mensagem);
         }
