@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+// importação por causa do jwt 
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken")
 
 const { PrismaClient } = require("@prisma/client");
 
@@ -23,13 +26,15 @@ router.post('/cadastrar', async (req, res) => {
   try {
     const { nome, email, senha } = req.body;
     console.log(req.body);
+    const senhaCriptografada = await bcrypt.hash(senha, 10);
+
 
     // Crie um novo usuário no banco de dados
     const novoUsuario = await prisma.usuario.create({
       data: {
         nome,
         email,
-        senha,
+        senha:senhaCriptografada
       },
     });
 
@@ -150,5 +155,46 @@ router.get('/pesquisaid/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+
+
+//usuario entrar
+
+
+router.post("/entrar", async function (req, res, next) {
+  const { email, senha } = req.body;
+console.log(req.body);
+  try {
+    const user = await prisma.usuario.findFirst({
+      where: {
+        email: email
+      }
+    });
+
+    if (!user) {
+      return res.status(401).json({ mensagem: "E-mail não encontrado." });
+    }
+
+    const passwordIsValid = await bcrypt.compare(senha, user.senha);
+    if (!passwordIsValid) {
+      return res.status(401).json({ mensagem: "Senha inválida." });
+    }
+
+    const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, { expiresIn: 86400 });
+
+    res.status(200).json({ mensagem: "Login realizado com sucesso.", token: token });
+  } catch (error) {
+    console.error('Ocorreu um erro ao realizar o login: ', error);
+
+    res.status(500).json({ mensagem: "Não foi possível realizar o login do usuário." });
+  }
+});
+
+
+
+
+
+
+
 
 module.exports = router;
