@@ -1,0 +1,117 @@
+
+<body>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+  
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        /* Remove espaço extra sob a imagem */
+      }
+    </style>
+  
+    <section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
+      <div class="col-12  col-md-6 col-lg-6">
+        <div class="w-100 bg-primary-subtle  rounded-4">
+          <div class="bg-black rounded-top-4">
+            <h4 class="pb-5 text-light text-center">
+            </h4>
+            <img src="/images/smartbus-logo.png" class="img-fluid w-50 mx-auto mt-5 pt-5" style="margin-top: -50px">
+          </div>
+          <div class="text-center">
+          </div>
+          <br>
+          <div class=" rounded-bottom-4">
+            <div class="container">
+              <h4>Cadastro de Onibus da empresa</h4>
+              <form id="formulario" name="formulario" class="mx-auto my-4" enctype="multipart/form-data">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="nome">Placamento do veiculo</label>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputName">Nome</label>
+                            <input type="text" id="inputName" class="form-control" placeholder="John" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputSurname">Origem</label>
+                            <input type="text" class="form-control" id="inputSurname" placeholder="Doe" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputEmail4">Destino</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="doejohnn@email.com" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="inputPassword4">Partida</label>
+                            <input type="number" class="form-control" id="inputPhone" placeholder="(00)90000-0000" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="inputCity">Duração</label>
+                            <input type="text" class="form-control" id="inputCity" required>
+                        </div>
+                    </div>
+                <button type="submit" class="btn btn-primary"
+                  style="background-color: #FF9e00; color: #000;">Enviar</button>
+                <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;" href="/adm/linhas">
+                  Cancelar</a>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  
+  </html>
+  <!-- abaixo todo o css fechado -->
+  
+  
+  
+  
+  
+  <!-- abaixo temos o codigo funcional do cadastrar -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  
+  
+      const form = document.querySelector('#formulario');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault()
+  
+  
+        try {
+          const formData = new FormData(form);
+          const data = {
+            placa: formData.get('nome'),
+          };
+  
+          const response = await axios.post('http://127.0.0.1:5000/onibus/cadastrar', data);
+          alert("cadastrou")
+          // window.location.href = '/entrar';
+        } catch (error) {
+          console.error("Erro ao enviar requisição:", error);
+          alert("deu ruim");
+        }
+  
+        // form.classList.add('was-validated')
+      }, false)
+    });
+  </script>
+  
+  
+  </html>
