@@ -43,10 +43,15 @@
         <li class="nav-item py-2-5   m-2  ">
           <a class="nav-link text-warning custom-font-weight font-do-site-primaria" href="http://127.0.0.1:3000/site/ajuda">Ajuda</a>
         </li>
-        <li>
+        <li id="btnentrar">
           <a href="http://127.0.0.1:3000/site/cadastrar"><button type="button" src="template/pages/samples/login.html"
               class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Entrar</button></a>
         </li>
+        <li id="btnperfil" >
+          <a href="http://127.0.0.1:3000/site/perfil"><button type="hidden" src="template/pages/samples/login.html"
+              class=" btn btn-warning  btn-primary custom-shadow btn-md rounded-3 border-0 text-black font-weight-bold  py-2-5   m-3  text-center">Meu perfil</button></a>
+        </li>
+
       </ul>
     </div>
   </nav>
@@ -85,6 +90,8 @@
 
     <%- script %>
 
+
+    <script defer src="/js/onload.js"></script> 
 
 
 </body>

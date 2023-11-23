@@ -47,6 +47,12 @@
   </body>
   <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js" integrity="sha256-WCzAhd2P6gRJF9Hv3oOOd+hFJi/QJbv+Azn4CGB8gfY=" crossorigin="anonymous"></script>
   <script>
+
+
+
+
+
+
     document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -69,6 +75,8 @@
 
                     Cookies.set('jwt', response.data.token, { expires: 1, path: '/' });
                     alert("Login realizado com sucesso.");
+
+                    localStorage.setItem('estalogado', true);    //fazer false no sair
 
                     window.location.href = '/site/perfil';
                 } catch (error) {
