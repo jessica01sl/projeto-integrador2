@@ -8,6 +8,7 @@ npm i
 criar .env
 	DATABASE_URL="mysql://root:@127.0.0.1:3306/bancopi"
 	PORT=5000
+  SECRET_KEY=secretkey
 
 npx prisma generate && npx prisma db pull
 
