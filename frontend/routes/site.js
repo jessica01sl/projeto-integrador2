@@ -8,8 +8,8 @@ router.get('/home', function (req, res, next) {
   res.render('pages/site/index', { title: 'site publico', layout: 'layout/clean' });
 });
 
-// recarga DO SITE PUBLICO
-router.get('/recarga', function (req, res, next) {
+// recarga DO SITE PUBLICO   
+router.get('/recarga/:id', function (req, res, next) {
   res.render('pages/site/recarga', { title: 'site publico', layout: 'layout/vazio' });
 });
 

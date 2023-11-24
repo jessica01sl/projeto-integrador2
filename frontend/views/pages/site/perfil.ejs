@@ -16,6 +16,7 @@
 
 
       <!-- Conteúdo da coluna esquerda -->
+      <form id="example" id="example">
       <div  class=" row justify-content-center col-lg-12 ">
         <div class="card mb-4  ">
           <div class="card-body text-center  ">
@@ -25,10 +26,11 @@
             <p class="text-muted mb-1">CI: 7383503*</p>
             <p class="text-muted mb-4">Cartão Comum*</p>
             <div class="d-flex justify-content-center mb-2">
-              <button type="button" class="btn btn-light border ">
+              <button type="click" id="aaa" name="aaa" class="btn btn-light border ">
                 <img src="/img/olho-aberto.png" alt="" class="icon-size"> <!-- Add the "icon-size" class -->
               </button>
               <button type="button" class="btn btn-outline-primary ms-1">******</button>
+              </form>
             </div>
           </div>
         </div>
@@ -59,7 +61,44 @@
 
   </section>
 
+  <script>
 
+script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const tbody = document.querySelector("#example");
+
+          const response = await axios.get(
+            "http://localhost:5000/motoristas/listar"
+          );
+          response.data.forEach((motorista) => {
+            const tr = document.createElement("aaa");
+
+
+
+        
+
+            // const fotoTd = document.createElement('td');
+            // if (motorista.foto) {
+            //     fotoTd.innerHTML = `<img src="http://localhost:3001/${motorista.foto}" alt="${motorista.nome}" width="50">`;
+            // } else {
+            //     fotoTd.innerHTML = "Não possui.";
+            // }
+            // tr.appendChild(fotoTd);
+
+            const acoesTd = document.createElement("td");
+            // <a href="/motoristas/exibir/${motorista.id}">Exibir</a>
+            acoesTd.innerHTML = `${exibirLink} | ${editarLink} | ${deletarLink}`;
+            tr.appendChild(acoesTd);
+
+            tbody.appendChild(tr);
+          });
+        } catch (error) {
+          console.log(error);
+          // alert(error.response.data.mensagem);
+        }
+      });
+  </script>
 
 
 

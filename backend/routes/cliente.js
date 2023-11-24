@@ -71,7 +71,7 @@ router.post('/cadastrar', async (req, res) => {
 
 
 // atualizar o cliente
-router.put('/atualizar/:id', async (req, res) => {
+router.patch('/atualizar/:id', async (req, res) => {
   try {
     const clienteId = parseInt(req.params.id);
     const { nome, saldo, cpf } = req.body;
