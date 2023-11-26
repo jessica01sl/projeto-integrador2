@@ -54,7 +54,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="inputPassword4">CPF</label>
-                          <input type="text" id="horarioPartida" name="horarioPartida" class="form-control" id="inputPhone" placeholder="000.000.00-00" required>
+                          <input type="text" id="cpf" name="cpf" class="form-control" id="inputPhone" placeholder="000.000.00-00" required>
                         </div>
                       </div>
                       <button type="submit" class="btn btn-primary"
@@ -92,14 +92,12 @@
           const formData = new FormData(form);
           const data = {
             nome: formData.get('nome'),
-            origem: formData.get('origem'),
-            destino: formData.get('destino'),
-            horarioPartida: formData.get('horarioPartida'),
-            duracao: formData.get('duracao'),
+            cpf: formData.get('cpf'),
+
   
           };
   
-          const response = await axios.post('http://127.0.0.1:5000/linhas/cadastrar', data);
+          const response = await axios.post('http://127.0.0.1:5000/cliente/cadastrar', data);
           alert("cadastrou")
           // window.location.href = '/entrar';
         } catch (error) {
