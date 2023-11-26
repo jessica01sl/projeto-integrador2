@@ -32,11 +32,19 @@ router.get('/motorista/editar/:id', function(req, res, next) {
 
 
 
-//rota de cliente
+//rota de cliente-----------------------------------------------------------------------
 router.get('/cliente', function(req, res, next) {
   res.render('pages/adm/cliente', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
 
+router.get('/cliente/cadastrar', function(req, res, next) {
+  res.render('pages/adm/cadastrocliente', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+
+router.get('/cliente/editar/:id', function(req, res, next) {
+  res.render('pages/adm/editarcliente', { title: 'Painel do Administrador', layout: 'layout/layout' });
+});
+//--------------------------------------------------------------------------------------------
 
 
 
@@ -69,6 +77,7 @@ router.get('/linhas/cadastrar', function(req, res, next) {
 router.get('/linhas/editar/:id', function(req, res, next) {
   res.render('pages/adm/editarlinha', { title: 'Painel do Administrador', layout: 'layout/layout' });
 });
+//--------------------------------------------------------------------------------------------
 
 
 
@@ -94,10 +103,6 @@ router.get('/cadastrar', function(req, res, next) {
 
 
 
-//rota da CATRACA COLOCAR NO LUGAR CORERETO
-router.get('/catraca', function(req, res, next) {
-  res.render('pages/catraca/tela', { title: 'Painel do Administrador', layout: 'layout/vazio' });
-});
 
 
 
