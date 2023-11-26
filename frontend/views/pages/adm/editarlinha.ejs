@@ -35,32 +35,32 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="inputName">Nome</label>
-                          <input id="nome" name="nome" type="text" id="inputName" class="form-control" placeholder="John" required>
+                          <input id="nome" name="nome" type="text" class="form-control" placeholder="John" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="inputSurname">Origem</label>
-                          <input type="text" id="origem" name="origem" class="form-control" id="inputSurname" placeholder="Doe" required>
+                          <input type="text" id="origem" name="origem" class="form-control" placeholder="Doe" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="inputEmail4">Destino</label>
-                          <input type="text"  id="destino" name="destino" class="form-control" id="inputEmail4" placeholder="doejohnn@email.com"
+                          <input type="text"  id="destino" name="destino" class="form-control"  placeholder="doejohnn@email.com"
                             required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="inputPassword4">Horario de Partida do Onibus</label>
-                          <input type="text" id="horarioPartida" name="horarioPartida" class="form-control" id="inputPhone" placeholder="00:00" required>
+                          <input type="text" id="horarioPartida" name="horarioPartida" class="form-control" placeholder="00:00" required>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
                           <label for="inputCity">Duração</label>
-                          <input type="text" id="duracao" name="duracao" class="form-control" id="inputCity" required>
+                          <input type="text" id="duracao" name="duracao" class="form-control"  required>
                         </div>
                       </div>
                       <button type="submit" class="btn btn-primary"
@@ -78,60 +78,70 @@
 
 
 
-
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+          const id = window.location.pathname.split('/').pop();
+          const response = await axios.get(`http://127.0.0.1:5000/linhas/puxar/${id}`);
+          const linha = response.data;
   
-<script>
-  // abaixo codigo funcional do editar
-  document.addEventListener('DOMContentLoaded', async () => {
-try {
-    const id = window.location.pathname.split('/').pop();
-    const response = await axios.get(`http://127.0.0.1:5000/linhas/puxar/${id}`);
-    const motorista = response.data;
-
-    let form = document.querySelector('#formulario');
-    const nomeInput = document.querySelector('#nome');
-
-    nomeInput.value = motorista.nome;
-
-
-    // abaixo fala sobre o botao subimit para finalizar edição
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-
-
-        if (form.checkValidity()) {
-            try {
-                form = document.querySelector('#formulario');
-                const formData = new FormData(form);
-                const nome = formData.get("nome");
-                const data = { nome };
-                
-                await axios.patch(`http://127.0.0.1:5000/linhas/editar/${id}`, data);
-
-                alert("Motorista editado com sucesso.");
-                window.location.href = `/adm/motorista`;
-            } catch (error) {
-                console.log(error);
-                // alert(error.response.data.mensagem);
+          let form = document.querySelector('#formulario');
+          const inputs = {
+            nome: linha.nome,
+            origem: linha.origem,
+            destino: linha.destino,
+            horarioPartida: linha.horarioPartida,
+            duracao: linha.duracao
+            // Adicione outros campos conforme necessário
+          };
+  
+          for (const [campo, valor] of Object.entries(inputs)) {
+            const inputElement = document.querySelector(`#${campo}`);
+            if (inputElement) {
+              inputElement.value = valor;
             }
-        }
-
-        form.classList.add('was-validated');
-    }, false);
-} catch (error) {
-    console.log(error);
-
-    if (error?.response?.status === 404) {
-        alert("Motorista não encontrado.");
-        window.location.href = "/adm/linhas";
-    } else {
-        // alert(error.response.data.mensagem);
-    }
-}
-
-});
-</script>
+          }
+  
+          // Abaixo fala sobre o botão submit para finalizar edição
+          form.addEventListener('submit', async (event) => {
+              event.preventDefault();
+  
+              if (form.checkValidity()) {
+                  try {
+                      form = document.querySelector('#formulario');
+                      const formData = new FormData(form);
+  
+                      // Crie um objeto para armazenar os dados do formulário
+                      const data = {};
+                      for (const [key, value] of formData.entries()) {
+                          data[key] = value;
+                      }
+  
+                      await axios.patch(`http://127.0.0.1:5000/linhas/editar/${id}`, data);
+  
+                      alert("Linha editada com sucesso.");
+                      window.location.href = `/adm/linhas`;
+                  } catch (error) {
+                      console.log(error);
+                      // alert(error.response.data.mensagem);
+                  }
+              }
+  
+              form.classList.add('was-validated');
+          }, false);
+      } catch (error) {
+          console.log(error);
+  
+          if (error?.response?.status === 404) {
+              alert("Linha não encontrada.");
+              window.location.href = "/adm/linhas";
+          } else {
+              // alert(error.response.data.mensagem);
+          }
+      }
+    });
+  </script>
+  
 
 
 </body>

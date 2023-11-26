@@ -50,40 +50,31 @@ router.post("/cadastrar", async (req, res, next) => {
 
 // atualizar o linha 
 router.patch('/editar/:id', async (req, res) => {
+  const { id } = req.params;
+  const { nome, origem, destino, horarioPartida, duracao } = req.body;
+
   try {
-    const linhaId = parseInt(req.params.id);
-    const { nome, origem, destino, horarioPartida, duracao } = req.body;
+    // Converta a string para número (caso duracao seja fornecida como string)
+    const duracaoInt = parseInt(duracao);
 
-    // Verifique se a linha existe antes de tentar atualizá-la
-    const linhaExistente = await prisma.linha.findUnique({
-      where: { id: linhaId },
-    });
-
-    if (!linhaExistente) {
-      return res.status(404).json({ error: 'Linha não encontrada' });
-    }
-
-    // Atualize as informações da linha express no banco de dados
+    // Atualize as informações da linha no banco de dados
     const linhaAtualizada = await prisma.linha.update({
-      where: { id: linhaId },
+      where: { id: parseInt(id) },
       data: {
         nome,
         origem,
         destino,
         horarioPartida,
-        duracao,
+        duracao: duracaoInt,
       },
     });
 
-    res.status(200).json(linhaAtualizada); // Retorna a linha atualizada como resposta
+    res.json({ mensagem: 'Linha atualizada com sucesso', linha: linhaAtualizada });
   } catch (error) {
-    console.error('Erro:', error);
+    console.error('Erro ao atualizar a linha:', error);
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
-
-
-
 
 
 
