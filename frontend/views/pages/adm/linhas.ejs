@@ -41,7 +41,7 @@
                 <th>nome</th>
                 <th>origem</th>
                 <th>destino</th> 
-                <th>Partida</th>
+                <th>Horario de Partida</th>
                 <th>duração</th> 
                 <th>Opções</th>
               </tr>
@@ -128,9 +128,7 @@
             const horarioPartidaTd = document.createElement("td");
             horarioPartidaTd.textContent = linha.horarioPartida;
             tr.appendChild(horarioPartidaTd);
-            
-            tr.appendChild(destinoTd);
-
+          
             const duracaoTd = document.createElement("td");
             duracaoTd.textContent = linha.duracao;
             tr.appendChild(duracaoTd);
