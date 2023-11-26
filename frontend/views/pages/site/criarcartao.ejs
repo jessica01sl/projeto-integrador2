@@ -1,199 +1,201 @@
 <body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-    <link rel="stylesheet" href="/public">
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* Remove espaço extra sob a imagem */
+    }
+  </style>
 
-    <section class=" container-fluid   d-flex justify-content-center align-items-center">
-        <div class="col-12  col-md-12 col-lg-12">
-            <div class="w-100 bg-light custom-shadow  ">
 
-                <div class="bg-black">
-                    <h1 class="pb-5 text-light text-center  pt-4 pb-5 text-light text-center mb-5">CRIAÇÃO DE CARTÃO
-                    </h1>
+  <section class=" container-fluid  mb-5  d-flex justify-content-center align-items-center">
+    <div class="col-12  col-md-12 col-lg-10">
+      <div class="w-100 bg-primary-subtle  rounded-4">
+        <div class="bg-dark mt-4">
+          <h1 class="text-center text-light">Criação de Cartão</h1>
+          <h4 class="pb-5 text-light text-center">
+          </h4>
+        </div>
+        <div class="text-center">
+        </div>
+        <br>
+        <div class=" rounded-bottom-4">
+          <div class="container mt-6 pt-5">
+            <h4>Cadastro de Onibus da empresa</h4>
+            <form id="formulario" name="formulario" class="mx-auto my-4" enctype="multipart/form-data">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputName">Nome Completo</label>
+                  <input type="text" id="nome" name="nome" class="form-control" placeholder="" required>
+                </div>
+
+                <div class="form-group col-md-6 mb-5 pb-3">
+                  <label for="inputPassword4">CPF </label>
+                  <input type="text" id="cpf" name="cpf" class="form-control" id="inputPassword4"
+                    placeholder="000.000.000-00" required>
                 </div>
 
 
-                <div class="  rounded-bottom-4">
-                    <div class="container">
-                        <h4>Formulario para criação de cadastro</h4>
-                        <form action="" method="POST" class="mx-auto my-4">
-                            <!-- O restante do seu formulário aqui -->
-
-                            <form claaction="pastadestino.php" method="POST">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputName">Nome Completo</label>
-                                        <input type="text" id="inputName" class="form-control" placeholder="" required>
-                                    </div>
-
-                                    <div class="form-group col-md-6 mb-5 pb-3">
-                                        <label for="inputPassword4">CPF </label>
-                                        <input type="text" class="form-control" id="inputPassword4" placeholder="000.000.000-00"
-                                            required>
-                                    </div>
 
 
+                <!-- cidade codigo cep -->
+                <form class="row g-3">
+                  <h5 class="mt-5 pt-5 mr-5 pr-5 ">Adicione seu enderço</h5>
+                  <div class="col-md-6">
+                    <input class="form-control rounded-3 mb-3" type="text" name="cep" id="cep" placeholder="CEP ">
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control rounded-3  mb-3" type="text" name="estado" id="estado"
+                      placeholder="Estado" disabled>
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control rounded-3  mb-3" type="text" name="cidade" id="cidade"
+                      placeholder="Cidade" disabled>
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control rounded-3  mb-3" type="text" name="bairro" id="bairro"
+                      placeholder="Bairro" disabled>
+                  </div>
+                  <div class="col-md-6">
+                    <input class="form-control rounded-3  mb-3" type="text" name="rua" id="rua" placeholder="Rua"
+                      disabled>
 
+                  </div>
+              </div>
+              <div class="botao text-center">
+                <button type="submit"
+                  class="btn mt-4 mb-5 btn btn-warning btn-md rounded-5 border-0  custom-shadow  text-black font-weight-bold m-2 text-center">CRIAR
+                  CARTÃO</button>
 
-                                    <!-- cidade codigo cep -->
-                                    <form class="row g-3">
-                                        <h5 class="mt-5 pt-5 mr-5 pr-5 ">Adicione seu enderço</h5>
-                                        <div class="col-md-6">
-                                            <input class="form-control rounded-3 mb-3" type="text" name="cep" id="cep"
-                                                placeholder="CEP ">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="form-control rounded-3  mb-3" type="text" name="estado"
-                                                id="estado" placeholder="Estado" disabled>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="form-control rounded-3  mb-3" type="text" name="cidade"
-                                                id="cidade" placeholder="Cidade" disabled>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="form-control rounded-3  mb-3" type="text" name="bairro"
-                                                id="bairro" placeholder="Bairro" disabled>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="form-control rounded-3  mb-3" type="text" name="rua" id="rua"
-                                                placeholder="Rua" disabled>
+              </div>
+            </form>
 
-                                        </div>
-                                </div>
-                                <div class="botao text-center">
-                                    <button type="submit"
-                                        class="btn mt-4 mb-5 btn btn-warning btn-md rounded-5 border-0  custom-shadow  text-black font-weight-bold m-2 text-center">CRIAR
-                                        CARTÃO</button>
-
-                                </div>
-                            </form>
-
-                        </form>
-                    </div>
-                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="organizadora">
+        <form id="app-cover">
+          <div id="select-box">
+            <input type="checkbox" id="options-view-button">
+            <div id="select-button" class="brd">
+              <div id="selected-value">
+                <span>Escolher tipo do cartão <svg class="ml-5 pl-2" xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M384 432c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0zm64-16c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320zM224 352c-6.7 0-13-2.8-17.6-7.7l-104-112c-6.5-7-8.2-17.2-4.4-25.9s12.5-14.4 22-14.4l208 0c9.5 0 18.2 5.7 22 14.4s2.1 18.9-4.4 25.9l-104 112c-4.5 4.9-10.9 7.7-17.6 7.7z" />
+                  </svg></span>
+              </div>
+              <div id="chevrons">
+                <i class="fas fa-chevron-up"></i>
+                <i class="fas fa-chevron-down"></i>
+              </div>
             </div>
-  <div class="organizadora">        
-<form id="app-cover">
-    <div id="select-box">
-      <input type="checkbox" id="options-view-button">
-      <div id="select-button" class="brd">
-        <div id="selected-value">
-          <span>Escolher tipo do cartão <svg class="ml-5 pl-2" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 432c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0zm64-16c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320zM224 352c-6.7 0-13-2.8-17.6-7.7l-104-112c-6.5-7-8.2-17.2-4.4-25.9s12.5-14.4 22-14.4l208 0c9.5 0 18.2 5.7 22 14.4s2.1 18.9-4.4 25.9l-104 112c-4.5 4.9-10.9 7.7-17.6 7.7z"/></svg></span>
-        </div>
-        <div id="chevrons">
-          <i class="fas fa-chevron-up"></i>
-          <i class="fas fa-chevron-down"></i>
-        </div>
+            <div id="options">
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="behance">
+                <input class="s-c bottom" type="radio" name="platform" value="behance">
+                <i class="fab fa-behance"></i>
+                <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                  </svg> - Comum</span>
+                <span class="opt-val">Comum</span>
+              </div>
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="hackerrank">
+                <input class="s-c bottom" type="radio" name="platform" value="hackerrank">
+                <i class="fab fa-hackerrank"></i>
+                <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                  </svg> - Idoso</span>
+                <span class="opt-val">Idoso</span>
+              </div>
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="stackoverflow">
+                <input class="s-c bottom" type="radio" name="platform" value="stackoverflow">
+                <i class="fab fa-stack-overflow"></i>
+                <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                  </svg> - Necessudades Especiais</span>
+                <span class="opt-val">Necessudades Especiais</span>
+              </div>
+              <div class="option">
+                <input class="s-c top" type="radio" name="platform" value="freecodecamp">
+                <input class="s-c bottom" type="radio" name="platform" value="freecodecamp">
+                <i class="fab fa-free-code-camp"></i>
+                <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                      d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                  </svg> - Estudante </span>
+                <span class="opt-val">Estudante</span>
+              </div>
+              <div id="option-bg"></div>
+            </div>
+          </div>
+        </form>
       </div>
-      <div id="options">
-        <div class="option">
-          <input class="s-c top" type="radio" name="platform" value="behance">
-          <input class="s-c bottom" type="radio" name="platform" value="behance">
-          <i class="fab fa-behance"></i>
-          <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> -  Comum</span>
-          <span class="opt-val">Comum</span>
-        </div>
-        <div class="option">
-          <input class="s-c top" type="radio" name="platform" value="hackerrank">
-          <input class="s-c bottom" type="radio" name="platform" value="hackerrank">
-          <i class="fab fa-hackerrank"></i>
-          <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> -  Idoso</span>
-          <span class="opt-val">Idoso</span>
-        </div>
-        <div class="option">
-          <input class="s-c top" type="radio" name="platform" value="stackoverflow">
-          <input class="s-c bottom" type="radio" name="platform" value="stackoverflow">
-          <i class="fab fa-stack-overflow"></i>
-          <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> -  Necessudades Especiais</span>
-          <span class="opt-val">Necessudades Especiais</span>
-        </div>
-        <div class="option">
-          <input class="s-c top" type="radio" name="platform" value="freecodecamp">
-          <input class="s-c bottom" type="radio" name="platform" value="freecodecamp">
-          <i class="fab fa-free-code-camp"></i>
-          <span class="label"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg> -  Estudante </span>
-          <span class="opt-val">Estudante</span>
-        </div>
-        <div id="option-bg"></div>
-      </div>
-    </div>
+  </section>
+
   </form>
-</div>  
-    </section>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+</body>
 
 
+<!-- abaixo todo o css fechado -->
 
 
+<!-- abaixo temos o codigo funcional do cadastrar -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
 
 
-    <!-- abaixo temos o codigo NÃO FUNCIONAL  do cadastrar -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('#formulario');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
 
 
-            const form = document.querySelector('#formulario');
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault()
+      try {
+        const formData = new FormData(form);
+        const data = {
+          nome: formData.get('nome'),
+          cpf: formData.get('cpf'),
 
 
-                try {
-                    const formData = new FormData(form);
-                    const data = {
-                        nome: formData.get('nome')
-                        ,
-                    };
+        };
 
-                    const response = await axios.post('http://127.0.0.1:5000/cliente/cadastrar', data);
-                    alert("cadastrou")
-                    // window.location.href = '/entrar';
-                } catch (error) {
-                    console.error("Erro ao enviar requisição:", error);
-                    alert("deu ruim");
-                }
+        const response = await axios.post('http://127.0.0.1:5000/cliente/cadastrar', data);
+        alert("cadastrou")
+        // window.location.href = '/entrar';
+      } catch (error) {
+        console.error("Erro ao enviar requisição:", error);
+        alert("deu ruim");
+      }
 
-                // form.classList.add('was-validated')
-            }, false)
-        });
-    </script>
+      // form.classList.add('was-validated')
+    }, false)
+  });
+</script>
 
 
-
-
-    <!-- api de cep -->
-    <script>
-        const formulario = document.querySelector("form");
-        const resultados = document.querySelector("#resultados");
-
-        formulario.addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            const cep = formulario.cep.value;
-
-            try {
-                const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
-                // console.log(response);
-
-                if (response.ok) {
-                    const data = await response.json();
-                    // console.log(data);
-
-
-                    formulario.cidade.value = data.city;
-                    formulario.estado.value = data.state;
-                    formulario.bairro.value = data.neighborhood;
-                    formulario.rua.value = data.street;
-
-
-
-                } else {
-                    resultados.innerHTML = `<p>O CEP ${cep} é inválido.</p>`;
-                }
-            } catch (error) {
-                console.error(error);
-                resultados.innerHTML = "<p>Erro ao buscar CEP.</p>";
-            }
-        });
-    </script>
+</html>
 
 
 
@@ -216,7 +218,85 @@
 
 
 
-<style>#app-cover {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- api de cep -->
+<script>
+  const formulario = document.querySelector("form");
+  const resultados = document.querySelector("#resultados");
+
+  formulario.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const cep = formulario.cep.value;
+
+    try {
+      const response = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+      // console.log(response);
+
+      if (response.ok) {
+        const data = await response.json();
+        // console.log(data);
+
+
+        formulario.cidade.value = data.city;
+        formulario.estado.value = data.state;
+        formulario.bairro.value = data.neighborhood;
+        formulario.rua.value = data.street;
+
+
+
+      } else {
+        resultados.innerHTML = `<p>O CEP ${cep} é inválido.</p>`;
+      }
+    } catch (error) {
+      console.error(error);
+      resultados.innerHTML = "<p>Erro ao buscar CEP.</p>";
+    }
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- STYLE DO BOTAO DE CORES -->
+
+<style>
+  #app-cover {
     position: absolute;
     top: 0;
     right: 0;
@@ -226,7 +306,7 @@
     margin: 100px auto 0 auto;
     z-index: 1;
   }
-  
+
   #select-button {
     position: relative;
     height: 40px;
@@ -234,10 +314,10 @@
     background-color: #ffffff;
     border-radius: 4px;
     cursor: pointer;
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
     border: #000 solid 1px;
   }
-  
+
   #options-view-button {
     position: absolute;
     top: 0;
@@ -251,24 +331,24 @@
     cursor: pointer;
     z-index: 3;
   }
-  
+
   #selected-value {
     font-size: 16px;
     line-height: 1;
     margin-right: 26px;
   }
-  
+
   .option i {
     width: 16px;
     height: 16px;
   }
-  
+
   .option,
   .label {
     color: #2d3667;
     font-size: 16px;
   }
-  
+
   #chevrons {
     position: absolute;
     top: 0;
@@ -277,7 +357,7 @@
     width: 12px;
     padding: 9px 14px;
   }
-  
+
   #chevrons i {
     display: block;
     height: 50%;
@@ -285,17 +365,17 @@
     font-size: 12px;
     text-align: right;
   }
-  
-  #options-view-button:checked + #select-button #chevrons i {
+
+  #options-view-button:checked+#select-button #chevrons i {
     color: #2d3667;
   }
-  
+
   .options {
     position: absolute;
     left: 0;
     width: 250px;
   }
-  
+
   #options {
     position: absolute;
     top: 42px;
@@ -306,57 +386,57 @@
     background-color: #fff;
     border-radius: 4px;
   }
-  
-  #options-view-button:checked ~ #options {
+
+  #options-view-button:checked~#options {
     border: 1px solid #e2eded;
     border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
   }
-  
+
   .option {
     position: relative;
     line-height: 1;
     transition: 0.3s ease all;
     z-index: 2;
   }
-  
+
   .option i {
     position: absolute;
     left: 14px;
     padding: 0;
     display: none;
   }
-  
-  #options-view-button:checked ~ #options .option i {
+
+  #options-view-button:checked~#options .option i {
     display: block;
     padding: 12px 0;
   }
-  
+
   .label {
     display: none;
     padding: 0;
     margin-left: 27px;
   }
-  
-  #options-view-button:checked ~ #options .label {
+
+  #options-view-button:checked~#options .label {
     display: block;
     padding: 12px 14px;
   }
-  
+
   .s-c {
     position: absolute;
     left: 0;
     width: 100%;
     height: 50%;
   }
-  
+
   .s-c.top {
     top: 0;
   }
-  
+
   .s-c.bottom {
     bottom: 0;
   }
-  
+
   input[type="radio"] {
     position: absolute;
     right: 0;
@@ -367,53 +447,55 @@
     opacity: 0;
     cursor: pointer;
   }
-  
-  .s-c:hover ~ i {
+
+  .s-c:hover~i {
     color: #fff;
     opacity: 0;
   }
-  
+
   .s-c:hover {
     height: 100%;
     z-index: 1;
   }
-  
-  .s-c.bottom:hover + i {
+
+  .s-c.bottom:hover+i {
     bottom: -25px;
     animation: moveup 0.3s ease 0.1s forwards;
   }
-  
-  .s-c.top:hover ~ i {
+
+  .s-c.top:hover~i {
     top: -25px;
     animation: movedown 0.3s ease 0.1s forwards;
   }
-  
+
   @keyframes moveup {
     0% {
       bottom: -25px;
       opacity: 0;
     }
+
     100% {
       bottom: 0;
       opacity: 1;
     }
   }
-  
+
   @keyframes movedown {
     0% {
       top: -25px;
       opacity: 0;
     }
+
     100% {
       top: 0;
       opacity: 1;
     }
   }
-  
+
   .label {
     transition: 0.3s ease all;
   }
-  
+
   .opt-val {
     position: absolute;
     left: 14px;
@@ -423,25 +505,25 @@
     background-color: #fff;
     transform: scale(0);
   }
-  
-  .option input[type="radio"]:checked ~ .opt-val {
+
+  .option input[type="radio"]:checked~.opt-val {
     opacity: 1;
     transform: scale(1);
   }
-  
-  .option input[type="radio"]:checked ~ i {
+
+  .option input[type="radio"]:checked~i {
     top: 0;
     bottom: auto;
     opacity: 1;
     animation: unset;
   }
-  
-  .option input[type="radio"]:checked ~ i,
-  .option input[type="radio"]:checked ~ .label {
+
+  .option input[type="radio"]:checked~i,
+  .option input[type="radio"]:checked~.label {
     color: #fff;
   }
-  
-  .option input[type="radio"]:checked ~ .label:before {
+
+  .option input[type="radio"]:checked~.label:before {
     content: "";
     position: absolute;
     top: 0;
@@ -450,89 +532,85 @@
     left: 0;
     z-index: -1;
   }
-  
-  #options-view-button:not(:checked)
-    ~ #options
-    .option
-    input[type="radio"]:checked
-    ~ .opt-val {
+
+  #options-view-button:not(:checked)~#options .option input[type="radio"]:checked~.opt-val {
     top: -30px;
   }
-  
-  .option:nth-child(1) input[type="radio"]:checked ~ .label:before {
+
+  .option:nth-child(1) input[type="radio"]:checked~.label:before {
     background-color: #000;
     border-radius: 4px 4px 0 0;
   }
-  
-  .option:nth-child(1) input[type="radio"]:checked ~ .opt-val {
+
+  .option:nth-child(1) input[type="radio"]:checked~.opt-val {
     top: -31px;
   }
-  
-  .option:nth-child(2) input[type="radio"]:checked ~ .label:before {
+
+  .option:nth-child(2) input[type="radio"]:checked~.label:before {
     background-color: #ea4c89;
   }
-  
-  .option:nth-child(2) input[type="radio"]:checked ~ .opt-val {
+
+  .option:nth-child(2) input[type="radio"]:checked~.opt-val {
     top: -71px;
   }
-  
-  .option:nth-child(3) input[type="radio"]:checked ~ .label:before {
+
+  .option:nth-child(3) input[type="radio"]:checked~.label:before {
     background-color: #0057ff;
   }
-  
-  .option:nth-child(3) input[type="radio"]:checked ~ .opt-val {
+
+  .option:nth-child(3) input[type="radio"]:checked~.opt-val {
     top: -111px;
   }
-  
-  .option:nth-child(4) input[type="radio"]:checked ~ .label:before {
+
+  .option:nth-child(4) input[type="radio"]:checked~.label:before {
     background-color: #32c766;
   }
-  
-  .option:nth-child(4) input[type="radio"]:checked ~ .opt-val {
+
+  .option:nth-child(4) input[type="radio"]:checked~.opt-val {
     top: -151px;
   }
-  
-  .option:nth-child(5) input[type="radio"]:checked ~ .label:before {
+
+  .option:nth-child(5) input[type="radio"]:checked~.label:before {
     background-color: #f48024;
   }
-  
-  .option:nth-child(5) input[type="radio"]:checked ~ .opt-val {
+
+  .option:nth-child(5) input[type="radio"]:checked~.opt-val {
     top: -191px;
   }
-  
-  .option:nth-child(6) input[type="radio"]:checked ~ .label:before {
+
+  .option:nth-child(6) input[type="radio"]:checked~.label:before {
     background-color: #006400;
     border-radius: 0 0 4px 4px;
   }
-  
-  .option:nth-child(6) input[type="radio"]:checked ~ .opt-val {
+
+  .option:nth-child(6) input[type="radio"]:checked~.opt-val {
     top: -231px;
   }
-  
+
   .option .fa-codepen {
     color: #000;
   }
-  
+
   .option .fa-dribbble {
     color: #ea4c89;
   }
-  
+
   .option .fa-behance {
     color: #0057ff;
   }
-  
+
   .option .fa-hackerrank {
     color: #32c766;
   }
-  
+
   .option .fa-stack-overflow {
     color: #f48024;
   }
-  
+
   .option .fa-free-code-camp {
     color: #006400;
   }
-  
+
   #option-bg {
     position: absolute;
     top: 0;
@@ -543,43 +621,44 @@
     z-index: 1;
     display: none;
   }
-  
-  #options-view-button:checked ~ #options #option-bg {
+
+  #options-view-button:checked~#options #option-bg {
     display: block;
   }
-  
+
   .option:hover .label {
     color: #fff;
   }
-  
-  .option:nth-child(1):hover ~ #option-bg {
+
+  .option:nth-child(1):hover~#option-bg {
     top: 0;
     background-color: #000;
     border-radius: 4px 4px 0 0;
   }
-  
-  .option:nth-child(2):hover ~ #option-bg {
+
+  .option:nth-child(2):hover~#option-bg {
     top: 40px;
     background-color: #ea4c89;
   }
-  
-  .option:nth-child(3):hover ~ #option-bg {
+
+  .option:nth-child(3):hover~#option-bg {
     top: 80px;
     background-color: #0057ff;
   }
-  
-  .option:nth-child(4):hover ~ #option-bg {
+
+  .option:nth-child(4):hover~#option-bg {
     top: 120px;
     background-color: #32c766;
   }
-  
-  .option:nth-child(5):hover ~ #option-bg {
+
+  .option:nth-child(5):hover~#option-bg {
     top: 160px;
     background-color: #f48024;
   }
-  
-  .option:nth-child(6):hover ~ #option-bg {
+
+  .option:nth-child(6):hover~#option-bg {
     top: 200px;
     background-color: #006400;
     border-radius: 0 0 4px 4px;
-  }</style>
+  }
+</style>
