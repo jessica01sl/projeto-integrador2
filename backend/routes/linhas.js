@@ -49,7 +49,7 @@ router.post("/cadastrar", async (req, res, next) => {
 
 
 // atualizar o linha 
-router.put('/atualizar/:id', async (req, res) => {
+router.patch('/editar/:id', async (req, res) => {
   try {
     const linhaId = parseInt(req.params.id);
     const { nome, origem, destino, horarioPartida, duracao } = req.body;
@@ -127,5 +127,32 @@ router.delete('/excluir/:id', async (req, res) => {
 
 
 // buscar um linhas por id
+
+
+
+router.get('/puxar/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    // Consultando a linha pelo ID usando o Prisma
+    const linha = await prisma.linha.findUnique({
+      where: { id: parseInt(id) },
+      include: { viagem: true }, // Incluindo relacionamento com viagem se necessário
+    });
+
+    // Verificando se a linha foi encontrada
+    if (!linha) {
+      return res.status(404).json({ error: 'Linha não encontrada' });
+    }
+
+    // Retornando os dados da linha
+    res.json(linha);
+  } catch (error) {
+    console.error('Erro ao buscar a linha:', error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+
 
 module.exports = router;
