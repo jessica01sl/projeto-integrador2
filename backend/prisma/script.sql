@@ -31,6 +31,7 @@ CREATE TABLE Cliente (
     nome VARCHAR(255) NOT NULL,
     saldo DECIMAL(10, 2) NOT NULL,
     cpf VARCHAR(11) NOT NULL,
+    cartao VARCHAR(1) 
     FOREIGN KEY (usuarioId) REFERENCES Usuario (id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 

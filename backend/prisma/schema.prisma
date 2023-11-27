@@ -13,6 +13,7 @@ model cliente {
   nome      String     @db.VarChar(255)
   saldo     Decimal?   @db.Decimal(10, 2)
   cpf       String     @db.VarChar(11)
+  cartao    String?    @db.VarChar(1)
   usuario   usuario?   @relation(fields: [usuarioId], references: [id], map: "cliente_ibfk_1")
   embarque  embarque[]
 
