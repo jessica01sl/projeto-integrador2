@@ -69,13 +69,55 @@ router.post('/cadastrar', async (req, res) => {
 
 
 
+router.patch('/recarregar/:id', async (req, res) => {
+  const { id } = req.params;
+  const { saldo } = req.body;
+
+  try {
+    // Obtenha o cliente pelo ID
+    const cliente = await prisma.cliente.findUnique({
+      where: { id: Number(id) },
+    });
+    
+
+    if (!cliente) {
+      return res.status(404).json({ error: 'Cliente não encontrado' });
+    }
+
+    // Converta o saldo para um número
+    const saldoNumero = Number(saldo);
+
+    if (isNaN(saldoNumero)) {
+      return res.status(400).json({ error: 'O saldo fornecido não é um número válido' });
+    }
+
+    // Some o saldo da requisição com o saldo atual do cliente
+    // const saldoAtualizado = cliente.saldo ? cliente.saldo + saldoNumero : saldoNumero;
+    const novoSaldo = Number(saldo) + Number(cliente.saldo);
+
+    // Atualize o saldo do cliente no banco de dados
+    const clienteAtualizado = await prisma.cliente.update({
+      where: { id: Number(id) },
+      data: { saldo: novoSaldo },
+    });
+
+    // console.log(clienteAtualizado);
+
+    res.status(200).json({ id: clienteAtualizado.id, saldo: clienteAtualizado.saldo });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Erro interno do servidor' });
+  }
+});
+
+
 
 // atualizar o cliente
 router.patch('/atualizar/:id', async (req, res) => {
   try {
     const clienteId = parseInt(req.params.id);
-    const { nome, saldo, cpf } = req.body;
-
+    const { nome, saldoatual, cpf } = req.body;
+    
     // Verifique se o cliente existe antes de tentar atualizá-lo
     const clienteExistente = await prisma.cliente.findUnique({
       where: { id: clienteId },
@@ -90,7 +132,7 @@ router.patch('/atualizar/:id', async (req, res) => {
       where: { id: clienteId },
       data: {
         nome,
-        saldo,
+        saldo: saldoatual,
         cpf,
       },
     });

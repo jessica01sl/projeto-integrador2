@@ -60,6 +60,7 @@ model usuario {
   nome    String    @db.VarChar(255)
   email   String    @db.VarChar(255)
   senha   String    @db.VarChar(255)
+  token   String    @db.VarChar(255)
   cliente cliente[]
 }
 
