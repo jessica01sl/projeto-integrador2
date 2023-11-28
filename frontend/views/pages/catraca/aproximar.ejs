@@ -14,8 +14,7 @@
         <h1>APROXIME O CARTÃO</h1>
         <img src="/img/aproximar.png" >
         <h6>Linha 115</h6>
-        <div  id="dataHora"></div>
-        <p>www.nomedositeprincipal.com</p>
+        <p>www.SmartBus.com.br</p>
        
 
         <script>
@@ -39,8 +38,42 @@
       </div>
     </div>
 
-    <input name="idcartao" id="idcartao" type="hidden">
 
-    <script src="./js/dataHora.js"></script>
+
+
+    <LABEL>AQUI VEM O ID</LABEL>
+    <input type="text" name="leitor" id="leitor"  />
+
+
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const leitor = document.querySelector("#leitor");
+        leitor.focus();
+      });
+
+
+      const leitor = document.querySelector("#leitor");
+      leitor.addEventListener("input", function() {
+        alert("RFID:" + leitor.value);
+        window.location.href = "/catraca/liberado";       
+      });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 
