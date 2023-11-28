@@ -69,9 +69,9 @@ router.post('/cadastrar', async (req, res) => {
 
 
 
-router.patch('/recarregar/:id', async (req, res) => {
-  const { id } = req.params;
-  const { saldo } = req.body;
+router.patch('/recarregar', async (req, res) => {
+  const { cardnumber, saldo } = req.body;
+  const id = cardnumber;
 
   try {
     // Obtenha o cliente pelo ID
@@ -79,6 +79,7 @@ router.patch('/recarregar/:id', async (req, res) => {
       where: { id: Number(id) },
     });
     
+    console.log(req.body);
 
     if (!cliente) {
       return res.status(404).json({ error: 'Cliente não encontrado' });

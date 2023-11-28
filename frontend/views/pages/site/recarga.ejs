@@ -25,7 +25,7 @@
   // abaixo codigo funcional do editar
   document.addEventListener('DOMContentLoaded', async () => {
     try {
-      const id = window.location.pathname.split('/').pop();
+      // const id = window.location.pathname.split('/').pop();
      
       const form = document.querySelector('#formulario');
       form.addEventListener('submit', async (event) => {
@@ -35,11 +35,13 @@
           try {
             const formData = new FormData(form);
             let saldo = formData.get("saldo");
+            let cardnumber = formData.get("cardnumber");
+            
             saldo = parseFloat(saldo)
 
-            const data = { id, saldo };
+            const data = { cardnumber, saldo };
 
-            await axios.patch(`http://127.0.0.1:5000/cliente/recarregar/${id}`, data);
+            await axios.patch(`http://127.0.0.1:5000/cliente/recarregar`, data);
 
             alert("Transação completa com sucesso.");
             // window.location.href = `/site/perfil`;
@@ -126,7 +128,7 @@
           </div>
           <div class="column-2">
             <label for="cardnumber">Nimero do cartão</label>
-            <input type="password" id="cardnumber" />
+            <input type="password" id="cardnumber" name="cardnumber"/>
 
             <span class="info">* CVV or CVC is the card security code, unique three digits number on the back of your
               card separate from its number.</span>

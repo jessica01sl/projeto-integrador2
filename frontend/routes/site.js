@@ -9,7 +9,7 @@ router.get('/home', function (req, res, next) {
 });
 
 // recarga DO SITE PUBLICO   
-router.get('/recarga/:id', function (req, res, next) {
+router.get('/recarga', function (req, res, next) {
   res.render('pages/site/recarga', { title: 'site publico', layout: 'layout/vazio' });
 });
 
