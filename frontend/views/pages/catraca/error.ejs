@@ -1,0 +1,31 @@
+<body>
+    <div class="container bg-black">
+        <h4 id="data-e-hora"></h4>
+        <h1 class="  text-light bg-black">Erro Desconhecido</h1>
+        <h6 class=" text-light bg-black">Tente aproximar o cartão <br> novamente</h6>
+        <img  class=" bg-black" src="/img/error.png" width="300px">
+        
+        <p class=" text-light bg-black" >www.nomedositeprincipal.com</p>
+    </div>
+
+    <script  src="./js/dataHora.js"></script>
+</body>
+
+<script>
+    function mostrarDataHora() {
+      const elementoDataHora = document.getElementById("data-e-hora");
+      elementoDataHora.style.color = "#eaeaea"; // Define a cor principal do Bootstrap
+      elementoDataHora.style.fontFamily = "Inria Sans, sans-serif"; // Define a fonte do Bootstrap
+      elementoDataHora.style.fontWeight = "bold"; // Define o peso da fonte como negrito
+      function atualizarDataHora() {
+        const data = new Date();
+        const dataFormatada = data.toLocaleDateString();
+        const horaFormatada = data.toLocaleTimeString();
+        elementoDataHora.textContent = `Data: ${dataFormatada} - Hora: ${horaFormatada}`;
+      }
+      setInterval(atualizarDataHora, 1000); // Atualiza a cada segundo
+      atualizarDataHora(); // Para exibir imediatamente
+    }
+
+    mostrarDataHora();
+  </script>

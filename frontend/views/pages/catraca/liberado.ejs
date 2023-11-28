@@ -1,0 +1,32 @@
+<body>
+    <div class="container">
+        <h4 id="data-e-hora"></h4>
+        <h1>PASSE A CATRACA</h1>
+        <img src="/img/liberado.png" width="200px">
+        <div class="info">Nome do passageiro</div>
+        <div class="info">Débito: R$-3,60</div>
+        <div class="info">Restam: R$96,40</div>
+        <div class="p" id="dataHora"></div>
+        <p>www.nomedositeprincipal.com</p>
+    </div>
+
+    <script src="./js/dataHora.js"></script>
+</body>
+<script>
+    function mostrarDataHora() {
+      const elementoDataHora = document.getElementById("data-e-hora");
+      elementoDataHora.style.color = "#eaeaea"; // Define a cor principal do Bootstrap
+      elementoDataHora.style.fontFamily = "Inria Sans, sans-serif"; // Define a fonte do Bootstrap
+      elementoDataHora.style.fontWeight = "bold"; // Define o peso da fonte como negrito
+      function atualizarDataHora() {
+        const data = new Date();
+        const dataFormatada = data.toLocaleDateString();
+        const horaFormatada = data.toLocaleTimeString();
+        elementoDataHora.textContent = `Data: ${dataFormatada} - Hora: ${horaFormatada}`;
+      }
+      setInterval(atualizarDataHora, 1000); // Atualiza a cada segundo
+      atualizarDataHora(); // Para exibir imediatamente
+    }
+
+    mostrarDataHora();
+  </script>

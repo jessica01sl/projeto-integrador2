@@ -10,11 +10,33 @@
 
 <body>
     <div class="container">
+        <h4 id="data-e-hora"></h4>
         <h1>APROXIME O CARTÃO</h1>
         <img src="/img/aproximar.png" >
         <h6>Linha 115</h6>
         <div  id="dataHora"></div>
         <p>www.nomedositeprincipal.com</p>
+       
+
+        <script>
+          function mostrarDataHora() {
+            const elementoDataHora = document.getElementById("data-e-hora");
+            elementoDataHora.style.color = "#eaeaea"; // Define a cor principal do Bootstrap
+            elementoDataHora.style.fontFamily = "Inria Sans, sans-serif"; // Define a fonte do Bootstrap
+            elementoDataHora.style.fontWeight = "bold"; // Define o peso da fonte como negrito
+            function atualizarDataHora() {
+              const data = new Date();
+              const dataFormatada = data.toLocaleDateString();
+              const horaFormatada = data.toLocaleTimeString();
+              elementoDataHora.textContent = `Data: ${dataFormatada} - Hora: ${horaFormatada}`;
+            }
+            setInterval(atualizarDataHora, 1000); // Atualiza a cada segundo
+            atualizarDataHora(); // Para exibir imediatamente
+          }
+
+          mostrarDataHora();
+        </script>
+      </div>
     </div>
 
     <input name="idcartao" id="idcartao" type="hidden">
@@ -22,43 +44,3 @@
     <script src="./js/dataHora.js"></script>
 </body>
 
-<style>@import url('https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&display=swap');
-    *{
-        margin: 0;
-        padding: 0;
-        background-color: rgb(25, 25, 25);
-        font-family: 'Cambay', sans-serif;
-    }
-    
-    img{
-        background-color: #FFB612;
-    }
-    .container{
-        text-align: center;
-        background-color: #FFB612;
-        width:500px ;
-        height:650px;
-    
-    }
-    #dataHora{
-        background-color: #FFB612;
-    }
-    h1{
-        padding: 50px 2px 0 2px;
-        background-color: #FFB612;
-        font-size: 30pt;
-    }
-    
-    h6{
-        font-size: 20pt;
-        background-color: #FFB612;
-    }
-    
-    p{
-        padding: 40px 0 0 0;
-        background-color: #FFB612;
-    }
-    
-    
-    </style>
-</html>
