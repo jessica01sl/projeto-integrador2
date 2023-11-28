@@ -11,102 +11,54 @@
 <body>
     <div class="container">
         <h1>APROXIME O CARTÃO</h1>
-        <img src="./img/cartao-nfc.svg" >
+        <img src="/img/aproximar.png" >
         <h6>Linha 115</h6>
-        <div id="dataHora"></div>
+        <div  id="dataHora"></div>
         <p>www.nomedositeprincipal.com</p>
     </div>
 
     <input name="idcartao" id="idcartao" type="hidden">
 
-
-
-
-
-
-
-
     <script src="./js/dataHora.js"></script>
 </body>
 
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    background-color: #FFB612;
-    font-family: 'Cambay', sans-serif;
-}
-
-.container{
-    text-align: center;
-}
-
-h1{
-    padding: 50px 2px 0 2px;
-
-    font-size: 30pt;
-}
-
-h6{
-    font-size: 20pt;
-}
-
-p{
-    padding: 40px 0 0 0;
-}
-</style>
-
-
-<script>
-   
-    document.addEventListener('DOMContentLoaded', async () => {
-  try {
-      const id = window.location.pathname.split('/').pop();
-      const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
-      const motorista = response.data;
-
-      let form = document.querySelector('#formulario');
-      const nomeInput = document.querySelector('#nome');
-
-      nomeInput.value = motorista.nome;
-
-
-      // abaixo fala sobre o botao subimit para finalizar edição
-      form.addEventListener('submit', async (event) => {
-          event.preventDefault();
-
-
-
-          if (form.checkValidity()) {
-              try {
-                  form = document.querySelector('#formulario');
-                  const formData = new FormData(form);
-                  const nome = formData.get("nome");
-                  const data = { nome };
-                  
-                  await axios.patch(`http://localhost:5000/motoristas/editar/${id}`, data);
-
-                  alert("Motorista editado com sucesso.");
-                  window.location.href = `/adm/motorista`;
-              } catch (error) {
-                  console.log(error);
-                  // alert(error.response.data.mensagem);
-              }
-          }
-
-          form.classList.add('was-validated');
-      }, false);
-  } catch (error) {
-      console.log(error);
-
-      if (error?.response?.status === 404) {
-          alert("Motorista não encontrado.");
-          window.location.href = "/adm/motorista";
-      } else {
-          // alert(error.response.data.mensagem);
-      }
-  }
-
-});
-  </script>
+<style>@import url('https://fonts.googleapis.com/css2?family=Cambay:wght@400;700&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        background-color: rgb(25, 25, 25);
+        font-family: 'Cambay', sans-serif;
+    }
+    
+    img{
+        background-color: #FFB612;
+    }
+    .container{
+        text-align: center;
+        background-color: #FFB612;
+        width:500px ;
+        height:650px;
+    
+    }
+    #dataHora{
+        background-color: #FFB612;
+    }
+    h1{
+        padding: 50px 2px 0 2px;
+        background-color: #FFB612;
+        font-size: 30pt;
+    }
+    
+    h6{
+        font-size: 20pt;
+        background-color: #FFB612;
+    }
+    
+    p{
+        padding: 40px 0 0 0;
+        background-color: #FFB612;
+    }
+    
+    
+    </style>
+</html>
