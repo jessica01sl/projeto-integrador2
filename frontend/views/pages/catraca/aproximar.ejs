@@ -41,12 +41,6 @@
 
 
 
-    <LABEL>AQUI VEM O ID</LABEL>
-    <input type="text" name="leitor" id="leitor"  />
-
-
-
-
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -55,20 +49,96 @@
       });
 
 
-      const leitor = document.querySelector("#leitor");
-      leitor.addEventListener("input", function() {
-        alert("RFID:" + leitor.value);
-        window.location.href = "/catraca/liberado";       
-      });
+      // const leitor = document.querySelector("#leitor");
+      // leitor.addEventListener("input", function() {
+      //   alert("RFID:" + leitor.value);
+      //   window.location.href = "/catraca/liberado";       
+      // });
     </script>
 
 
 
 
+  <script>
+    function verificarSaldo() {
+      // Simulação de consulta ao banco de dados
+      const idDigitado = document.getElementById("leitor").value;
+      const saldoNoBanco = obterSaldoDoBanco(idDigitado);
+
+      if (saldoNoBanco >= 5) {
+        // Caso o saldo seja suficiente
+        deletarSaldoNoBanco(idDigitado, 5);
+        window.location.href = "catraca/liberado";
+      } else {
+        // Caso o saldo seja insuficiente
+        window.location.href = "catraca/negado";
+      }
+    }
+
+    function obterSaldoDoBanco(id) {
+      // Simulação da função para obter saldo do banco de dados
+      // Substitua isso com sua lógica de consulta real
+      const dadosDoBanco = {
+        "123": 10, // Exemplo de ID e saldo
+        "456": 3,
+        // Adicione mais IDs e saldos conforme necessário
+      };
+
+      return dadosDoBanco[id] || 0;
+    }
+
+    function deletarSaldoNoBanco(id, valor) {
+      // Simulação da função para deletar saldo do banco de dados
+      // Substitua isso com sua lógica de remoção real
+      // Normalmente, seria uma chamada AJAX para um servidor
+      console.log(`Removendo ${valor} do saldo do ID ${id}`);
+    }
+  </script>
 
 
 
+<form action="/verificar-saldo" method="post" onsubmit="return verificarSaldo()">
+  <label for="leitor">AQUI VEM O ID</label>
+  <input type="text" name="leitor" id="leitor" />
+  <input type="submit" value="Verificar Saldo">
+</form>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const leitor = document.querySelector("#leitor");
+      leitor.focus();
+  });
+
+  function verificarSaldo() {
+      const idDigitado = document.getElementById("leitor").value;
+      const saldoNoBanco = obterSaldoDoBanco(idDigitado);
+
+      if (saldoNoBanco >= 5) {
+          deletarSaldoNoBanco(idDigitado, 5);
+          alert("Saldo Suficiente. Redirecionando para Catraca Liberada.");
+          window.location.href = "/catraca/liberado";
+          return false; // Evitar que o formulário seja submetido
+      } else {
+          alert("Saldo Insuficiente. Redirecionando para Catraca Negada.");
+          window.location.href = "/catraca/negado";
+          return false; // Evitar que o formulário seja submetido
+      }
+  }
+
+  function obterSaldoDoBanco(id) {
+      const dadosDoBanco = {
+          "123": 10,
+          "456": 3,
+      };
+
+      return dadosDoBanco[id] || 0;
+  }
+
+  function deletarSaldoNoBanco(id, valor) {
+      console.log(`Removendo ${valor} do saldo do ID ${id}`);
+      // Adicione aqui a lógica real para remover o saldo no banco de dados
+  }
+</script>
 
 
 
