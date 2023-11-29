@@ -46,6 +46,7 @@
                 <th>Nome</th>
                 <th>Saldo</th>
                 <th>CPF</th>
+                <th>Tipo do cartão</th>
                 <th>Opções</th>
               </tr>
             </thead>
@@ -125,14 +126,16 @@
             saldoTd.textContent = cliente.saldo;
             tr.appendChild(saldoTd);
 
-            
+          
 
             const cpfTd = document.createElement("td");
             cpfTd.textContent = cliente.cpf;
             tr.appendChild(cpfTd);
 
            
-
+            const cartaoTd = document.createElement("td");
+            cartaoTd.textContent = cliente.cartao;
+            tr.appendChild( cartaoTd);
 
 
 
