@@ -38,8 +38,9 @@
       </div>
     </div>
 
-
-
+<form id="formulario" name="formulario">
+    <input type="text" name="leitor" id="leitor"  />
+  </form>
 
 
     <script>
@@ -58,7 +59,7 @@
 
 
 
-
+<!-- 
   <script>
     function verificarSaldo() {
       // Simulação de consulta ao banco de dados
@@ -100,7 +101,7 @@
 <form action="/verificar-saldo" method="post" onsubmit="return verificarSaldo()">
   <label for="leitor">AQUI VEM O ID</label>
   <input type="text" name="leitor" id="leitor" />
-  <input type="submit" value="Verificar Saldo">
+
 </form>
 
 <script>
@@ -138,10 +139,72 @@
       console.log(`Removendo ${valor} do saldo do ID ${id}`);
       // Adicione aqui a lógica real para remover o saldo no banco de dados
   }
+</script> -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const leitor = document.querySelector("#leitor");
+    leitor.focus();
+  });
+
+
+  
+  // abaixo codigo funcional do editar
+  document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      // const id = window.location.pathname.split('/').pop();
+     
+      const form = document.querySelector('#formulario');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (form.checkValidity()) {
+          try {
+            const formData = new FormData(form);
+            let saldo = -5 ;
+            let cardnumber = formData.get("cardnumber");
+            
+            saldo = parseFloat(saldo)
+
+            const data = { cardnumber, saldo };
+
+            await axios.patch(`http://127.0.0.1:5000/cliente/recarregar`, data);
+
+            alert("Transação completa com sucesso.");
+            // window.location.href = `/site/perfil`;
+          } catch (error) {
+            console.log(error);
+            // alert(error.response.data.mensagem);
+          }
+        }
+
+        form.classList.add('was-validated');
+      }, false);
+    } catch (error) {
+      console.log(error);
+
+      if (error?.response?.status === 404) {
+        alert("Transação não concluida.");
+        window.location.href = "/site/perfil";
+      } else {
+        // alert(error.response.data.mensagem);
+      }
+    }
+
+  });
+
+
+
+
+
+
+  const leitor = document.querySelector("#leitor");
+  leitor.addEventListener("input", function() {
+    alert("RFID:" + leitor.value);
+    window.location.href = "/catraca/liberado";       
+  });
 </script>
-
-
-
 
 
 
