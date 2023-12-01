@@ -39,6 +39,7 @@
               <tr>
                 <th>ID</th>
                 <th>Nome</th>
+                <th>Foto</th>
                 <th>Opções</th>
                 <th>.</th>
               </tr>
@@ -117,13 +118,13 @@
 
         
 
-            // const fotoTd = document.createElement('td');
-            // if (motorista.foto) {
-            //     fotoTd.innerHTML = `<img src="http://localhost:3001/${motorista.foto}" alt="${motorista.nome}" width="50">`;
-            // } else {
-            //     fotoTd.innerHTML = "Não possui.";
-            // }
-            // tr.appendChild(fotoTd);
+            const fotoTd = document.createElement('td');
+            if (motorista.foto) {
+                fotoTd.innerHTML = `<img src="http://localhost:3000/${motorista.foto}" alt="${motorista.nome}" width="50">`;
+            } else {
+                fotoTd.innerHTML = "Não possui.";
+            }
+            tr.appendChild(fotoTd);
 
             const acoesTd = document.createElement("td");
             // <a href="/motoristas/exibir/${motorista.id}">Exibir</a>

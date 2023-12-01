@@ -33,6 +33,7 @@ app.use('/linhas', linhasRouter);
 app.use('/onibus', onibusRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/cliente', clienteRouter);
+// app.use('/uploads', express.static(uploads));
 
 module.exports = app;
 
