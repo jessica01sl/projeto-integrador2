@@ -29,15 +29,32 @@
           <br>
           <div class=" rounded-bottom-4">
             <div class="container">
-              <h4>Cadastro de Onibus da empresa</h4>
+              <h4>Edição dos Dados de um cliente</h4>
               <form id="formulario" name="formulario" class="mx-auto my-4" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="nome">Placamento do veiculo</label>
+                      <label for="nome"> Nome do cliente </label>
                       <input type="text" id="nome" name="nome" class="form-control" placeholder="aaa-0000" required>
                     </div>
+                    <div class="form-group">
+                      <label for="nome"> CPF do cliente </label>
+                      <input type="text" id="cpf" name="cpf" class="form-control" placeholder="000.000.000-00" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="nome"> Tipo do cartão </label>
+                      <input type="text" id="cartao" name="cartao" class="form-control" placeholder="coloque o numero referente ao tipo" required>
+                    </div>
                   </div>
+                  
+
+
+
+
+
+
+
+
                   <!-- <div class="col-md-6">
                                       <div class="form-group">
                                           <label for="inputState">Envio de documentos</label>
@@ -47,7 +64,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary"
                   style="background-color: #FF9e00; color: #000;">Enviar</button>
-                <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;" href="/adm/onibus">
+                <a class="btn btn-primary" style="background-color: #FF9e00; color: #000;" href="/adm/cliente">
                   Cancelar</a>
   
               </form>
@@ -60,21 +77,28 @@
 
 
 
-
-
 <script>
 // abaixo codigo funcional do editar
 document.addEventListener('DOMContentLoaded', async () => {
 try {
   const id = window.location.pathname.split('/').pop();
-  const response = await axios.get(`http://127.0.0.1:5000/motoristas/puxar/${id}`);
-  const motorista = response.data;
+  const response = await axios.get(`http://127.0.0.1:5000/cliente/pesquisa/${id}`);
+  const cliente = response.data;
 
   let form = document.querySelector('#formulario');
-  const nomeInput = document.querySelector('#nome');
+          const inputs = {
+            nome: cliente.nome,
+            cpf: cliente.cpf,
+            cartao:cliente.cartao,
 
-  nomeInput.value = motorista.nome;
+          };
 
+          for (const [campo, valor] of Object.entries(inputs)) {
+            const inputElement = document.querySelector(`#${campo}`);
+            if (inputElement) {
+              inputElement.value = valor;
+            }
+          }
 
   // abaixo fala sobre o botao subimit para finalizar edição
   form.addEventListener('submit', async (event) => {
@@ -89,10 +113,11 @@ try {
               const nome = formData.get("nome");
               const data = { nome };
               
-              await axios.patch(`http://localhost:5000/motoristas/editar/${id}`, data);
+              
+              await axios.patch(`http://127.0.0.1:5000/cliente/atualizar/${id}`, data);
 
               alert("Motorista editado com sucesso.");
-              window.location.href = `/adm/motorista`;
+              window.location.href = `/adm/cliente`;
           } catch (error) {
               console.log(error);
               // alert(error.response.data.mensagem);
@@ -105,8 +130,8 @@ try {
   console.log(error);
 
   if (error?.response?.status === 404) {
-      alert("Motorista não encontrado.");
-      window.location.href = "/adm/motorista";
+      alert("Cliente não encontrado.");
+      window.location.href = "/adm/cliente";
   } else {
       // alert(error.response.data.mensagem);
   }

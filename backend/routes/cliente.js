@@ -200,7 +200,7 @@ router.delete('/excluir/:id', async (req, res) => {
 
 
 
-// buscar um motorista por id funcionando
+// buscar um clientes por id funcionando
 router.get('/pesquisa/:id', async (req, res) => {
   try {
     const clienteId = parseInt(req.params.id);
@@ -248,6 +248,14 @@ router.delete('/deleteid/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
+
+
+
+
+
+
+
 
 
 module.exports = router;
