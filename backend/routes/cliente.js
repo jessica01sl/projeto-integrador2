@@ -34,7 +34,7 @@ router.get('/listar', async (req, res) => {
 // cadastrar cliente funcionando
 router.post('/cadastrar', async (req, res) => {
   try {
-    const { usuarioId, nome, saldo, cpf } = req.body;
+    const { usuarioId, nome, saldo, cpf, cartao } = req.body;
 
     // Crie um novo cliente no banco de dados
     const novoCliente = await prisma.cliente.create({
@@ -43,6 +43,7 @@ router.post('/cadastrar', async (req, res) => {
         nome,
         saldo,
         cpf,
+        cartao, // Inclua o campo "cartao" na criação do cliente
       },
     });
 
@@ -52,6 +53,7 @@ router.post('/cadastrar', async (req, res) => {
     res.status(500).json({ error: 'Erro interno do servidor' });
   }
 });
+
 
 
 
