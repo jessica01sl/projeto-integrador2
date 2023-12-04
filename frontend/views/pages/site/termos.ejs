@@ -1,456 +1,256 @@
+<script>
+  document.addEventListener("DOMContentLoaded", async (event) => {
+    const tokenDaSessao = getCookie('token'); /// nao sei se seria token ou jwt
 
-<form id="app-cover">
-  <div id="select-box">
-    <input type="checkbox" id="options-view-button">
-    <div id="select-button" class="brd">
-      <div id="selected-value">
-        <span>Select a platform</span>
-      </div>
-      <div id="chevrons">
-        <i class="fas fa-chevron-up"></i>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-    <div id="options">
-      <div class="option">
-        <input class="s-c top" type="radio" name="platform" value="codepen">
-        <input class="s-c bottom" type="radio" name="platform" value="codepen">
-        <i class="fab fa-codepen"></i>
-        <span class="label">CodePen</span>
-        <span class="opt-val">CodePen</span>
-      </div>
-      <div class="option">
-        <input class="s-c top" type="radio" name="platform" value="dribbble">
-        <input class="s-c bottom" type="radio" name="platform" value="dribbble">
-        <i class="fab fa-dribbble"></i>
-        <span class="label">Dribbble</span>
-        <span class="opt-val">Dribbble</span>
-      </div>
-      <div class="option">
-        <input class="s-c top" type="radio" name="platform" value="behance">
-        <input class="s-c bottom" type="radio" name="platform" value="behance">
-        <i class="fab fa-behance"></i>
-        <span class="label">Behance</span>
-        <span class="opt-val">Behance</span>
-      </div>
-      <div class="option">
-        <input class="s-c top" type="radio" name="platform" value="hackerrank">
-        <input class="s-c bottom" type="radio" name="platform" value="hackerrank">
-        <i class="fab fa-hackerrank"></i>
-        <span class="label">HackerRank</span>
-        <span class="opt-val">HackerRank</span>
-      </div>
-      <div class="option">
-        <input class="s-c top" type="radio" name="platform" value="stackoverflow">
-        <input class="s-c bottom" type="radio" name="platform" value="stackoverflow">
-        <i class="fab fa-stack-overflow"></i>
-        <span class="label">StackOverflow</span>
-        <span class="opt-val">StackOverflow</span>
-      </div>
-      <div class="option">
-        <input class="s-c top" type="radio" name="platform" value="freecodecamp">
-        <input class="s-c bottom" type="radio" name="platform" value="freecodecamp">
-        <i class="fab fa-free-code-camp"></i>
-        <span class="label">FreeCodeCamp</span>
-        <span class="opt-val">FreeCodeCamp</span>
-      </div>
-      <div id="option-bg"></div>
-    </div>
-  </div>
-</form>
+        if (tokenDaSessao == null){
+            window.location.href = 'http://localhost:3000/logar'
+        }
+    
+    const tokenDecodificado = decodeToken(tokenDaSessao)
+    console.log(tokenDecodificado)
 
-<style>* {
-    user-select: none;
-  }
-  
-  *:focus {
-    outline: none;
-  }
-  
-  
-  
+    const campoNome = document.querySelector('#nome');
+    const campoCPF = document.querySelector('#cpf');
+    const botaoSaldo = document.querySelector('#button-saldo');
 
-  
-  .brd {
-    border: 1px solid #e2eded;
-    border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
-  }
-  
-  #info {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    color: #2d3667;
-    font-size: 16px;
-    text-align: center;
-    padding: 14px;
-    background-color: #f3f9f9;
-  }
-  
-  #app-cover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    width: 300px;
-    height: 42px;
-    margin: 100px auto 0 auto;
-    z-index: 1;
-  }
-  
-  #select-button {
-    position: relative;
-    height: 16px;
-    padding: 12px 14px;
-    background-color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  #options-view-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-    z-index: 3;
-  }
-  
-  #selected-value {
-    font-size: 16px;
-    line-height: 1;
-    margin-right: 26px;
-  }
-  
-  .option i {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .option,
-  .label {
-    color: #2d3667;
-    font-size: 16px;
-  }
-  
-  #chevrons {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 12px;
-    padding: 9px 14px;
-  }
-  
-  #chevrons i {
-    display: block;
-    height: 50%;
-    color: #d1dede;
-    font-size: 12px;
-    text-align: right;
-  }
-  
-  #options-view-button:checked + #select-button #chevrons i {
-    color: #2d3667;
-  }
-  
-  .options {
-    position: absolute;
-    left: 0;
-    width: 250px;
-  }
-  
-  #options {
-    position: absolute;
-    top: 42px;
-    right: 0;
-    left: 0;
-    width: 298px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 4px;
-  }
-  
-  #options-view-button:checked ~ #options {
-    border: 1px solid #e2eded;
-    border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
-  }
-  
-  .option {
-    position: relative;
-    line-height: 1;
-    transition: 0.3s ease all;
-    z-index: 2;
-  }
-  
-  .option i {
-    position: absolute;
-    left: 14px;
-    padding: 0;
-    display: none;
-  }
-  
-  #options-view-button:checked ~ #options .option i {
-    display: block;
-    padding: 12px 0;
-  }
-  
-  .label {
-    display: none;
-    padding: 0;
-    margin-left: 27px;
-  }
-  
-  #options-view-button:checked ~ #options .label {
-    display: block;
-    padding: 12px 14px;
-  }
-  
-  .s-c {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 50%;
-  }
-  
-  .s-c.top {
-    top: 0;
-  }
-  
-  .s-c.bottom {
-    bottom: 0;
-  }
-  
-  input[type="radio"] {
-    position: absolute;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .s-c:hover ~ i {
-    color: #fff;
-    opacity: 0;
-  }
-  
-  .s-c:hover {
-    height: 100%;
-    z-index: 1;
-  }
-  
-  .s-c.bottom:hover + i {
-    bottom: -25px;
-    animation: moveup 0.3s ease 0.1s forwards;
-  }
-  
-  .s-c.top:hover ~ i {
-    top: -25px;
-    animation: movedown 0.3s ease 0.1s forwards;
-  }
-  
-  @keyframes moveup {
-    0% {
-      bottom: -25px;
-      opacity: 0;
+    var saldoCliente, cpfCliente, nomeCliente;
+
+    try {
+        const response = await axios.get(`http://127.0.0.1:5000/cliente/listar/${tokenDecodificado.id}`);
+
+        saldoCliente = response.data.saldo;
+        cpfCliente = response.data.cpf;
+        nomeCliente = response.data.nome;
+
+        
+    } catch (error) {
+        alert(error.message)
     }
-    100% {
-      bottom: 0;
-      opacity: 1;
-    }
-  }
-  
-  @keyframes movedown {
-    0% {
-      top: -25px;
-      opacity: 0;
-    }
-    100% {
-      top: 0;
-      opacity: 1;
-    }
-  }
-  
-  .label {
-    transition: 0.3s ease all;
-  }
-  
-  .opt-val {
-    position: absolute;
-    left: 14px;
-    width: 217px;
-    height: 21px;
-    opacity: 0;
-    background-color: #fff;
-    transform: scale(0);
-  }
-  
-  .option input[type="radio"]:checked ~ .opt-val {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .option input[type="radio"]:checked ~ i {
-    top: 0;
-    bottom: auto;
-    opacity: 1;
-    animation: unset;
-  }
-  
-  .option input[type="radio"]:checked ~ i,
-  .option input[type="radio"]:checked ~ .label {
-    color: #fff;
-  }
-  
-  .option input[type="radio"]:checked ~ .label:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-  }
-  
-  #options-view-button:not(:checked)
-    ~ #options
-    .option
-    input[type="radio"]:checked
-    ~ .opt-val {
-    top: -30px;
-  }
-  
-  .option:nth-child(1) input[type="radio"]:checked ~ .label:before {
-    background-color: #000;
-    border-radius: 4px 4px 0 0;
-  }
-  
-  .option:nth-child(1) input[type="radio"]:checked ~ .opt-val {
-    top: -31px;
-  }
-  
-  .option:nth-child(2) input[type="radio"]:checked ~ .label:before {
-    background-color: #ea4c89;
-  }
-  
-  .option:nth-child(2) input[type="radio"]:checked ~ .opt-val {
-    top: -71px;
-  }
-  
-  .option:nth-child(3) input[type="radio"]:checked ~ .label:before {
-    background-color: #0057ff;
-  }
-  
-  .option:nth-child(3) input[type="radio"]:checked ~ .opt-val {
-    top: -111px;
-  }
-  
-  .option:nth-child(4) input[type="radio"]:checked ~ .label:before {
-    background-color: #32c766;
-  }
-  
-  .option:nth-child(4) input[type="radio"]:checked ~ .opt-val {
-    top: -151px;
-  }
-  
-  .option:nth-child(5) input[type="radio"]:checked ~ .label:before {
-    background-color: #f48024;
-  }
-  
-  .option:nth-child(5) input[type="radio"]:checked ~ .opt-val {
-    top: -191px;
-  }
-  
-  .option:nth-child(6) input[type="radio"]:checked ~ .label:before {
-    background-color: #006400;
-    border-radius: 0 0 4px 4px;
-  }
-  
-  .option:nth-child(6) input[type="radio"]:checked ~ .opt-val {
-    top: -231px;
-  }
-  
-  .option .fa-codepen {
-    color: #000;
-  }
-  
-  .option .fa-dribbble {
-    color: #ea4c89;
-  }
-  
-  .option .fa-behance {
-    color: #0057ff;
-  }
-  
-  .option .fa-hackerrank {
-    color: #32c766;
-  }
-  
-  .option .fa-stack-overflow {
-    color: #f48024;
-  }
-  
-  .option .fa-free-code-camp {
-    color: #006400;
-  }
-  
-  #option-bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 40px;
-    transition: 0.3s ease all;
-    z-index: 1;
-    display: none;
-  }
-  
-  #options-view-button:checked ~ #options #option-bg {
-    display: block;
-  }
-  
-  .option:hover .label {
-    color: #fff;
-  }
-  
-  .option:nth-child(1):hover ~ #option-bg {
-    top: 0;
-    background-color: #000;
-    border-radius: 4px 4px 0 0;
-  }
-  
-  .option:nth-child(2):hover ~ #option-bg {
-    top: 40px;
-    background-color: #ea4c89;
-  }
-  
-  .option:nth-child(3):hover ~ #option-bg {
-    top: 80px;
-    background-color: #0057ff;
-  }
-  
-  .option:nth-child(4):hover ~ #option-bg {
-    top: 120px;
-    background-color: #32c766;
-  }
-  
-  .option:nth-child(5):hover ~ #option-bg {
-    top: 160px;
-    background-color: #f48024;
-  }
-  
-  .option:nth-child(6):hover ~ #option-bg {
-    top: 200px;
-    background-color: #006400;
-    border-radius: 0 0 4px 4px;
-  }
-  </style>
+
+    botaoSaldo.setAttribute('clicado', 'nao')
+
+    botaoSaldo.addEventListener('click', (event) => {
+        if (botaoSaldo.attributes.clicado.value == 'nao'){
+            botaoSaldo.innerHTML = `R$${saldoCliente}`
+            botaoSaldo.attributes.clicado.value = 'sim'
+        } else {
+            botaoSaldo.innerHTML = "******"
+            botaoSaldo.attributes.clicado.value = 'nao'
+        }
+    })
+
+    campoNome.value = nomeCliente;
+    campoCPF.value = cpfCliente;
+    
+
+    const formPatch = document.querySelector('#formulario-recarregar');
+
+    const valor = document.querySelector('#Valor'); //aqui nois devemos pegar os dados do formulario que vamos enviar para recarregar
+})
+</script>
+
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STPSP</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="stylesheets/site/recarga-cartao.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="linha-between" id="imagens-botoes">
+            <div class="logo">
+              <img src="/images/logo-site.png" alt="logo do Sistema de Transporte Público de São Paulo">
+            </div>
+            
+            <div class="header-botoes">
+                <button class="botao login"><a href="http://localhost:3000/logar">Login</a></button>
+                <button class="botao inscrever" id="inscrever-se">Adquira já</button>
+            </div>
+        </div>
+
+        <div class="separador-menu"></div>
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary menu-container" style="padding: 0px;">
+          <div class="container-fluid menu-navbar">
+            <button class="navbar-toggler menu-hamburguer" type="button" data-bs-toggle="collapse" data-bs-theme="dark" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse menu-flex" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" aria-current="page" href="http://localhost:3000/">Página
+                            Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="http://localhost:3000/carteirinha">Seu Cartão</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="http://localhost:3000/recarregar">Recarga</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="http://localhost:3000/linhas">Linhas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="http://localhost:3000/sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="http://localhost:3000/atendimento">Atendimento</a>
+                    </li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <h3 id="centro">Seu Cartão</h3>
+    <div class="pai">
+        <div class="campo">
+            <div class="container-info-cartao">
+
+                <div class="seus-dados" id="seus-dados">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label ">Nome</label>
+                            <input type="text" class="form-control formulario border-black w-100" id="nome" aria-describedby="emailHelp" disabled>
+                        </div>
+
+
+
+
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label ">CPF</label>
+                        <input type="text" class="form-control formulario border-black" id="cpf" aria-describedby="emailHelp" disabled>
+                    </div>
+
+
+
+
+                        <h3 id="centro">Saldo</h3>
+
+                        <div class="saldo">
+                            <button id="button-saldo">******</button>
+                        </div>
+                    </div>
+            </div>
+
+
+            <h3>Quer recarregar o seu Cartão?</h3>
+
+
+
+            <!-- <div class="container2">
+                <form class="org" id="formulario-recarregar">
+                    <p>Métodos de pagamento</p>
+
+
+                    <div class="pagamento">
+                        <button id="button-pag" class="btn" type="submit">Débito</button>
+                        <button id="button-pag" class="btn" type="submit">Crédito</button>
+                        <button id="button-pag" class="btn" type="submit">Pix</button>
+                        <button id="button-pag" class="btn" type="submit">Boleto</button>
+                    </div>
+
+                    <div class="metodos-pagamento">
+                        <img src="/images/visa.png" alt="">
+                        <img src="/images/mastercard.png" alt="">
+                        <img src="/images/elo.png" alt="">
+                    </div>
+
+                    <div class="cartao">
+
+                        <div class="mb-3">
+                            <label for="Numero-cartao" class="form-label ">Número do Cartão</label>
+                            <input type="number" class="form-control formulario border-black w-100" id="Numero-cartao" aria-describedby="emailHelp">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="Nome" class="form-label ">Nome Completo</label>
+                            <input type="text" class="form-control formulario border-black w-100" id="Nome-Completo" aria-describedby="emailHelp">
+                        </div>
+                                <div class="mb-3">
+                                    <label for="Validade" class="form-label ">Validade</label>
+                                    <input type="number" class="form-control formulario border-black w-100" id="Validade"
+                                        aria-describedby="emailHelp" required placeholder="00/00/0000">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="CVC" class="form-label ">CVC</label>
+                                    <input type="number" class="form-control formulario border-black w-100" id="CVC"
+                                        aria-describedby="emailHelp" required placeholder="000">
+                                </div>
+
+                            <div class="mb-3">
+                                <label for="Valor" class="form-label ">Valor</label>
+                                <input type="number" class="form-control formulario border-black w-100" id="Valor"
+                                    aria-describedby="emailHelp">
+                            </div>
+
+                            <button type="submit" class="btn">Enviar</button>
+                            
+                        </div>
+                    </form>
+            </div> -->
+        </div>
+
+        <footer>
+            <div class="container-footer">
+                <div class="row-footer">
+
+                    <!--coluna 1-->
+                    <div class="footer-col">
+                        <h4>Produtos</h4>
+                        <ul>
+                            <li><a href="#">Conta Digital</a></li>
+                            <li><a href="#">Cartão de transporte</a></li>
+                            <li><a href="#">Recarga</li>
+                        </ul>
+                    </div>
+                    <!--fim da coluna 1-->
+
+                    <!--coluna 2-->
+                    <div class="footer-col">
+                        <h4>Atendimento</h4>
+                        <ul>
+                            <li><a href="#">Atendimento whatsaap</a></li>
+                            <li><a href="#">Duvidas Frequentes</a></li>
+                            <li><a href="#">Contato institucional</a></li>
+                            <!--<li><a href="#">sadasfaf@gmail.com</a></li>-->
+                        </ul>
+                    </div>
+                    <!--fim da coluna 2-->
+
+                    <!--coluna 4-->
+                    <div class="footer-col">
+                        <h4>Nos siga nas redes socias</h4>
+                        <div class="rede-social">
+                            <img src="/images/instagram.png" alt="">
+                            <img src="/images/twitter.png" alt="">
+                            <img src="/images/facebook.png" alt="">
+
+
+
+
+                        </div>
+                    </div>
+                    <!--fim da coluna 4-->
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="/javascripts/site/cookiemanager.js"></script>
+        <script src="/javascripts/site/recarga-token-validacao.js"></script>
+</body>
+
+</html>

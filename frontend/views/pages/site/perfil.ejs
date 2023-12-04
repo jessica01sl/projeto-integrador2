@@ -110,4 +110,88 @@ script>
     crossorigin="anonymous"></script>
 </body>
 
-</html>
+
+
+
+<h3 id="centro">Seu Cartão</h3>
+<div class="pai">
+    <div class="campo">
+        <div class="container-info-cartao">
+
+            <div class="seus-dados" id="seus-dados">
+                    <div class="mb-3">
+                        <label for="nome" class="form-label ">Nome</label>
+                        <input type="text" class="form-control formulario border-black w-100" id="nome" name="nome" aria-describedby="emailHelp" disabled>
+                    </div>
+
+
+
+
+                <div class="mb-3">
+                    <label for="cpf" class="form-label ">CPF</label>
+                    <input type="text" class="form-control formulario border-black" id="cpf" aria-describedby="emailHelp" disabled>
+                </div>
+
+
+
+
+                    <h3 id="centro">Saldo</h3>
+
+                    <div class="saldo">
+                        <button id="button-saldo">******</button>
+                    </div>
+                </div>
+        </div>
+
+
+<!-- script do saldo -->
+<script>
+document.addEventListener("DOMContentLoaded", async (event) => {
+  const tokenDaSessao = getCookie('jwt');
+
+      if (tokenDaSessao == null){
+          window.location.href = 'http://localhost:3000/adm'
+      }
+  
+  const tokenDecodificado = decodeToken(tokenDaSessao)
+  console.log(tokenDecodificado)
+
+  const campoNome = document.querySelector('#nome');
+  const campoCPF = document.querySelector('#cpf');
+  const botaoSaldo = document.querySelector('#button-saldo');
+
+  var saldo, cpf, nome;
+
+  try {
+      const response = await axios.get(`http://127.0.0.1:5000/cliente/pesquisa/${tokenDecodificado.id}`);
+
+      saldo = response.data.saldo;
+      cpf = response.data.cpf;
+      nome = response.data.nome;
+
+      
+  } catch (error) {
+      alert(error.message)
+  }
+
+  botaoSaldo.setAttribute('clicado', 'nao')
+
+  botaoSaldo.addEventListener('click', (event) => {
+      if (botaoSaldo.attributes.clicado.value == 'nao'){
+          botaoSaldo.innerHTML = `R$${saldoCliente}`
+          botaoSaldo.attributes.clicado.value = 'sim'
+      } else {
+          botaoSaldo.innerHTML = "******"
+          botaoSaldo.attributes.clicado.value = 'nao'
+      }
+  })
+
+  campoNome.value = nomeCliente;
+  campoCPF.value = cpfCliente;
+  
+
+  const formPatch = document.querySelector('#formulario-recarregar');
+
+  const valor = document.querySelector('#Valor'); //aqui nois devemos pegar os dados do formulario que vamos enviar para recarregar
+})
+</script>
