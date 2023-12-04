@@ -23,14 +23,14 @@ model cliente {
 model embarque {
   id        Int      @id @default(autoincrement())
   clienteId Int
-  viagemId  Int
+  viagemId  Int?
   tarifa    Decimal  @db.Decimal(10, 2)
-  horario   DateTime @db.DateTime(0)
+  horario   DateTime @default(now()) @db.DateTime(0)
   cliente   cliente  @relation(fields: [clienteId], references: [id], map: "embarque_ibfk_1")
-  viagem    viagem   @relation(fields: [viagemId], references: [id], map: "embarque_ibfk_2")
+  viagem    viagem?  @relation(fields: [viagemId], references: [id], onDelete: Restrict, map: "embarque_ibfk_2")
 
   @@index([clienteId], map: "clienteId")
-  @@index([viagemId], map: "viagemId")
+  @@index([viagemId], map: "embarque_ibfk_2")
 }
 
 model linha {

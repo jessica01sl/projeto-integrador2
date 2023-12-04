@@ -38,174 +38,46 @@
       </div>
     </div>
 
-<form id="formulario" name="formulario">
-    <input type="text" name="leitor" id="leitor"  />
-  </form>
-
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const leitor = document.querySelector("#leitor");
-        leitor.focus();
-      });
-
-
-      // const leitor = document.querySelector("#leitor");
-      // leitor.addEventListener("input", function() {
-      //   alert("RFID:" + leitor.value);
-      //   window.location.href = "/catraca/liberado";       
-      // });
-    </script>
-
-
-
-<!-- 
-  <script>
-    function verificarSaldo() {
-      // Simulação de consulta ao banco de dados
-      const idDigitado = document.getElementById("leitor").value;
-      const saldoNoBanco = obterSaldoDoBanco(idDigitado);
-
-      if (saldoNoBanco >= 5) {
-        // Caso o saldo seja suficiente
-        deletarSaldoNoBanco(idDigitado, 5);
-        window.location.href = "catraca/liberado";
-      } else {
-        // Caso o saldo seja insuficiente
-        window.location.href = "catraca/negado";
-      }
-    }
-
-    function obterSaldoDoBanco(id) {
-      // Simulação da função para obter saldo do banco de dados
-      // Substitua isso com sua lógica de consulta real
-      const dadosDoBanco = {
-        "123": 10, // Exemplo de ID e saldo
-        "456": 3,
-        // Adicione mais IDs e saldos conforme necessário
-      };
-
-      return dadosDoBanco[id] || 0;
-    }
-
-    function deletarSaldoNoBanco(id, valor) {
-      // Simulação da função para deletar saldo do banco de dados
-      // Substitua isso com sua lógica de remoção real
-      // Normalmente, seria uma chamada AJAX para um servidor
-      console.log(`Removendo ${valor} do saldo do ID ${id}`);
-    }
-  </script>
-
-
-
-<form action="/verificar-saldo" method="post" onsubmit="return verificarSaldo()">
-  <label for="leitor">AQUI VEM O ID</label>
-  <input type="text" name="leitor" id="leitor" />
-
-</form>
+    <input type="text" name="clienteId" id="clienteId" placeholder="Informar o código do cartão." onchange="lerCartao()">
+   
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <script defer src="/js/app/aguardando.js"></script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-      const leitor = document.querySelector("#leitor");
-      leitor.focus();
-  });
-
-  function verificarSaldo() {
-      const idDigitado = document.getElementById("leitor").value;
-      const saldoNoBanco = obterSaldoDoBanco(idDigitado);
-
-      if (saldoNoBanco >= 5) {
-          deletarSaldoNoBanco(idDigitado, 5);
-          alert("Saldo Suficiente. Redirecionando para Catraca Liberada.");
-          window.location.href = "/catraca/liberado";
-          return false; // Evitar que o formulário seja submetido
-      } else {
-          alert("Saldo Insuficiente. Redirecionando para Catraca Negada.");
-          window.location.href = "/catraca/negado";
-          return false; // Evitar que o formulário seja submetido
-      }
-  }
-
-  function obterSaldoDoBanco(id) {
-      const dadosDoBanco = {
-          "123": 10,
-          "456": 3,
-      };
-
-      return dadosDoBanco[id] || 0;
-  }
-
-  function deletarSaldoNoBanco(id, valor) {
-      console.log(`Removendo ${valor} do saldo do ID ${id}`);
-      // Adicione aqui a lógica real para remover o saldo no banco de dados
-  }
-</script> -->
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const leitor = document.querySelector("#leitor");
-    leitor.focus();
-  });
-
-
-  
-  // abaixo codigo funcional do editar
-  document.addEventListener('DOMContentLoaded', async () => {
+  const lerCartao = async () => {
     try {
-      // const id = window.location.pathname.split('/').pop();
-     
-      const form = document.querySelector('#formulario');
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-
-        if (form.checkValidity()) {
-          try {
-            const formData = new FormData(form);
-            let saldo = -5 ;
-            let cardnumber = formData.get("cardnumber");
-            
-            saldo = parseFloat(saldo)
-
-            const data = { cardnumber, saldo };
-
-            await axios.patch(`http://127.0.0.1:5000/cliente/recarregar`, data);
-
-            alert("Transação completa com sucesso.");
-            // window.location.href = `/site/perfil`;
-          } catch (error) {
-            console.log(error);
-            // alert(error.response.data.mensagem);
-          }
-        }
-
-        form.classList.add('was-validated');
-      }, false);
+      // Obtenha o valor do input
+      const clienteId = inputClienteId.value;
+      
+      // Faça a solicitação POST usando Axios
+      const url = "http://localhost:5000/cliente/liberar";
+      const data = { clienteId };
+      const response = await axios.post(url, data);
+  
+      console.log(response.data);
+      
+      // Se a solicitação for bem-sucedida, redirecione para a página de sucesso
+      window.location.href = "http://localhost:3000/catraca/liberado";
     } catch (error) {
-      console.log(error);
-
-      if (error?.response?.status === 404) {
-        alert("Transação não concluida.");
-        window.location.href = "/site/perfil";
+      console.error("Erro ao cadastrar embarque:", error);
+  
+      // Se o erro for relacionado ao cliente não encontrado, redirecione para a página de aviso indicando a causa
+      if (error.response && error.response.status === 404) {
+        window.location.href = "http://localhost:3000/catraca/error";
+      } else if (error.response && error.response.status === 402) {
+        // Se o erro for relacionado a saldo insuficiente, redirecione para a página de aviso indicando a causa
+        window.location.href = "http://localhost:3000/catraca/semsaldo";
       } else {
-        // alert(error.response.data.mensagem);
+        // Para outros erros, redirecione para a página de erro
+        window.location.href = "http://localhost:3000/catraca/error";
       }
     }
-
-  });
-
-
-
-
-
-
-  const leitor = document.querySelector("#leitor");
-  leitor.addEventListener("input", function() {
-    alert("RFID:" + leitor.value);
-    window.location.href = "/catraca/liberado";       
-  });
+  };
+  
+  const inputClienteId = document.querySelector("#clienteId");
+  inputClienteId.focus();
 </script>
-
 
 
 </body>
