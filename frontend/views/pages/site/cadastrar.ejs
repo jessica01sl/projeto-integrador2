@@ -55,7 +55,7 @@
                     <button type="submit" class="btn btn-google col">
                       <i class="mdi mdi-google-plus"></i> Google plus </button>
                   </div>
-                  <p class="sign-up text-center">Já tem uma conta?<a href="login.html"> Entrar</a></p>
+                  <p class="sign-up text-center">Já tem uma conta?<a href="http://127.0.0.1:3000/site/login"> Entrar</a></p>
                   <p class="terms">Ao criar uma conta você está aceitando nossos<a href="#"> Termos & Condições</a></p>
                 </form>
               </div>
@@ -90,7 +90,7 @@
           
           const response = await axios.post('http://127.0.0.1:5000/usuario/cadastrar', data);
           alert("cadastrou")
-          // window.location.href = '/entrar';
+          window.location.href = 'http://127.0.0.1:3000/site/login';
         } catch (error) {
           console.error("Erro ao enviar requisição:", error);
           alert("deu ruim");
