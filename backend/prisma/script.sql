@@ -8,6 +8,7 @@ CREATE TABLE Usuario (
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
     senha VARCHAR(255) NOT NULL,
+    token VARCHAR(255) NOT NULL
 );
 
 -- CreateTable
@@ -31,7 +32,6 @@ CREATE TABLE Cliente (
     nome VARCHAR(255) NOT NULL,
     saldo DECIMAL(10, 2) NOT NULL,
     cpf VARCHAR(11) NOT NULL,
-    cartao VARCHAR(1) 
     FOREIGN KEY (usuarioId) REFERENCES Usuario (id) ON DELETE SET NULL ON UPDATE CASCADE
 );
 

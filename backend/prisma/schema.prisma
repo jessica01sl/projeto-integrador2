@@ -13,7 +13,7 @@ model cliente {
   nome      String     @db.VarChar(255)
   saldo     Decimal?   @db.Decimal(10, 2)
   cpf       String     @db.VarChar(11)
-  cartao    String?    @db.VarChar(3)
+  cartao    String?    @db.VarChar(1)
   usuario   usuario?   @relation(fields: [usuarioId], references: [id], map: "cliente_ibfk_1")
   embarque  embarque[]
 
@@ -21,13 +21,13 @@ model cliente {
 }
 
 model embarque {
-  id        Int       @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   clienteId Int
   viagemId  Int?
-  tarifa    Decimal   @db.Decimal(10, 2)
-  horario   DateTime? @db.DateTime(0)
-  cliente   cliente   @relation(fields: [clienteId], references: [id], map: "embarque_ibfk_1")
-  viagem    viagem?   @relation(fields: [viagemId], references: [id], onDelete: Restrict, map: "embarque_ibfk_2")
+  tarifa    Decimal  @db.Decimal(10, 2)
+  horario   DateTime @default(now()) @db.DateTime(0)
+  cliente   cliente  @relation(fields: [clienteId], references: [id], map: "embarque_ibfk_1")
+  viagem    viagem?  @relation(fields: [viagemId], references: [id], onDelete: Restrict, map: "embarque_ibfk_2")
 
   @@index([clienteId], map: "clienteId")
   @@index([viagemId], map: "embarque_ibfk_2")
