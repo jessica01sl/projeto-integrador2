@@ -1,86 +1,89 @@
-
-
 <div class="main-panel">
-  
+
 
 
 
 
   <body>
-  
-      
-  <div class="ag-format-container">
+
+
+    <div class="ag-format-container">
       <div class="ag-courses_box">
-        
-  
-        
-    <!-- pode remover abaixo como quiser  -->
+
+
+
+        <!-- pode remover abaixo como quiser  -->
         <div class="ag-courses_item">
           <a href="http://127.0.0.1:3000/catraca" class="ag-courses-item_link">
             <div class="ag-courses-item_bg"></div>
-  
             <div class="ag-courses-item_title">
-              Vizualizar layouyt catraca
+              Catraca do Onibus
+              (interface1)
             </div>
-    
+
             <div class="ag-courses-item_date-box">
               Atualizado em:
               <span class="ag-courses-item_date">
-                04.12.2023
+                16.01.2024
             </div>
           </a>
         </div>
-    
-  
-    
+
+
+
         <div class="ag-courses_item">
           <a href="#" class="ag-courses-item_link">
             <div class="ag-courses-item_bg"></div>
-    
+
             <div class="ag-courses-item_title">
-              Acompanhar Onibus em circulação
+              Catraca do Onibus
+              (Aqui interface2)
             </div>
-    
+
             <div class="ag-courses-item_date-box">
               Atualizado em:
               <span class="ag-courses-item_date">
-                04.12.2023
+                16.01.2024
               </span>
             </div>
           </a>
         </div>
-    
-       
-    
+
+
+
         <div class="ag-courses_item">
           <a href="http://127.0.0.1:3000/site/home" class="ag-courses-item_link">
             <div class="ag-courses-item_bg"></div>
-    
+
             <div class="ag-courses-item_title">
-              Vizualizar site publico
+              Site Publico
+              comercial
+              (interface3)
             </div>
-    
+
             <div class="ag-courses-item_date-box">
               Atualizado em:
               <span class="ag-courses-item_date">
-                04.12.2023
+                16.01.2024
             </div>
           </a>
         </div>
-    
+
       </div>
     </div>
-    </body>
-  
-    <style>.ag-format-container {
-      width: 1142px;
+  </body>
+
+  <style>
+    .ag-format-container {
+      width: 900px;
       margin: 0 auto;
     }
-    
-    
+
+
     body {
       background-color: #000;
     }
+
     .ag-courses_box {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -90,439 +93,293 @@
       align-items: flex-start;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-    
+
       padding: 50px 0;
     }
+
     .ag-courses_item {
       -ms-flex-preferred-size: calc(33.33333% - 30px);
       flex-basis: calc(33.33333% - 30px);
-    
+
       margin: 0 15px 30px;
-    
+
       overflow: hidden;
-    
+
       border-radius: 28px;
     }
+
     .ag-courses-item_link {
       display: block;
       padding: 30px 20px;
       background-color: #121212;
-    
+
       overflow: hidden;
-    
+
       position: relative;
     }
+
     .ag-courses-item_link:hover,
     .ag-courses-item_link:hover .ag-courses-item_date {
       text-decoration: none;
       color: #FFF;
     }
+
     .ag-courses-item_link:hover .ag-courses-item_bg {
       -webkit-transform: scale(10);
       -ms-transform: scale(10);
       transform: scale(10);
     }
+
     .ag-courses-item_title {
       min-height: 87px;
       margin: 0 0 25px;
-    
+
       overflow: hidden;
-    
+
       font-weight: bold;
       font-size: 30px;
       color: #FFF;
-    
+
       z-index: 2;
       position: relative;
     }
+
     .ag-courses-item_date-box {
       font-size: 18px;
       color: #FFF;
-    
+
       z-index: 2;
       position: relative;
     }
+
     .ag-courses-item_date {
       font-weight: bold;
       color: #f9b234;
-    
+
       -webkit-transition: color .5s ease;
       -o-transition: color .5s ease;
       transition: color .5s ease
     }
+
     .ag-courses-item_bg {
       height: 128px;
       width: 128px;
       background-color: #f9b234;
-    
+
       z-index: 1;
       position: absolute;
       top: -75px;
       right: -75px;
-    
+
       border-radius: 50%;
-    
+
       -webkit-transition: all .5s ease;
       -o-transition: all .5s ease;
       transition: all .5s ease;
     }
+
     .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
       background-color: #3ecd5e;
     }
+
     .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
       background-color: #e44002;
     }
+
     .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
       background-color: #952aff;
     }
+
     .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
       background-color: #cd3e94;
     }
+
     .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
       background-color: #4c49ea;
     }
-    
-    
-    
+
+
+
     @media only screen and (max-width: 979px) {
       .ag-courses_item {
         -ms-flex-preferred-size: calc(50% - 30px);
         flex-basis: calc(50% - 30px);
       }
+
       .ag-courses-item_title {
         font-size: 24px;
       }
     }
-    
+
     @media only screen and (max-width: 767px) {
       .ag-format-container {
         width: 96%;
       }
-    
+
     }
+
     @media only screen and (max-width: 639px) {
       .ag-courses_item {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
       }
+
       .ag-courses-item_title {
         min-height: 72px;
         line-height: 1;
-    
+
         font-size: 24px;
       }
+
       .ag-courses-item_link {
         padding: 22px 40px;
       }
+
       .ag-courses-item_date-box {
         font-size: 16px;
       }
     }
-    
-  
-    </style>
-  
-  
-  
-  
-  
-  
-  
-    <div class="content-wrapper">
-      <div class="row">
-        <div class="col-12 grid-margin stretch-card">
-          <div class="card corona-gradient-card">
-            <div class="card-body py-0 px-0 px-sm-3">
-              <div class="row align-items-center">
-                <div class="col-4 col-sm-3 col-xl-2">
-                </div>
+  </style>
+
+
+
+
+
+
+
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-12 grid-margin stretch-card">
+        <div class="card corona-gradient-card">
+          <div class="card-body py-0 px-0 px-sm-3">
+            <div class="row align-items-center">
+              <div class="col-4 col-sm-3 col-xl-2">
               </div>
             </div>
           </div>
         </div>
       </div>
-  
-      <!--Linhas de rota-->
-      <div class="col-md-0 grid-margin stretch-card">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-row justify-content-between">
-              <h4 class="card-title mb-1">Linhas</h4>
-              <p class="text-muted mb-1">Linhas mais acessadas</p>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="preview-list">
-                  <div class="preview-item border-bottom">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-primary">
-                        <i class="mdi mdi-file-document"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content d-sm-flex flex-grow">
-                      <div class="flex-grow">
-                        <h6 class="preview-subject">Jaragua</h6>
-                        <p class="text-muted mb-0">Jaragua Direto</p>
-                      </div>
-                      <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                        <p class="text-muted">De 30 em 30 minutos</p>
-                        <p class="text-muted mb-0">Seg a Dom </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="preview-item border-bottom">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-success">
-                        <i class="mdi mdi-cloud-download"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content d-sm-flex flex-grow">
-                      <div class="flex-grow">
-                        <h6 class="preview-subject">Travessão</h6>
-                        <p class="text-muted mb-0">Travessão via Barranco</p>
-                      </div>
-                      <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                        <p class="text-muted">De 45 em 45 minutos</p>
-                        <p class="text-muted mb-0"> Seg a Dom</p>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="preview-item border-bottom">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-info">
-                        <i class="mdi mdi-clock"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content d-sm-flex flex-grow">
-                      <div class="flex-grow">
-                        <h6 class="preview-subject">Vapapesca</h6>
-                        <p class="text-muted mb-0">Via Canto do Mar</p>
-                      </div>
-                      <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                        <p class="text-muted">De 50 em 50 minutos</p>
-                        <p class="text-muted mb-0">Seg a Dom</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="preview-item border-bottom">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-danger">
-                        <i class="mdi mdi-email-open"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content d-sm-flex flex-grow">
-                      <div class="flex-grow">
-                        <h6 class="preview-subject">Pegorelli</h6>
-                        <p class="text-muted mb-0">Via Pereque / via Ubs Tarumãns</p>
-                      </div>
-                      <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                        <p class="text-muted">De 50 em 50 minutos</p>
-                        <p class="text-muted mb-0">Seg a Dom </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-warning">
-                        <i class="mdi mdi-chart-pie"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content d-sm-flex flex-grow">
-                      <div class="flex-grow">
-                        <h6 class="preview-subject">Tinga</h6>
-                        <p class="text-muted mb-0"></p>
-                      </div>
-                      <div class="me-auto text-sm-right pt-2 pt-sm-0">
-                        <p class="text-muted">De hora em hora</p>
-                        <p class="text-muted mb-0">Seg a Dom </p>
-  
-  
-  
-  
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-     
-        </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-        
-  
-        <!-- Registro dos motoristas
-        <div class="row ">
-          <div class="col-12 grid-margin">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Motoristas</h4>
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>
-                          <div class="form-check form-check-muted m-0">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                            </label>
-                          </div>
-                        </th>
-                        <th> Nome dos Motoristas </th>
-                        <th> Registro</th>
-                        <th> Ganho por viagem </th>
-                        <th> Linhas </th>
-                        <th> Férias </th>
-  
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <div class="form-check form-check-muted m-0">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <img src="assets/images/faces/face1.jpg" alt="image" />
-                          <span class="ps-2">Maria Betânia</span>
-                        </td>
-                        <td> 02312 </td>
-                        <td> R$ 645,00</td>
-                        <td> Pegorelli </td>
-                        <td> 22/03/2024 </td>
-  
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-check-muted m-0">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <img src="assets/images/faces/face2.jpg" alt="image" />
-                          <span class="ps-2">Camila Cabello</span>
-                        </td>
-                        <td> 02312 </td>
-                        <td> R$ 820,00 </td>
-                        <td> Jaragua </td>
-                        <td> 04/12/2024 </td>
-  
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-check-muted m-0">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <img src="assets/images/faces/face5.jpg" alt="image" />
-                          <span class="ps-2">Manoel Gomes</span>
-                        </td>
-                        <td> 02312 </td>
-                        <td> R$ 730,500 </td>
-                        <td> Travessão </td>
-                        <td> 10/02/2024 </td>
-  
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-check-muted m-0">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-  
-                          <img src="assets/images/faces/face3.jpg" alt="image" />
-                          <span class="ps-2">Jorge Abraão</span>
-                        </td>
-                        <td> 02312 </td>
-                        <td> R$ 400,15 </td>
-                        <td> Tinga </td>
-                        <td> 06/19/2025 </td>
-  
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="form-check form-check-muted m-0">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input">
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <img src="assets/images/faces/face4.jpg" alt="image" />
-                          <span class="ps-2">José Da Silva</span>
-                        </td>
-                        <td> 02312 </td>
-                        <td> R$ 605,00 </td>
-                        <td> Vapapesca </td>
-                        <td> 05/08/2025 </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-     Rodapé -->
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © SmartBus.com
-              2023</span>
-          </div>
-        </footer>
-        <!-- partial -->
-      </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
+
+    <!--Linhas de rota-->
+    <div class="col-md-0 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex flex-row justify-content-between">
+            <h4 class="card-title mb-1">Linhas</h4>
+            <p class="text-muted mb-1">Linhas mais acessadas</p>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="preview-list">
+                <div class="preview-item border-bottom">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-primary">
+                      <i class="mdi mdi-file-document"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-sm-flex flex-grow">
+                    <div class="flex-grow">
+                      <h6 class="preview-subject">Jaragua</h6>
+                      <p class="text-muted mb-0">Jaragua Direto</p>
+                    </div>
+                    <div class="me-auto text-sm-right pt-2 pt-sm-0">
+                      <p class="text-muted">De 30 em 30 minutos</p>
+                      <p class="text-muted mb-0">Seg a Dom </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-item border-bottom">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success">
+                      <i class="mdi mdi-cloud-download"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-sm-flex flex-grow">
+                    <div class="flex-grow">
+                      <h6 class="preview-subject">Travessão</h6>
+                      <p class="text-muted mb-0">Travessão via Barranco</p>
+                    </div>
+                    <div class="me-auto text-sm-right pt-2 pt-sm-0">
+                      <p class="text-muted">De 45 em 45 minutos</p>
+                      <p class="text-muted mb-0"> Seg a Dom</p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-item border-bottom">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-info">
+                      <i class="mdi mdi-clock"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-sm-flex flex-grow">
+                    <div class="flex-grow">
+                      <h6 class="preview-subject">Vapapesca</h6>
+                      <p class="text-muted mb-0">Via Canto do Mar</p>
+                    </div>
+                    <div class="me-auto text-sm-right pt-2 pt-sm-0">
+                      <p class="text-muted">De 50 em 50 minutos</p>
+                      <p class="text-muted mb-0">Seg a Dom</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-item border-bottom">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-danger">
+                      <i class="mdi mdi-email-open"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-sm-flex flex-grow">
+                    <div class="flex-grow">
+                      <h6 class="preview-subject">Pegorelli</h6>
+                      <p class="text-muted mb-0">Via Pereque / via Ubs Tarumãns</p>
+                    </div>
+                    <div class="me-auto text-sm-right pt-2 pt-sm-0">
+                      <p class="text-muted">De 50 em 50 minutos</p>
+                      <p class="text-muted mb-0">Seg a Dom </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-warning">
+                      <i class="mdi mdi-chart-pie"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content d-sm-flex flex-grow">
+                    <div class="flex-grow">
+                      <h6 class="preview-subject">Tinga</h6>
+                      <p class="text-muted mb-0"></p>
+                    </div>
+                    <div class="me-auto text-sm-right pt-2 pt-sm-0">
+                      <p class="text-muted">De hora em hora</p>
+                      <p class="text-muted mb-0">Seg a Dom </p>
+
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © SmartBus.com
+          2023</span>
+      </div>
+    </footer>
+    <!-- partial -->
   </div>
-  
-  
+  <!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
