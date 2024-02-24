@@ -1,12 +1,26 @@
 # projeto-integrador2
+🚀 SmartBus - Projeto em Desenvolvimento 🌐
 
-Esse é o nosso projeto o SmartBus
+Bem-vindo ao repositório "SmartBus"! Este é um emocionante projeto em constante desenvolvimento, criado com paixão e dedicação. Aqui estão alguns destaques do que você pode esperar deste projeto:
 
-feito por:
+📝 Tecnologias Utilizadas:
 
-Philype jorge 
+Frontend: Bootstrap, HTML, CSS.
+Backend: JavaScript (Node.js), MySQL 2, Prisma, JWT(criptografia das senhas), APIs.
+Testes: Jest para testes de unidade.
+Outras Ferramentas: Thunder Client para testes e colaboração contínua.
+🌱 Em Desenvolvimento Constante:
+Este projeto está em constante evolução à medida que exploramos novas funcionalidades e melhorias. Estamos comprometidos em oferecer a você uma experiência aprimorada a cada atualização.
 
+🔗 Links Úteis:
 
+https://github.com/jessica01sl/projeto-integrador2
+
+🚧 Estado Atual do Projeto:
+
+Desenvolvimento ativo.
+Implementações planejadas para melhorias futuras.
+Agradecemos por seu interesse no "SmartBus".
 
 
 <div>
